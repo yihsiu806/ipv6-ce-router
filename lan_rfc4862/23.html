@@ -1,0 +1,793 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN""http://www.w3c.org/TR/REC-html40/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>IPv6 Conformance Test Report</TITLE>
+<META NAME="GENERATOR" CONTENT="TAHI IPv6 Conformance Test Kit">
+</HEAD>
+
+<BODY BGCOLOR="#F0F0F0">
+<H1>Test Information</H1>
+<TABLE BORDER=1>
+<TR><TD>Title</TD><TD>Part G&#58; CE-Router receives invalid DAD NA (option length ==zero)</TD></TR>
+<TR><TD>CommandLine</TD><TD>./LLA_DAD_NAPostDAD_invalidOptLen.seq -pkt LLA_SAA.def -log 23.html -ti Part G&#58; CE-Router receives invalid DAD NA (option length ==zero)</TD></TR>
+<TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_1</TD></TR>
+<TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
+<TR><TD>Start</TD><TD>2016/04/01 08:50:53</TD></TR>
+<TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
+<TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
+<TR><TD>Pkt</TD><TD>LLA_SAA.def</TD></TR>
+<TR><TD>System</TD><TD>manual</TD></TR>
+<TR><TD>TargetName</TD><TD>Linux SI_Framework 2.6.36+</TD></TR>
+<TR><TD>HostName</TD><TD>SI_Framework</TD></TR>
+<TR><TD>Type</TD><TD>router</TD></TR>
+</TABLE>
+<HR>
+<H1>Test Sequence Execution Log</H1>
+<TABLE BORDER=1>
+<TR><TD>08:50:53</TD><TD>Start</TD></TR>
+<TR VALIGN="TOP"><TD>08:50:53</TD><TD>Start Capturing Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP"><TD>08:50:53</TD><TD>Start Capturing Packets (Link1)<BR>
+</TD></TR>
+
+<TR><TD><BR></TD><TD>
+<PRE>*** Target initialization phase ***</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>08:50:53</TD>
+<TD>
+vRemote(reboot_async.rmt) ``/usr/local/v6eval//bin/manual//reboot_async.rmt -t manual -u root -p amittima -d cuaU0   timeout=120''
+<PRE>
+reboot_async&gt; 
+reboot_async&gt; Reboot NUT.
+reboot_async&gt;     * You don't need to wait NUT untill boot up completely.
+reboot_async&gt;     * You have to exit this script quickly.
+reboot_async&gt;     * This script is used for catching up boot sequence.
+reboot_async&gt;         Ex.) DAD, MLD Report, ...
+reboot_async&gt; 
+reboot_async&gt; Press Enter key for continue. 
+reboot_async&gt; 
+
+</PRE>
+</TD></TR>
+<TR><TD><BR></TD><TD>
+<PRE>reboot_async.rmt returned status 0</PRE>
+<PRE>*** Target testing phase ***</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>08:50:59</TD><TD>Clear Captured Packets (Link1)<BR>
+</TD></TR>
+
+<TR><TD><BR></TD><TD>
+<PRE>TN wait DAD NS(DADNS_from_NUT) from CE-Router for 300 [sec],</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>08:50:59</TD>
+<TD>vRecv(Link1,DADNS_from_NUT) timeout:300 cntLimit: seektime:0<BR>
+<A NAME="vRecv0"></A>
+<A HREF="#vRecvPKT0">recv unexpect packet at 08:51:00</A>
+<BR>
+<A NAME="vRecv1"></A>
+<A HREF="#vRecvPKT1">recv unexpect packet at 08:51:01</A>
+<BR>
+<A NAME="vRecv2"></A>
+<A HREF="#vRecvPKT2">recv unexpect packet at 08:51:01</A>
+<BR>
+<A NAME="vRecv3"></A>
+<A HREF="#vRecvPKT3">recv unexpect packet at 08:51:01</A>
+<BR>
+<A NAME="vRecv4"></A>
+<A HREF="#vRecvPKT4">recv unexpect packet at 08:51:01</A>
+<BR>
+<A NAME="vRecv5"></A>
+<A HREF="#vRecvPKT5">recv unexpect packet at 08:51:01</A>
+<BR>
+<A NAME="vRecv6"></A>
+<A HREF="#vRecvPKT6">recv unexpect packet at 08:51:01</A>
+<BR>
+<A NAME="vRecv7"></A>
+<A HREF="#vRecvPKT7">recv unexpect packet at 08:51:01</A>
+<BR>
+<A NAME="vRecv8"></A>
+<A HREF="#vRecvPKT8">recv unexpect packet at 08:51:01</A>
+<BR>
+<A NAME="vRecv9"></A>
+<A HREF="#vRecvPKT9">recv unexpect packet at 08:52:16</A>
+<BR>
+<A NAME="vRecv10"></A>
+<A HREF="#vRecvPKT10">recv DADNS_from_NUT</A><BR>
+
+</TD>
+</TR>
+
+<TR VALIGN="TOP">
+<TD>08:52:16</TD><TD>
+vSend(Link1,DADNA_from_TN_invalidOptLen)<BR>
+<FONT COLOR="#FF0000">!!! unable decode Type size(1,0) ,in Opt_ICMPv6_TLL at(0,0)/size(0)</FONT><BR><A NAME="vSend0"></A>
+<A HREF="#vSendPKT0">send DADNA_from_TN_invalidOptLen</A><BR>
+
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>08:52:17</TD>
+<TD>Wait 5 second
+</TD></TR>
+<TR><TD><BR></TD><TD>
+<PRE>Check if CE-Router's address is configured</PRE>
+<PRE>Send NS from TN to CE-Router: SOLNS_from_TN_SameTgt</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>08:52:22</TD><TD>Clear Captured Packets (Link1)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP">
+<TD>08:52:22</TD><TD>
+vSend(Link1,SOLNS_from_TN_SameTgt)<BR>
+<A NAME="vSend1"></A>
+<A HREF="#vSendPKT1">send SOLNS_from_TN_SameTgt</A><BR>
+
+</TD>
+</TR>
+<TR><TD><BR></TD><TD>
+<PRE>Wait NA from CE-Router: NA_from_NUT,NA_from_NUT_woTLL</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>08:52:22</TD>
+<TD>vRecv(Link1,NA_from_NUT NA_from_NUT_woTLL) timeout:5 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv11"></A>
+<A HREF="#vRecvPKT11">recv NA_from_NUT</A><BR>
+
+</TD>
+</TR>
+
+<TR><TD><BR></TD><TD>
+<PRE>Received packet count=1</PRE>
+<PRE>Received NA from CE-Router: NA_from_NUT</PRE>
+<PRE>CE-Router assigned the address to the interface.</PRE>
+<PRE>CE-Router assigned the address to the interface.</PRE>
+<PRE>Check if CE-Router's address is configured</PRE>
+<PRE>Send NS from TN to CE-Router: NS_from_TN_SrcDstUni</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>08:52:22</TD><TD>Clear Captured Packets (Link1)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP">
+<TD>08:52:22</TD><TD>
+vSend(Link1,NS_from_TN_SrcDstUni)<BR>
+<A NAME="vSend2"></A>
+<A HREF="#vSendPKT2">send NS_from_TN_SrcDstUni</A><BR>
+
+</TD>
+</TR>
+<TR><TD><BR></TD><TD>
+<PRE>Wait NA from CE-Router: NA_from_NUT,NA_from_NUT_woTLL</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>08:52:22</TD>
+<TD>vRecv(Link1,NA_from_NUT NA_from_NUT_woTLL) timeout:5 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv12"></A>
+<A HREF="#vRecvPKT12">recv NA_from_NUT_woTLL</A><BR>
+
+</TD>
+</TR>
+
+<TR><TD><BR></TD><TD>
+<PRE>Received packet count=1</PRE>
+<PRE>Received NA from CE-Router: NA_from_NUT_woTLL</PRE>
+<PRE>CE-Router assigned the address to the interface.</PRE>
+<PRE>CE-Router assigned the address to the interface.</PRE>
+<PRE>OK</PRE>
+<PRE>*** EOT ***</PRE>
+</TD>
+</TR>
+<TR><TD>08:52:22</TD><TD>End</TD></TR>
+</TABLE>
+<HR><H1>Packet Reverse Log</H1>
+<UL>
+<A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 08:51:00</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:60)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 01:80:c2:00:00:00
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 38
+| Payload                         (length:46)
+| | data                             = 
+| |   42420300 00000000  80000050 181e7f2f  00000000 80000050  181e7f2f 80010000
+| |   14000200 01000000  00007dbe ca03
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:01:80:c2:00:00:00 = 33:33:ff:1e:7f:2f
+ng compare hether_nut_lan_to_tentsolnode.Type received:38 = 34525
+ng meta Frame_Ether.Packet_IPv6 != Frame_Ether.Payload
+</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 08:51:01</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:551)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 01:00:5e:7f:ff:fa
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 2048
+| Packet_IPv4                     (length:537)
+| | Hdr_IPv4                        (length:20)
+| | | Version                          = 4
+| | | IHL                              = 5
+| | | TypeOfService                    = 0
+| | | TotalLength                      = 537
+| | | Identifier                       = 0
+| | | Reserved                         = 0
+| | | DF                               = 1
+| | | MF                               = 0
+| | | FragmentOffset                   = 0
+| | | TTL                              = 2
+| | | Protocol                         = 17
+| | | HeaderChecksum                   = 31961 calc(31961)
+| | | SourceAddress                    = 10.0.0.1
+| | | DestinationAddress               = 239.255.255.250
+| | Upp_UDP                         (length:517)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 4306
+| | | | DestinationPort                  = 1900
+| | | | Length                           = 517
+| | | | Checksum                         = 23711 calc(23711)
+| | | Payload                         (length:509)
+| | | | data                             = 
+| | | |   4e4f5449 4659202a  20485454 502f312e  310d0a48 4f53543a  20323339 2e323535
+| | | |   2e323535 2e323530  3a313930 300d0a43  41434845 2d434f4e  54524f4c 3a206d61
+| | | |   782d6167 653d3630  0d0a4c4f 43415449  4f4e3a20 68747470  3a2f2f31 302e302e
+| | | |   302e313a 33373635  2f726f6f 74446573  632e786d 6c0d0a53  45525645 523a204c
+| | | |   696e7578 2f332e39  2e352d33 30312e66  6331392e 7838365f  36342055 506e502f
+| | | |   312e3120 4d696e69  55506e50 642f312e  370d0a4e 543a2075  706e703a 726f6f74
+| | | |   64657669 63650d0a  55534e3a 20757569  643a6662 38643262  64312d34 6437312d
+| | | |   34363537 2d623565  302d3938 38373033  64316236 63373a3a  75706e70 3a726f6f
+| | | |   74646576 6963650d  0a4e5453 3a207373  64703a61 6c697665  0d0a4f50 543a2022
+| | | |   68747470 3a2f2f73  6368656d 61732e75  706e702e 6f72672f  75706e70 2f312f30
+| | | |   2f223b20 6e733d30  310d0a30 312d4e4c  533a2031 0d0a424f  4f544944 2e55504e
+| | | |   502e4f52 473a2031  0d0a434f 4e464947  49442e55 504e502e  4f52473a 20313333
+| | | |   370d0a4d 41433a20  30303a35 303a3138  3a31453a 37463a32  460d0a45 58543a20
+| | | |   41435f49 503a2031  302e302e 302e312c  2041435f 4e4d3a20  3235352e 3235352e
+| | | |   3235352e 302c2041  435f4448 43503a20  4f46462c 2041435f  41564149 4c5f4950
+| | | |   3a203130 2e302e30  2e313030 202d2031  302e302e 302e3230  300d0a0d 0a
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:01:00:5e:7f:ff:fa = 33:33:ff:1e:7f:2f
+ng compare hether_nut_lan_to_tentsolnode.Type received:2048 = 34525
+ng meta Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv4
+</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 08:51:01</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:503)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 01:00:5e:7f:ff:fa
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 2048
+| Packet_IPv4                     (length:489)
+| | Hdr_IPv4                        (length:20)
+| | | Version                          = 4
+| | | IHL                              = 5
+| | | TypeOfService                    = 0
+| | | TotalLength                      = 489
+| | | Identifier                       = 0
+| | | Reserved                         = 0
+| | | DF                               = 1
+| | | MF                               = 0
+| | | FragmentOffset                   = 0
+| | | TTL                              = 2
+| | | Protocol                         = 17
+| | | HeaderChecksum                   = 32009 calc(32009)
+| | | SourceAddress                    = 10.0.0.1
+| | | DestinationAddress               = 239.255.255.250
+| | Upp_UDP                         (length:469)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 4306
+| | | | DestinationPort                  = 1900
+| | | | Length                           = 469
+| | | | Checksum                         = 51402 calc(51402)
+| | | Payload                         (length:461)
+| | | | data                             = 
+| | | |   4e4f5449 4659202a  20485454 502f312e  310d0a48 4f53543a  20323339 2e323535
+| | | |   2e323535 2e323530  3a313930 300d0a43  41434845 2d434f4e  54524f4c 3a206d61
+| | | |   782d6167 653d3630  0d0a4c4f 43415449  4f4e3a20 68747470  3a2f2f31 302e302e
+| | | |   302e313a 33373635  2f726f6f 74446573  632e786d 6c0d0a53  45525645 523a204c
+| | | |   696e7578 2f332e39  2e352d33 30312e66  6331392e 7838365f  36342055 506e502f
+| | | |   312e3120 4d696e69  55506e50 642f312e  370d0a4e 543a2075  726e3a73 6368656d
+| | | |   61732d75 706e702d  6f72673a 64657669  63653a49 6e746572  6e657447 61746577
+| | | |   61794465 76696365  3a310d0a 55534e3a  20757569 643a6662  38643262 64312d34
+| | | |   6437312d 34363537  2d623565 302d3938  38373033 64316236  63373a3a 75726e3a
+| | | |   73636865 6d61732d  75706e70 2d6f7267  3a646576 6963653a  496e7465 726e6574
+| | | |   47617465 77617944  65766963 653a310d  0a4e5453 3a207373  64703a61 6c697665
+| | | |   0d0a4f50 543a2022  68747470 3a2f2f73  6368656d 61732e75  706e702e 6f72672f
+| | | |   75706e70 2f312f30  2f223b20 6e733d30  310d0a30 312d4e4c  533a2031 0d0a424f
+| | | |   4f544944 2e55504e  502e4f52 473a2031  0d0a434f 4e464947  49442e55 504e502e
+| | | |   4f52473a 20313333  370d0a0d 0a
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:01:00:5e:7f:ff:fa = 33:33:ff:1e:7f:2f
+ng compare hether_nut_lan_to_tentsolnode.Type received:2048 = 34525
+ng meta Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv4
+</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 08:51:01</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:499)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 01:00:5e:7f:ff:fa
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 2048
+| Packet_IPv4                     (length:485)
+| | Hdr_IPv4                        (length:20)
+| | | Version                          = 4
+| | | IHL                              = 5
+| | | TypeOfService                    = 0
+| | | TotalLength                      = 485
+| | | Identifier                       = 0
+| | | Reserved                         = 0
+| | | DF                               = 1
+| | | MF                               = 0
+| | | FragmentOffset                   = 0
+| | | TTL                              = 2
+| | | Protocol                         = 17
+| | | HeaderChecksum                   = 32013 calc(32013)
+| | | SourceAddress                    = 10.0.0.1
+| | | DestinationAddress               = 239.255.255.250
+| | Upp_UDP                         (length:465)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 4306
+| | | | DestinationPort                  = 1900
+| | | | Length                           = 465
+| | | | Checksum                         = 61176 calc(61176)
+| | | Payload                         (length:457)
+| | | | data                             = 
+| | | |   4e4f5449 4659202a  20485454 502f312e  310d0a48 4f53543a  20323339 2e323535
+| | | |   2e323535 2e323530  3a313930 300d0a43  41434845 2d434f4e  54524f4c 3a206d61
+| | | |   782d6167 653d3630  0d0a4c4f 43415449  4f4e3a20 68747470  3a2f2f31 302e302e
+| | | |   302e313a 33373635  2f726f6f 74446573  632e786d 6c0d0a53  45525645 523a204c
+| | | |   696e7578 2f332e39  2e352d33 30312e66  6331392e 7838365f  36342055 506e502f
+| | | |   312e3120 4d696e69  55506e50 642f312e  370d0a4e 543a2075  726e3a73 6368656d
+| | | |   61732d75 706e702d  6f72673a 64657669  63653a57 414e436f  6e6e6563 74696f6e
+| | | |   44657669 63653a31  0d0a5553 4e3a2075  7569643a 66623864  32626431 2d346437
+| | | |   312d3436 35372d62  3565302d 39383837  30336431 62366337  3a3a7572 6e3a7363
+| | | |   68656d61 732d7570  6e702d6f 72673a64  65766963 653a5741  4e436f6e 6e656374
+| | | |   696f6e44 65766963  653a310d 0a4e5453  3a207373 64703a61  6c697665 0d0a4f50
+| | | |   543a2022 68747470  3a2f2f73 6368656d  61732e75 706e702e  6f72672f 75706e70
+| | | |   2f312f30 2f223b20  6e733d30 310d0a30  312d4e4c 533a2031  0d0a424f 4f544944
+| | | |   2e55504e 502e4f52  473a2031 0d0a434f  4e464947 49442e55  504e502e 4f52473a
+| | | |   20313333 370d0a0d  0a
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:01:00:5e:7f:ff:fa = 33:33:ff:1e:7f:2f
+ng compare hether_nut_lan_to_tentsolnode.Type received:2048 = 34525
+ng meta Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv4
+</PRE><HR><A NAME="vRecvPKT4"></A><A HREF="#vRecv4">Recv at 08:51:01</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:479)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 01:00:5e:7f:ff:fa
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 2048
+| Packet_IPv4                     (length:465)
+| | Hdr_IPv4                        (length:20)
+| | | Version                          = 4
+| | | IHL                              = 5
+| | | TypeOfService                    = 0
+| | | TotalLength                      = 465
+| | | Identifier                       = 0
+| | | Reserved                         = 0
+| | | DF                               = 1
+| | | MF                               = 0
+| | | FragmentOffset                   = 0
+| | | TTL                              = 2
+| | | Protocol                         = 17
+| | | HeaderChecksum                   = 32033 calc(32033)
+| | | SourceAddress                    = 10.0.0.1
+| | | DestinationAddress               = 239.255.255.250
+| | Upp_UDP                         (length:445)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 4306
+| | | | DestinationPort                  = 1900
+| | | | Length                           = 445
+| | | | Checksum                         = 821 calc(821)
+| | | Payload                         (length:437)
+| | | | data                             = 
+| | | |   4e4f5449 4659202a  20485454 502f312e  310d0a48 4f53543a  20323339 2e323535
+| | | |   2e323535 2e323530  3a313930 300d0a43  41434845 2d434f4e  54524f4c 3a206d61
+| | | |   782d6167 653d3630  0d0a4c4f 43415449  4f4e3a20 68747470  3a2f2f31 302e302e
+| | | |   302e313a 33373635  2f726f6f 74446573  632e786d 6c0d0a53  45525645 523a204c
+| | | |   696e7578 2f332e39  2e352d33 30312e66  6331392e 7838365f  36342055 506e502f
+| | | |   312e3120 4d696e69  55506e50 642f312e  370d0a4e 543a2075  726e3a73 6368656d
+| | | |   61732d75 706e702d  6f72673a 64657669  63653a57 414e4465  76696365 3a310d0a
+| | | |   55534e3a 20757569  643a6662 38643262  64312d34 6437312d  34363537 2d623565
+| | | |   302d3938 38373033  64316236 63373a3a  75726e3a 73636865  6d61732d 75706e70
+| | | |   2d6f7267 3a646576  6963653a 57414e44  65766963 653a310d  0a4e5453 3a207373
+| | | |   64703a61 6c697665  0d0a4f50 543a2022  68747470 3a2f2f73  6368656d 61732e75
+| | | |   706e702e 6f72672f  75706e70 2f312f30  2f223b20 6e733d30  310d0a30 312d4e4c
+| | | |   533a2031 0d0a424f  4f544944 2e55504e  502e4f52 473a2031  0d0a434f 4e464947
+| | | |   49442e55 504e502e  4f52473a 20313333  370d0a0d 0a
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:01:00:5e:7f:ff:fa = 33:33:ff:1e:7f:2f
+ng compare hether_nut_lan_to_tentsolnode.Type received:2048 = 34525
+ng meta Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv4
+</PRE><HR><A NAME="vRecvPKT5"></A><A HREF="#vRecv5">Recv at 08:51:01</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:511)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 01:00:5e:7f:ff:fa
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 2048
+| Packet_IPv4                     (length:497)
+| | Hdr_IPv4                        (length:20)
+| | | Version                          = 4
+| | | IHL                              = 5
+| | | TypeOfService                    = 0
+| | | TotalLength                      = 497
+| | | Identifier                       = 0
+| | | Reserved                         = 0
+| | | DF                               = 1
+| | | MF                               = 0
+| | | FragmentOffset                   = 0
+| | | TTL                              = 2
+| | | Protocol                         = 17
+| | | HeaderChecksum                   = 32001 calc(32001)
+| | | SourceAddress                    = 10.0.0.1
+| | | DestinationAddress               = 239.255.255.250
+| | Upp_UDP                         (length:477)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 4306
+| | | | DestinationPort                  = 1900
+| | | | Length                           = 477
+| | | | Checksum                         = 31597 calc(31597)
+| | | Payload                         (length:469)
+| | | | data                             = 
+| | | |   4e4f5449 4659202a  20485454 502f312e  310d0a48 4f53543a  20323339 2e323535
+| | | |   2e323535 2e323530  3a313930 300d0a43  41434845 2d434f4e  54524f4c 3a206d61
+| | | |   782d6167 653d3630  0d0a4c4f 43415449  4f4e3a20 68747470  3a2f2f31 302e302e
+| | | |   302e313a 33373635  2f726f6f 74446573  632e786d 6c0d0a53  45525645 523a204c
+| | | |   696e7578 2f332e39  2e352d33 30312e66  6331392e 7838365f  36342055 506e502f
+| | | |   312e3120 4d696e69  55506e50 642f312e  370d0a4e 543a2075  726e3a73 6368656d
+| | | |   61732d75 706e702d  6f72673a 73657276  6963653a 57414e43  6f6d6d6f 6e496e74
+| | | |   65726661 6365436f  6e666967 3a310d0a  55534e3a 20757569  643a6662 38643262
+| | | |   64312d34 6437312d  34363537 2d623565  302d3938 38373033  64316236 63373a3a
+| | | |   75726e3a 73636865  6d61732d 75706e70  2d6f7267 3a736572  76696365 3a57414e
+| | | |   436f6d6d 6f6e496e  74657266 61636543  6f6e6669 673a310d  0a4e5453 3a207373
+| | | |   64703a61 6c697665  0d0a4f50 543a2022  68747470 3a2f2f73  6368656d 61732e75
+| | | |   706e702e 6f72672f  75706e70 2f312f30  2f223b20 6e733d30  310d0a30 312d4e4c
+| | | |   533a2031 0d0a424f  4f544944 2e55504e  502e4f52 473a2031  0d0a434f 4e464947
+| | | |   49442e55 504e502e  4f52473a 20313333  370d0a0d 0a
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:01:00:5e:7f:ff:fa = 33:33:ff:1e:7f:2f
+ng compare hether_nut_lan_to_tentsolnode.Type received:2048 = 34525
+ng meta Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv4
+</PRE><HR><A NAME="vRecvPKT6"></A><A HREF="#vRecv6">Recv at 08:51:01</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:493)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 01:00:5e:7f:ff:fa
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 2048
+| Packet_IPv4                     (length:479)
+| | Hdr_IPv4                        (length:20)
+| | | Version                          = 4
+| | | IHL                              = 5
+| | | TypeOfService                    = 0
+| | | TotalLength                      = 479
+| | | Identifier                       = 0
+| | | Reserved                         = 0
+| | | DF                               = 1
+| | | MF                               = 0
+| | | FragmentOffset                   = 0
+| | | TTL                              = 2
+| | | Protocol                         = 17
+| | | HeaderChecksum                   = 32019 calc(32019)
+| | | SourceAddress                    = 10.0.0.1
+| | | DestinationAddress               = 239.255.255.250
+| | Upp_UDP                         (length:459)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 4306
+| | | | DestinationPort                  = 1900
+| | | | Length                           = 459
+| | | | Checksum                         = 12338 calc(12338)
+| | | Payload                         (length:451)
+| | | | data                             = 
+| | | |   4e4f5449 4659202a  20485454 502f312e  310d0a48 4f53543a  20323339 2e323535
+| | | |   2e323535 2e323530  3a313930 300d0a43  41434845 2d434f4e  54524f4c 3a206d61
+| | | |   782d6167 653d3630  0d0a4c4f 43415449  4f4e3a20 68747470  3a2f2f31 302e302e
+| | | |   302e313a 33373635  2f726f6f 74446573  632e786d 6c0d0a53  45525645 523a204c
+| | | |   696e7578 2f332e39  2e352d33 30312e66  6331392e 7838365f  36342055 506e502f
+| | | |   312e3120 4d696e69  55506e50 642f312e  370d0a4e 543a2075  726e3a73 6368656d
+| | | |   61732d75 706e702d  6f72673a 73657276  6963653a 57414e49  50436f6e 6e656374
+| | | |   696f6e3a 310d0a55  534e3a20 75756964  3a666238 64326264  312d3464 37312d34
+| | | |   3635372d 62356530  2d393838 37303364  31623663 373a3a75  726e3a73 6368656d
+| | | |   61732d75 706e702d  6f72673a 73657276  6963653a 57414e49  50436f6e 6e656374
+| | | |   696f6e3a 310d0a4e  54533a20 73736470  3a616c69 76650d0a  4f50543a 20226874
+| | | |   74703a2f 2f736368  656d6173 2e75706e  702e6f72 672f7570  6e702f31 2f302f22
+| | | |   3b206e73 3d30310d  0a30312d 4e4c533a  20310d0a 424f4f54  49442e55 504e502e
+| | | |   4f52473a 20310d0a  434f4e46 49474944  2e55504e 502e4f52  473a2031 3333370d
+| | | |   0a0d0a
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:01:00:5e:7f:ff:fa = 33:33:ff:1e:7f:2f
+ng compare hether_nut_lan_to_tentsolnode.Type received:2048 = 34525
+ng meta Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv4
+</PRE><HR><A NAME="vRecvPKT7"></A><A HREF="#vRecv7">Recv at 08:51:01</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:495)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 01:00:5e:7f:ff:fa
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 2048
+| Packet_IPv4                     (length:481)
+| | Hdr_IPv4                        (length:20)
+| | | Version                          = 4
+| | | IHL                              = 5
+| | | TypeOfService                    = 0
+| | | TotalLength                      = 481
+| | | Identifier                       = 0
+| | | Reserved                         = 0
+| | | DF                               = 1
+| | | MF                               = 0
+| | | FragmentOffset                   = 0
+| | | TTL                              = 2
+| | | Protocol                         = 17
+| | | HeaderChecksum                   = 32017 calc(32017)
+| | | SourceAddress                    = 10.0.0.1
+| | | DestinationAddress               = 239.255.255.250
+| | Upp_UDP                         (length:461)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 4306
+| | | | DestinationPort                  = 1900
+| | | | Length                           = 461
+| | | | Checksum                         = 52960 calc(52960)
+| | | Payload                         (length:453)
+| | | | data                             = 
+| | | |   4e4f5449 4659202a  20485454 502f312e  310d0a48 4f53543a  20323339 2e323535
+| | | |   2e323535 2e323530  3a313930 300d0a43  41434845 2d434f4e  54524f4c 3a206d61
+| | | |   782d6167 653d3630  0d0a4c4f 43415449  4f4e3a20 68747470  3a2f2f31 302e302e
+| | | |   302e313a 33373635  2f726f6f 74446573  632e786d 6c0d0a53  45525645 523a204c
+| | | |   696e7578 2f332e39  2e352d33 30312e66  6331392e 7838365f  36342055 506e502f
+| | | |   312e3120 4d696e69  55506e50 642f312e  370d0a4e 543a2075  726e3a73 6368656d
+| | | |   61732d75 706e702d  6f72673a 73657276  6963653a 57414e50  5050436f 6e6e6563
+| | | |   74696f6e 3a310d0a  55534e3a 20757569  643a6662 38643262  64312d34 6437312d
+| | | |   34363537 2d623565  302d3938 38373033  64316236 63373a3a  75726e3a 73636865
+| | | |   6d61732d 75706e70  2d6f7267 3a736572  76696365 3a57414e  50505043 6f6e6e65
+| | | |   6374696f 6e3a310d  0a4e5453 3a207373  64703a61 6c697665  0d0a4f50 543a2022
+| | | |   68747470 3a2f2f73  6368656d 61732e75  706e702e 6f72672f  75706e70 2f312f30
+| | | |   2f223b20 6e733d30  310d0a30 312d4e4c  533a2031 0d0a424f  4f544944 2e55504e
+| | | |   502e4f52 473a2031  0d0a434f 4e464947  49442e55 504e502e  4f52473a 20313333
+| | | |   370d0a0d 0a
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:01:00:5e:7f:ff:fa = 33:33:ff:1e:7f:2f
+ng compare hether_nut_lan_to_tentsolnode.Type received:2048 = 34525
+ng meta Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv4
+</PRE><HR><A NAME="vRecvPKT8"></A><A HREF="#vRecv8">Recv at 08:51:01</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:495)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 01:00:5e:7f:ff:fa
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 2048
+| Packet_IPv4                     (length:481)
+| | Hdr_IPv4                        (length:20)
+| | | Version                          = 4
+| | | IHL                              = 5
+| | | TypeOfService                    = 0
+| | | TotalLength                      = 481
+| | | Identifier                       = 0
+| | | Reserved                         = 0
+| | | DF                               = 1
+| | | MF                               = 0
+| | | FragmentOffset                   = 0
+| | | TTL                              = 2
+| | | Protocol                         = 17
+| | | HeaderChecksum                   = 32017 calc(32017)
+| | | SourceAddress                    = 10.0.0.1
+| | | DestinationAddress               = 239.255.255.250
+| | Upp_UDP                         (length:461)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 4306
+| | | | DestinationPort                  = 1900
+| | | | Length                           = 461
+| | | | Checksum                         = 29059 calc(29059)
+| | | Payload                         (length:453)
+| | | | data                             = 
+| | | |   4e4f5449 4659202a  20485454 502f312e  310d0a48 4f53543a  20323339 2e323535
+| | | |   2e323535 2e323530  3a313930 300d0a43  41434845 2d434f4e  54524f4c 3a206d61
+| | | |   782d6167 653d3630  0d0a4c4f 43415449  4f4e3a20 68747470  3a2f2f31 302e302e
+| | | |   302e313a 33373635  2f726f6f 74446573  632e786d 6c0d0a53  45525645 523a204c
+| | | |   696e7578 2f332e39  2e352d33 30312e66  6331392e 7838365f  36342055 506e502f
+| | | |   312e3120 4d696e69  55506e50 642f312e  370d0a4e 543a2075  726e3a73 6368656d
+| | | |   61732d75 706e702d  6f72673a 73657276  6963653a 4c617965  7233466f 72776172
+| | | |   64696e67 3a310d0a  55534e3a 20757569  643a6662 38643262  64312d34 6437312d
+| | | |   34363537 2d623565  302d3938 38373033  64316236 63373a3a  75726e3a 73636865
+| | | |   6d61732d 75706e70  2d6f7267 3a736572  76696365 3a4c6179  65723346 6f727761
+| | | |   7264696e 673a310d  0a4e5453 3a207373  64703a61 6c697665  0d0a4f50 543a2022
+| | | |   68747470 3a2f2f73  6368656d 61732e75  706e702e 6f72672f  75706e70 2f312f30
+| | | |   2f223b20 6e733d30  310d0a30 312d4e4c  533a2031 0d0a424f  4f544944 2e55504e
+| | | |   502e4f52 473a2031  0d0a434f 4e464947  49442e55 504e502e  4f52473a 20313333
+| | | |   370d0a0d 0a
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:01:00:5e:7f:ff:fa = 33:33:ff:1e:7f:2f
+ng compare hether_nut_lan_to_tentsolnode.Type received:2048 = 34525
+ng meta Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv4
+</PRE><HR><A NAME="vRecvPKT9"></A><A HREF="#vRecv9">Recv at 08:52:16</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:02
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 34525
+| Packet_IPv6                     (length:56)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 16
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2f
+| | | DestinationAddress               = ff02::2
+| | ICMPv6_RS                       (length:16)
+| | | Type                             = 133
+| | | Code                             = 0
+| | | Checksum                         = 19443 calc(19443)
+| | | Reserved                         = 0
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:1e:7f:2f
+===DADNS_from_NUT=================================
+ng compare hether_nut_lan_to_tentsolnode.DestinationAddress received:33:33:00:00:00:02 = 33:33:ff:1e:7f:2f
+ng compare _HDR_IPV6_DADNS_from_NUT.SourceAddress received:fe80::250:18ff:fe1e:7f2f = ::
+ng compare _HDR_IPV6_DADNS_from_NUT.DestinationAddress received:ff02::2 = ff02::1:ff1e:7f2f
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+</PRE><HR><A NAME="vRecvPKT10"></A><A HREF="#vRecv10">Recv at 08:52:16</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:78)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:1e:7f:2f
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 34525
+| Packet_IPv6                     (length:64)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 24
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = ::
+| | | DestinationAddress               = ff02::1:ff1e:7f2f
+| | ICMPv6_NS                       (length:24)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 25660 calc(25660)
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::250:18ff:fe1e:7f2f
+===DADNS_from_NUT=================================
+</PRE><HR><A NAME="vSendPKT0"></A><A HREF="#vSend0">send DADNA_from_TN_invalidOptLen at 08:52:17</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:01
+| | SourceAddress                    = 00:00:00:00:01:01
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::200:ff:fe00:a2a2
+| | | DestinationAddress               = ff02::1
+| | ICMPv6_NA                       (length:32)
+| | | Type                             = 136
+| | | Code                             = 0
+| | | Checksum                         = 31420 calc()
+| | | RFlag                            = 0
+| | | SFlag                            = 0
+| | | OFlag                            = 1
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::250:18ff:fe1e:7f2f
+| | | Opt_ICMPv6_TLL                  (length:0)
+| | | [Needless]                      (length:8)
+| | | | data                             = 02000000 0000a2a2
+</PRE><HR><A NAME="vSendPKT1"></A><A HREF="#vSend1">send SOLNS_from_TN_SameTgt at 08:52:22</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:1e:7f:2f
+| | SourceAddress                    = 00:00:00:00:a2:a2
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::200:ff:fe00:a2a2
+| | | DestinationAddress               = ff02::1:ff1e:7f2f
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 7789 calc(7789)
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::250:18ff:fe1e:7f2f
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:00:00:00:a2:a2
+</PRE><HR><A NAME="vRecvPKT11"></A><A HREF="#vRecv11">Recv at 08:52:22</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:00:00:00:a2:a2
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2f
+| | | DestinationAddress               = fe80::200:ff:fe00:a2a2
+| | ICMPv6_NA                       (length:32)
+| | | Type                             = 136
+| | | Code                             = 0
+| | | Checksum                         = 11685 calc(11685)
+| | | RFlag                            = 1
+| | | SFlag                            = 1
+| | | OFlag                            = 1
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::250:18ff:fe1e:7f2f
+| | | Opt_ICMPv6_TLL                  (length:8)
+| | | | Type                             = 2
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:1e:7f:2f
+===NA_from_NUT=================================
+</PRE><HR><A NAME="vSendPKT2"></A><A HREF="#vSend2">send NS_from_TN_SrcDstUni at 08:52:22</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:50:18:1e:7f:2f
+| | SourceAddress                    = 00:00:00:00:a2:a2
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::200:ff:fe00:a2a2
+| | | DestinationAddress               = fe80::250:18ff:fe1e:7f2f
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 1185 calc(1185)
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::250:18ff:fe1e:7f2f
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:00:00:00:a2:a2
+</PRE><HR><A NAME="vRecvPKT12"></A><A HREF="#vRecv12">Recv at 08:52:22</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:78)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:00:00:00:a2:a2
+| | SourceAddress                    = 00:50:18:1e:7f:2f
+| | Type                             = 34525
+| Packet_IPv6                     (length:64)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 24
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2f
+| | | DestinationAddress               = fe80::200:ff:fe00:a2a2
+| | ICMPv6_NA                       (length:24)
+| | | Type                             = 136
+| | | Code                             = 0
+| | | Checksum                         = 59211 calc(59211)
+| | | RFlag                            = 1
+| | | SFlag                            = 1
+| | | OFlag                            = 0
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::250:18ff:fe1e:7f2f
+===NA_from_NUT=================================
+ng compare _ICMPV6_NA_from_NUT.OFlag received:0 = 1
+ng count Packet_IPv6.ICMPv6_NA != Packet_IPv6.ICMPv6_NA
+===NA_from_NUT_woTLL=================================
+</PRE><HR></UL>
+
+</BODY>
+</HTML>
+<!-- 1a32d8b94ffa47ec942d646cbdbd4584 -->
+<!-- 394eb4a9c7d59239e8b8bbbdad4a5069 -->
+<!-- cab24cfe646cbad35e9496b0f46d4701 -->

@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>LAN-RFC4862</TITLE>
+<META NAME="GENERATOR" CONTENT="TAHI IPv6 Conformance Test Suite">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<CENTER><TABLE BORDER=1>
+<TR BGCOLOR="#CCCCCC">
+<TH>No.</TH><TH>Title</TH>
+<TH>Result</TH><TH>Log</TH><TH>Script</TH><TH>Packet</TH><TH>Dump<BR>(bin)</TH>
+</TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>1</TD><TD><A HREF="./CERouter_Init.html">Initialization</A></TD><TD ALIGN="CENTER">-</TD><TD ALIGN="CENTER"><A HREF="1.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./CERouter_Init.seq">X</A></TD><TD ALIGN="CENTER">-</TD><TD ALIGN="CENTER"><A HREF="1_html_Link0.pcap">Link0</A> </TD></TR>
+<TR><TD><BR></TD><TD><B>Group 5: RFC4862</B></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD></TR>
+<TR><TD><BR></TD><TD><B>Test CERouter 2.5.1 : Address Autoconfiguration and Duplicate Address Detection</B></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>2</TD><TD><A HREF="./LLA_DADSuccess.html">Address Autoconfiguration and Duplicate Address Detection</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="2.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DADSuccess.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="2_html_Link0.pcap">Link0</A> <A HREF="2_html_Link1.pcap">Link1</A> </TD></TR>
+<TR><TD><BR></TD><TD><B>Test CERouter 2.5.2 : Receiving DAD Neighbor Solicitations and Advertisements</B></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>3</TD><TD><A HREF="./LLA_DAD_NSPostDAD_SameDstDiffTgt.html">Part A&#58; CE-Router receives DAD NS (target != CE-Router)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="3.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_SameDstDiffTgt.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="3_html_Link0.pcap">Link0</A> <A HREF="3_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>4</TD><TD><A HREF="./LLA_DAD_NSPostDAD_SameDstSameTgt.html">Part B&#58; CE-Router receives DAD NS (target == CE-Router)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="4.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_SameDstSameTgt.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="DAD_Failure.def">X</A></TD><TD ALIGN="CENTER"><A HREF="4_html_Link0.pcap">Link0</A> <A HREF="4_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>5</TD><TD><A HREF="./LLA_DAD_NAPostDAD_DiffTgt.html">Part C&#58; CE-Router receives DAD NA (target != CE-Router)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="5.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_DiffTgt.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="5_html_Link0.pcap">Link0</A> <A HREF="5_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>6</TD><TD><A HREF="./LLA_DAD_NAPostDAD_SameTgt.html">Part D&#58; CE-Router receives DAD NA (target == CE-Router)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="6.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_SameTgt.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="DAD_Failure.def">X</A></TD><TD ALIGN="CENTER"><A HREF="6_html_Link0.pcap">Link0</A> <A HREF="6_html_Link1.pcap">Link1</A> </TD></TR>
+<TR><TD><BR></TD><TD><B>Test CERouter 2.5.3 : Validation of DAD Neighbor Solicitations<B></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>7</TD><TD><A HREF="./LLA_DAD_NSPostDAD_invalidLEN.html">Part A&#58; CE-Router receives invalid DAD NS (ICMP length &lt; 24 octets)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="7.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_invalidLEN.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="7_html_Link0.pcap">Link0</A> <A HREF="7_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>8</TD><TD><A HREF="./LLA_DAD_NSPostDAD_HL254.html">Part B&#58; CE-Router receives invalid DAD NS (HopLimit !=255)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="8.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_HL254.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="8_html_Link0.pcap">Link0</A> <A HREF="8_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>9</TD><TD><A HREF="./LLA_DAD_NSPostDAD_DstTent.html">Part C&#58; CE-Router receives invalid DAD NS (Dst = CE-Router's tentative address)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="9.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_DstTent.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="9_html_Link0.pcap">Link0</A> <A HREF="9_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>10</TD><TD><A HREF="./LLA_DAD_NSPostDAD_DstAll.html">Part D&#58; CE-Router receives invalid DAD NS (Dst = allnode)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="10.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_DstAll.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="10_html_Link0.pcap">Link0</A> <A HREF="10_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>11</TD><TD><A HREF="./LLA_DAD_NSPostDAD_CODEnon0.html">Part E&#58; CE-Router receives invalid DAD NS (ICMP code!= zero)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="11.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_CODEnon0.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="11_html_Link0.pcap">Link0</A> <A HREF="11_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>12</TD><TD><A HREF="./LLA_DAD_NSPostDAD_invalidCHKSUM.html">Part F&#58; CE-Router receives invalid DAD NS (Invalid Checksum)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="12.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_invalidCHKSUM.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="12_html_Link0.pcap">Link0</A> <A HREF="12_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>13</TD><TD><A HREF="./LLA_DAD_NSPostDAD_tgtMCAST.html">Part G&#58; CE-Router receives invalid DAD NS (target == multicast address)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="13.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_tgtMCAST.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="13_html_Link0.pcap">Link0</A> <A HREF="13_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>14</TD><TD><A HREF="./LLA_DAD_NSPostDAD_wSLL.html">Part H&#58; CE-Router receives invalid DAD NS (contains SLL)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="14.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_wSLL.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="14_html_Link0.pcap">Link0</A> <A HREF="14_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>15</TD><TD><A HREF="./LLA_DAD_NSPostDAD_Reserved.html">Part I&#58; CE-Router receives valid DAD NS (Reserved Field)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="15.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_Reserved.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="DAD_Failure.def">X</A></TD><TD ALIGN="CENTER"><A HREF="15_html_Link0.pcap">Link0</A> <A HREF="15_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>16</TD><TD><A HREF="./LLA_DAD_NSPostDAD_wTLL.html">Part J&#58; CE-Router receives valid DAD NS (contains TLL)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="16.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_wTLL.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="DAD_Failure.def">X</A></TD><TD ALIGN="CENTER"><A HREF="16_html_Link0.pcap">Link0</A> <A HREF="16_html_Link1.pcap">Link1</A> </TD></TR>
+<TR><TD><BR></TD><TD><B>Test CERouter 2.5.4 : Validation of DAD Neighbor Advertisements</B></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>17</TD><TD><A HREF="./LLA_DAD_NAPostDAD_invalidLEN.html">Part A&#58; CE-Router receives invalid DAD NA (ICMP length &lt; 24 octets)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="17.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_invalidLEN.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="17_html_Link0.pcap">Link0</A> <A HREF="17_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>18</TD><TD><A HREF="./LLA_DAD_NAPostDAD_HL254.html">Part B&#58; CE-Router receives invalid DAD NA (HopLimit != 255)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="18.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_HL254.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="18_html_Link0.pcap">Link0</A> <A HREF="18_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>19</TD><TD><A HREF="./LLA_DAD_NAPostDAD_CODEnon0.html">Part C&#58; CE-Router receives invalid DAD NA (ICMP code!= zero)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="19.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_CODEnon0.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="19_html_Link0.pcap">Link0</A> <A HREF="19_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>20</TD><TD><A HREF="./LLA_DAD_NAPostDAD_invalidCHKSUM.html">Part D&#58; CE-Router receives invalid DAD NA (Invalid Checksum)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="20.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_invalidCHKSUM.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="20_html_Link0.pcap">Link0</A> <A HREF="20_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>21</TD><TD><A HREF="./LLA_DAD_NAPostDAD_SF1.html">Part E&#58; CE-Router receives invalid DAD NA (SolicitedFlag ==1)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="21.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_SF1.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="21_html_Link0.pcap">Link0</A> <A HREF="21_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>22</TD><TD><A HREF="./LLA_DAD_NAPostDAD_tgtMCAST.html">Part F&#58;  CE-Router receives invalid DAD NA (target == multicast address)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="22.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_tgtMCAST.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="22_html_Link0.pcap">Link0</A> <A HREF="22_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>23</TD><TD><A HREF="./LLA_DAD_NAPostDAD_invalidOptLen.html">Part G&#58; CE-Router receives invalid DAD NA (option length ==zero)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="23.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_invalidOptLen.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="23_html_Link0.pcap">Link0</A> <A HREF="23_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>24</TD><TD><A HREF="./LLA_DAD_NAPostDAD_Reserved.html">Part H&#58; CE-Router receives valid DAD NA (Reserved Field)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="24.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_Reserved.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="DAD_Failure.def">X</A></TD><TD ALIGN="CENTER"><A HREF="24_html_Link0.pcap">Link0</A> <A HREF="24_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>25</TD><TD><A HREF="./LLA_DAD_NAPostDAD_wSLL.html">Part I&#58; CE-Router receives valid DAD NA (contains SLL)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="25.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NAPostDAD_wSLL.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="DAD_Failure.def">X</A></TD><TD ALIGN="CENTER"><A HREF="25_html_Link0.pcap">Link0</A> <A HREF="25_html_Link1.pcap">Link1</A> </TD></TR>
+<TR><TD><BR></TD><TD><B>Test CERouter 2.5.5 : Receiving Neighbor Solicitations for Address Resolution</B></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>26</TD><TD><A HREF="./LLA_DAD_NSPostDAD_SrcUni.html">Part A&#58; CE-Router receives NS (src == unicast)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="26.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_SrcUni.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="26_html_Link0.pcap">Link0</A> <A HREF="26_html_Link1.pcap">Link1</A> </TD></TR>
+<TR BGCOLOR="#EEEEEE">
+<TD>27</TD><TD><A HREF="./LLA_DAD_NSPostDAD_SrcDstUni.html">Part B&#58; CE-Router receives NS (Src == unicast &amp;&amp; Dst == CE-Router's tentative address)</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="27.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./LLA_DAD_NSPostDAD_SrcDstUni.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="LLA_SAA.def">X</A></TD><TD ALIGN="CENTER"><A HREF="27_html_Link0.pcap">Link0</A> <A HREF="27_html_Link1.pcap">Link1</A> </TD></TR>
+<TR><TD><BR></TD><TD><B>Test CERouter 2.5.6 : Global Address Autoconfiguration and DAD</B></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD><TD><BR></TD></TR>
+<TR BGCOLOR="#DDDDDD">
+<TD>28</TD><TD><A HREF="./v6LC_3_2_1_A.html">Gloabl Address Autoconfiguration and DAD</A></TD><TD ALIGN="CENTER">PASS</TD><TD ALIGN="CENTER"><A HREF="28.html">X</A></TD><TD ALIGN="CENTER"><A HREF="./v6LC_3_2_1_A.seq">X</A></TD><TD ALIGN="CENTER"><A HREF="v6LC_3_2_1_A.def">X</A></TD><TD ALIGN="CENTER"><A HREF="28_html_Link0.pcap">Link0</A> <A HREF="28_html_Link1.pcap">Link1</A> </TD></TR>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>
+<!-- 45b5320fee93f39790b12ae17a6f6496 -->

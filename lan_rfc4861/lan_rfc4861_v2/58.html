@@ -1,0 +1,650 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN""http://www.w3c.org/TR/REC-html40/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>IPv6 Conformance Test Report</TITLE>
+<META NAME="GENERATOR" CONTENT="TAHI IPv6 Conformance Test Kit">
+</HEAD>
+
+<BODY BGCOLOR="#F0F0F0">
+<H1>Test Information</H1>
+<TABLE BORDER=1>
+<TR><TD>Title</TD><TD>Part L&#58; Receiving Unicast NA with S = 1, O = 1 and a different TLLA</TD></TR>
+<TR><TD>CommandLine</TD><TD>./V6LC_2_1_18_L.seq -pkt ./V6LC_2_1_18_L.def -log 58.html -ti Part L&#58; Receiving Unicast NA with S = 1, O = 1 and a different TLLA</TD></TR>
+<TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_1</TD></TR>
+<TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
+<TR><TD>Start</TD><TD>2016/03/25 14:38:39</TD></TR>
+<TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
+<TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
+<TR><TD>Pkt</TD><TD>./V6LC_2_1_18_L.def</TD></TR>
+<TR><TD>System</TD><TD>linux-v6</TD></TR>
+<TR><TD>HostName</TD><TD>SI_Framework</TD></TR>
+<TR><TD>Type</TD><TD>router</TD></TR>
+</TABLE>
+<HR>
+<H1>Test Sequence Execution Log</H1>
+<TABLE BORDER=1>
+<TR><TD>14:38:39</TD><TD>Start</TD></TR>
+<TR VALIGN="TOP"><TD>14:38:39</TD><TD>Start Capturing Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP"><TD>14:38:39</TD><TD>Start Capturing Packets (Link1)<BR>
+</TD></TR>
+
+<TR><TD><BR></TD><TD>
+<FONT COLOR="#FF0000" SIZE="5"><U><B>Procedure</B></U></FONT><BR></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>14:38:39</TD><TD>
+vSend(Link0,ra_MsetOset)<BR>
+<A NAME="vSend0"></A>
+<A HREF="#vSendPKT0">send ra_MsetOset</A><BR>
+
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>14:38:39</TD><TD>
+vSend(Link0,ereq_tr1_to_nut)<BR>
+<A NAME="vSend1"></A>
+<A HREF="#vSendPKT1">send ereq_tr1_to_nut</A><BR>
+
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>14:38:39</TD>
+<TD>vRecv(Link0,erep_nut_to_tr1 ns_any_to_tr1) timeout:5 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv0"></A>
+<A HREF="#vRecvPKT0">recv erep_nut_to_tr1</A><BR>
+
+</TD>
+</TR>
+
+<TR><TD><BR></TD><TD>
+TR1 receives echo reply from CE-Router<BR></TD>
+
+</TR>
+<TR VALIGN="top"><TD>14:38:39</TD>
+<TD>vRecv(Link0,dhcp6_solicit ns_nutlla_to_any_server1lla ns_nutrelay_to_client_local ns_nut_to_relay1_0_global ns_nutrelay_to_client_global ns_nutrelay_to_relay ns_nutlla_to_any_client1_lla ns_nut_global_to_relay2_0_global ns_nut_to_relay2_0 ns_nutrelay_to_server ns_nut_global_to_relay1_0_global ns_nut_to_relay1_0 ns_nut_to_any_client1_global ns_nut_to_relay2_0_global ns_nutlla_to_server1ga ns_nutlla_to_any_client2_lla ns_nutga_to_any_server1lla) timeout:130 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv1"></A>
+<A HREF="#vRecvPKT1">recv unexpect packet at 14:38:44</A>
+<BR>
+<A NAME="vRecv2"></A>
+<A HREF="#vRecvPKT2">recv unexpect packet at 14:38:45</A>
+<BR>
+<A NAME="vRecv3"></A>
+<A HREF="#vRecvPKT3">recv unexpect packet at 14:38:46</A>
+<BR>
+vRecv() return status=1
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>Could not get Solicit Message</B><BR><B>Could not get Solicit Message.</B><BR><FONT COLOR="#FF0000">CPE initialization fail!</FONT><BR><FONT COLOR="#FF0000">NG</FONT><BR></TD>
+</TR>
+<TR VALIGN="TOP"><TD>14:40:49</TD>
+<TD>
+vRemote(reboot.rmt) ``/usr/local/v6eval//bin/linux-v6//reboot.rmt -t linux-v6 -u admin -p admin -d cuaU0 -v 1   ''
+<PRE>Spawned 'cu -l cuaU0 -s 57600'
+	spawn id(3)
+	Pid: 9063
+	Tty: /dev/pts/10
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 184.
+	Expect::spawn(&quot;Expect&quot;, &quot;cu -l cuaU0 -s 57600&quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 578
+	V6evalRemote::rOpen() called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 48
+expect(Expect=GLOB(0x28eeda28) 4 Connected) called...
+expect(): handling param 'Connected'...
+expect(): exact match 'Connected'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeda28), 4, &quot;Connected&quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 599
+	V6evalRemote::rOpen() called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 48
+spawn id(3): beginning expect.
+	Timeout: 4 seconds.
+	Current time: Fri Mar 25 14:40:49 2016
+Waiting for new data (4 seconds)...
+spawn id(3): new data.
+spawn id(3): read 11 byte(s).
+Returning from expect successfully.
+  spawn id(3): accumulator: `\r\n'
+prompt_user: ``SI_Framework login: '', prompt_password: ``Password: '', prompt_command: ``# ''
+rLogin: Wait for login prompt (0.2 sec)
+expect(Expect=GLOB(0x28eeda28) 0.2 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeda28), 0.2, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 0.2 seconds.
+	Current time: Fri Mar 25 14:40:49 2016
+Waiting for new data (0.2 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeda28) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeda28), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Fri Mar 25 14:40:50 2016
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 3 byte(s).
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 2 byte(s).
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeda28) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeda28), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Fri Mar 25 14:40:55 2016
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeda28) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeda28), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Fri Mar 25 14:41:00 2016
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeda28) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeda28), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Fri Mar 25 14:41:05 2016
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeda28) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeda28), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Fri Mar 25 14:41:10 2016
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeda28) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeda28), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Fri Mar 25 14:41:15 2016
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeda28) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeda28), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Fri Mar 25 14:41:20 2016
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Retry error (&gt; 8)
+Before: ``
+
+
+
+
+
+
+
+
+
+''
+Match: ``''
+After: ``''
+Closing spawn id(3).
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 1531.
+	Expect::soft_close(Expect=GLOB(0x28eeda28)) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 937
+	V6evalRemote::rClose() called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 57
+Timed out waiting for an EOF from spawn id(3).
+spawn id(3) closed.
+Pid 9063 of spawn id(3) exited, Status: 0x00
+Closing spawn id(3).
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 1622.
+	Expect::hard_close(Expect=GLOB(0x28eeda28)) called at /usr/local/lib/perl5/site_perl/Expect.pm line 1849
+	Expect::DESTROY(Expect=GLOB(0x28eeda28)) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 939
+	eval {...} called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 939
+	V6evalRemote::rClose() called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 57
+</PRE>
+</TD></TR>
+<TR><TD>14:41:41</TD><TD>End</TD></TR>
+</TABLE>
+<HR><H1>Packet Reverse Log</H1>
+<UL>
+<A NAME="vSendPKT0"></A><A HREF="#vSend0">send ra_MsetOset at 14:38:39</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:102)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:01
+| | SourceAddress                    = 00:00:00:00:a0:a0
+| | Type                             = 34525
+| Packet_IPv6                     (length:88)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 48
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::200:ff:fe00:a0a0
+| | | DestinationAddress               = ff02::1
+| | ICMPv6_RA                       (length:48)
+| | | Type                             = 134
+| | | Code                             = 0
+| | | Checksum                         = 36875 calc(36875)
+| | | CurHopLimit                      = 64
+| | | MFlag                            = 1
+| | | OFlag                            = 1
+| | | HFlag                            = 0
+| | | Preference                       = 0
+| | | Reserved                         = 0
+| | | LifeTime                         = 600
+| | | ReachableTime                    = 30000
+| | | RetransTimer                     = 1000
+| | | Opt_ICMPv6_Prefix               (length:32)
+| | | | Type                             = 3
+| | | | Length                           = 4
+| | | | PrefixLength                     = 64
+| | | | LFlag                            = 1
+| | | | AFlag                            = 0
+| | | | RFlag                            = 0
+| | | | Reserved1                        = 0
+| | | | ValidLifetime                    = 600
+| | | | PreferredLifetime                = 600
+| | | | Reserved2                        = 0
+| | | | Prefix                           = 3ffe:501:ffff:100::
+</PRE><HR><A NAME="vSendPKT1"></A><A HREF="#vSend1">send ereq_tr1_to_nut at 14:38:39</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:50:18:12:12:12
+| | SourceAddress                    = 00:00:00:00:a0:a0
+| | Type                             = 34525
+| Packet_IPv6                     (length:56)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 16
+| | | NextHeader                       = 58
+| | | HopLimit                         = 64
+| | | SourceAddress                    = fe80::200:ff:fe00:a0a0
+| | | DestinationAddress               = fe80::250:18ff:fe12:1212
+| | ICMPv6_EchoRequest              (length:16)
+| | | Type                             = 128
+| | | Code                             = 0
+| | | Checksum                         = 46494 calc(46494)
+| | | Identifier                       = 0
+| | | SequenceNumber                   = 0
+| | | Payload                         (length:8)
+| | | | data                             = 00000000 00000000
+</PRE><HR><A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 14:38:39</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:00:00:00:a0:a0
+| | SourceAddress                    = 00:50:18:12:12:12
+| | Type                             = 34525
+| Packet_IPv6                     (length:56)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 16
+| | | NextHeader                       = 58
+| | | HopLimit                         = 64
+| | | SourceAddress                    = fe80::250:18ff:fe12:1212
+| | | DestinationAddress               = fe80::200:ff:fe00:a0a0
+| | ICMPv6_EchoReply                (length:16)
+| | | Type                             = 129
+| | | Code                             = 0
+| | | Checksum                         = 46238 calc(46238)
+| | | Identifier                       = 0
+| | | SequenceNumber                   = 0
+| | | Payload                         (length:8)
+| | | | data                             = 00000000 00000000
+===erep_nut_to_tr1=================================
+</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 14:38:44</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:00:00:00:a0:a0
+| | SourceAddress                    = 00:50:18:12:12:12
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe12:1212
+| | | DestinationAddress               = fe80::200:ff:fe00:a0a0
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 58103 calc(58103)
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::200:ff:fe00:a0a0
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:12:12:12
+===dhcp6_solicit=================================
+ng compare _HDR_IPV6_dhcp6_solicit.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+===ns_nutlla_to_any_server1lla=================================
+ng compare _ICMPV6_ns_nutlla_to_any_server1lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+===ns_nutrelay_to_client_local=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_client_local.DestinationAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a2a2
+ng compare _ICMPV6_ns_nutrelay_to_client_local.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a2a2
+===ns_nut_to_relay1_0_global=================================
+ng compare _ICMPV6_ns_nut_to_relay1_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a4a4
+===ns_nutrelay_to_client_global=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_client_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100:250:18ff:fe12:1212
+ng compare _HDR_IPV6_ns_nutrelay_to_client_global.DestinationAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+ng compare _ICMPV6_ns_nutrelay_to_client_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+===ns_nutrelay_to_relay=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_relay.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100:250:18ff:fe12:1212
+ng compare _ICMPV6_ns_nutrelay_to_relay.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:101:200:ff:fe00:a7a7
+===ns_nutlla_to_any_client1_lla=================================
+ng compare _ICMPV6_ns_nutlla_to_any_client1_lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a2a2
+===ns_nut_global_to_relay2_0_global=================================
+ng compare _HDR_IPV6_ns_nut_global_to_relay2_0_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100::abcd
+ng compare _ICMPV6_ns_nut_global_to_relay2_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a7a7
+===ns_nut_to_relay2_0=================================
+ng compare _ICMPV6_ns_nut_to_relay2_0.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a7a7
+===ns_nutrelay_to_server=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_server.DestinationAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+ng compare _ICMPV6_ns_nutrelay_to_server.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+===ns_nut_global_to_relay1_0_global=================================
+ng compare _HDR_IPV6_ns_nut_global_to_relay1_0_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100::abcd
+ng compare _ICMPV6_ns_nut_global_to_relay1_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a4a4
+===ns_nut_to_relay1_0=================================
+ng compare _ICMPV6_ns_nut_to_relay1_0.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a4a4
+===ns_nut_to_any_client1_global=================================
+ng compare _HDR_IPV6_ns_nut_to_any_client1_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100::abcd
+ng compare _ICMPV6_ns_nut_to_any_client1_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+===ns_nut_to_relay2_0_global=================================
+ng compare _ICMPV6_ns_nut_to_relay2_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a7a7
+===ns_nutlla_to_server1ga=================================
+ng compare _HETHER_nut_to_server1.DestinationAddress received:00:00:00:00:a0:a0 = 00:00:00:00:a1:a1
+ng compare _HDR_IPV6_ns_nutlla_to_server1ga.DestinationAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a1a1
+ng compare _ICMPV6_ns_nutlla_to_server1ga.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a1a1
+===ns_nutlla_to_any_client2_lla=================================
+ng compare _ICMPV6_ns_nutlla_to_any_client2_lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a3a3
+===ns_nutga_to_any_server1lla=================================
+ng compare _ICMPV6_ns_nutga_to_any_server1lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 14:38:45</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:00:00:00:a0:a0
+| | SourceAddress                    = 00:50:18:12:12:12
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe12:1212
+| | | DestinationAddress               = fe80::200:ff:fe00:a0a0
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 58103 calc(58103)
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::200:ff:fe00:a0a0
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:12:12:12
+===dhcp6_solicit=================================
+ng compare _HDR_IPV6_dhcp6_solicit.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+===ns_nutlla_to_any_server1lla=================================
+ng compare _ICMPV6_ns_nutlla_to_any_server1lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+===ns_nutrelay_to_client_local=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_client_local.DestinationAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a2a2
+ng compare _ICMPV6_ns_nutrelay_to_client_local.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a2a2
+===ns_nut_to_relay1_0_global=================================
+ng compare _ICMPV6_ns_nut_to_relay1_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a4a4
+===ns_nutrelay_to_client_global=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_client_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100:250:18ff:fe12:1212
+ng compare _HDR_IPV6_ns_nutrelay_to_client_global.DestinationAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+ng compare _ICMPV6_ns_nutrelay_to_client_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+===ns_nutrelay_to_relay=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_relay.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100:250:18ff:fe12:1212
+ng compare _ICMPV6_ns_nutrelay_to_relay.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:101:200:ff:fe00:a7a7
+===ns_nutlla_to_any_client1_lla=================================
+ng compare _ICMPV6_ns_nutlla_to_any_client1_lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a2a2
+===ns_nut_global_to_relay2_0_global=================================
+ng compare _HDR_IPV6_ns_nut_global_to_relay2_0_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100::abcd
+ng compare _ICMPV6_ns_nut_global_to_relay2_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a7a7
+===ns_nut_to_relay2_0=================================
+ng compare _ICMPV6_ns_nut_to_relay2_0.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a7a7
+===ns_nutrelay_to_server=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_server.DestinationAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+ng compare _ICMPV6_ns_nutrelay_to_server.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+===ns_nut_global_to_relay1_0_global=================================
+ng compare _HDR_IPV6_ns_nut_global_to_relay1_0_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100::abcd
+ng compare _ICMPV6_ns_nut_global_to_relay1_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a4a4
+===ns_nut_to_relay1_0=================================
+ng compare _ICMPV6_ns_nut_to_relay1_0.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a4a4
+===ns_nut_to_any_client1_global=================================
+ng compare _HDR_IPV6_ns_nut_to_any_client1_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100::abcd
+ng compare _ICMPV6_ns_nut_to_any_client1_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+===ns_nut_to_relay2_0_global=================================
+ng compare _ICMPV6_ns_nut_to_relay2_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a7a7
+===ns_nutlla_to_server1ga=================================
+ng compare _HETHER_nut_to_server1.DestinationAddress received:00:00:00:00:a0:a0 = 00:00:00:00:a1:a1
+ng compare _HDR_IPV6_ns_nutlla_to_server1ga.DestinationAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a1a1
+ng compare _ICMPV6_ns_nutlla_to_server1ga.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a1a1
+===ns_nutlla_to_any_client2_lla=================================
+ng compare _ICMPV6_ns_nutlla_to_any_client2_lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a3a3
+===ns_nutga_to_any_server1lla=================================
+ng compare _ICMPV6_ns_nutga_to_any_server1lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 14:38:46</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:00:00:00:a0:a0
+| | SourceAddress                    = 00:50:18:12:12:12
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe12:1212
+| | | DestinationAddress               = fe80::200:ff:fe00:a0a0
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 58103 calc(58103)
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::200:ff:fe00:a0a0
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:12:12:12
+===dhcp6_solicit=================================
+ng compare _HDR_IPV6_dhcp6_solicit.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+===ns_nutlla_to_any_server1lla=================================
+ng compare _ICMPV6_ns_nutlla_to_any_server1lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+===ns_nutrelay_to_client_local=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_client_local.DestinationAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a2a2
+ng compare _ICMPV6_ns_nutrelay_to_client_local.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a2a2
+===ns_nut_to_relay1_0_global=================================
+ng compare _ICMPV6_ns_nut_to_relay1_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a4a4
+===ns_nutrelay_to_client_global=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_client_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100:250:18ff:fe12:1212
+ng compare _HDR_IPV6_ns_nutrelay_to_client_global.DestinationAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+ng compare _ICMPV6_ns_nutrelay_to_client_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+===ns_nutrelay_to_relay=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_relay.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100:250:18ff:fe12:1212
+ng compare _ICMPV6_ns_nutrelay_to_relay.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:101:200:ff:fe00:a7a7
+===ns_nutlla_to_any_client1_lla=================================
+ng compare _ICMPV6_ns_nutlla_to_any_client1_lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a2a2
+===ns_nut_global_to_relay2_0_global=================================
+ng compare _HDR_IPV6_ns_nut_global_to_relay2_0_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100::abcd
+ng compare _ICMPV6_ns_nut_global_to_relay2_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a7a7
+===ns_nut_to_relay2_0=================================
+ng compare _ICMPV6_ns_nut_to_relay2_0.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a7a7
+===ns_nutrelay_to_server=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_server.DestinationAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+ng compare _ICMPV6_ns_nutrelay_to_server.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+===ns_nut_global_to_relay1_0_global=================================
+ng compare _HDR_IPV6_ns_nut_global_to_relay1_0_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100::abcd
+ng compare _ICMPV6_ns_nut_global_to_relay1_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a4a4
+===ns_nut_to_relay1_0=================================
+ng compare _ICMPV6_ns_nut_to_relay1_0.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a4a4
+===ns_nut_to_any_client1_global=================================
+ng compare _HDR_IPV6_ns_nut_to_any_client1_global.SourceAddress received:fe80::250:18ff:fe12:1212 = 3ffe:501:ffff:100::abcd
+ng compare _ICMPV6_ns_nut_to_any_client1_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+===ns_nut_to_relay2_0_global=================================
+ng compare _ICMPV6_ns_nut_to_relay2_0_global.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a7a7
+===ns_nutlla_to_server1ga=================================
+ng compare _HETHER_nut_to_server1.DestinationAddress received:00:00:00:00:a0:a0 = 00:00:00:00:a1:a1
+ng compare _HDR_IPV6_ns_nutlla_to_server1ga.DestinationAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a1a1
+ng compare _ICMPV6_ns_nutlla_to_server1ga.TargetAddress received:fe80::200:ff:fe00:a0a0 = 3ffe:501:ffff:100:200:ff:fe00:a1a1
+===ns_nutlla_to_any_client2_lla=================================
+ng compare _ICMPV6_ns_nutlla_to_any_client2_lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a3a3
+===ns_nutga_to_any_server1lla=================================
+ng compare _ICMPV6_ns_nutga_to_any_server1lla.TargetAddress received:fe80::200:ff:fe00:a0a0 = fe80::200:ff:fe00:a1a1
+</PRE><HR></UL>
+
+</BODY>
+</HTML>
+<!-- 3246ee9d01ed7fcfa18728d471af5a92 -->
+<!-- 155fc4c2e5ee9f60e0220a44c9cf704c -->
+<!-- 476e560e856abf18a9b5cb1cd81b5e40 -->

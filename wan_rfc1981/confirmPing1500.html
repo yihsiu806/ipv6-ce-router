@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Confirm Ping
+  Part C: ICMPv6 Echo Request 1500 octets</code></pre>
+
+<h1 id="TARGET">TARGET</h1>
+
+<pre><code>  CE-Router</code></pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+
+
+
+
+<h1 id="INITIALIZATION">INITIALIZATION</h1>
+
+<pre><code>        Common Test Setup 1.1</code></pre>
+
+<h1 id="TEST-PROCEDURE">TEST PROCEDURE</h1>
+
+<p>Verify that a node can reply to variable sized ICMP Echo Requests.</p>
+
+<pre><code>   TN3                    TR1                    CE-Router
+    |                      |                      |
+    |--------------------------------------------&gt;|
+    |   1.Echo Request     |                      |
+    |   (1500 octets)      |                      |
+    |                      |                      |
+    |&lt;--------------------------------------------|
+    |   2.Echo Reply       |                      |
+    |   (1500 octets)      |                      |
+    |                      |                      |
+    v                      v                      v
+
+
+  1. Send Echo Request
+  2. Receive Echo Reply
+     &lt;&lt;Check 1&gt;&gt;
+
+  Echo Request Data is:
+
+        IPv6 Header
+            Version            = 6
+            Traffic Class      = 0
+            FlowLabel          = 0
+            PayloadLength      = 1460
+            NextHeader         = 58 (ICMPv6)
+            SourceAddress      = TN3&#39;s Global Address
+            DestinationAddress = CE-Router&#39;s Global Address
+
+        ICMP Echo Request
+            Type           = 128 (Echo Request)
+            Code           = 0
+            Checksum       = (auto)
+            Identifier     = 0xffff
+            SequenceNumber = 1
+            PayloadData    = (PayloadLength - 8 octets)</code></pre>
+
+<h1 id="JUDGEMENT">JUDGEMENT</h1>
+
+<pre><code>  PASS: The CE-Router sent an Echo Reply to TR1 1500 octets in packet size.
+
+       &lt;&lt;Check 1&gt;&gt; Echo Reply or Fragment Echo Reply Received
+
+        IPv6 Header
+            Version             = 6
+            Traffic Class       = 0
+            FlowLabel           = 0
+            PayloadLength      = 1460
+            NextHeader          = 58 (ICMPv6)
+            SourceAddress       = CE-Router&#39;s Global Address
+            Destination Address = TN3&#39;s Global Address
+
+        ICMP Echo Reply
+            Type           = 129 (Echo Reply)
+            Code           = 0
+            Checksum       = (auto)
+            Identifier     = 0xffff (same as Echo Request)
+            SequenceNumber = 1 (same as Echo Request)
+            PayloadData    = (PayloadLength - 8 octets) (same as Echo Request)</code></pre>
+
+<h1 id="CLEANUP">CLEANUP</h1>
+
+<p>Common Test Cleanup</p>
+
+<h1 id="REFERENCE">REFERENCE</h1>
+
+
+
+
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<pre><code>  perldoc V6evalTool</code></pre>
+
+
+</body>
+
+</html>
+
+

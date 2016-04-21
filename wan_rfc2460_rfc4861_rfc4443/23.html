@@ -1,0 +1,618 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN""http://www.w3c.org/TR/REC-html40/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>IPv6 Conformance Test Report</TITLE>
+<META NAME="GENERATOR" CONTENT="TAHI IPv6 Conformance Test Kit">
+</HEAD>
+
+<BODY BGCOLOR="#F0F0F0">
+<H1>Test Information</H1>
+<TABLE BORDER=1>
+<TR><TD>Title</TD><TD><TT>Part B&#58; Valid Router Advertisement, Source Link-layer Address Option</TT></TD></TR>
+<TR><TD>CommandLine</TD><TD>./V6LC_2_2_2_B.seq -pkt ./V6LC_2_2_2_B.def -log 23.html -ti <TT>Part B&#58; Valid Router Advertisement, Source Link-layer Address Option</TT></TD></TR>
+<TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_1</TD></TR>
+<TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
+<TR><TD>Start</TD><TD>2016/03/17 21:27:24</TD></TR>
+<TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
+<TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
+<TR><TD>Pkt</TD><TD>./V6LC_2_2_2_B.def</TD></TR>
+<TR><TD>System</TD><TD>linux-v6</TD></TR>
+<TR><TD>TargetName</TD><TD>Linux SI_Framework 2.6.36+ #1 SMP Fri Feb 19 09:19:50 CST 2016 mips unknown	</TD></TR>
+<TR><TD>HostName</TD><TD>target.tahi.org</TD></TR>
+<TR><TD>Type</TD><TD>router</TD></TR>
+</TABLE>
+<HR>
+<H1>Test Sequence Execution Log</H1>
+<TABLE BORDER=1>
+<TR><TD>21:27:24</TD><TD>Start</TD></TR>
+<TR VALIGN="TOP"><TD>21:27:24</TD><TD>Start Capturing Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP"><TD>21:27:24</TD><TD>Clear Captured Packets (Link0)<BR>
+</TD></TR>
+
+<TR><TD><BR></TD><TD>
+<FONT COLOR="#FF0000" SIZE="5"><U><B>Test Procedure</B></U></FONT><BR></TD>
+</TR>
+<TR VALIGN="TOP"><TD>21:27:24</TD>
+<TD>
+vRemote(reboot_async.rmt) ``/usr/local/v6eval//bin/linux-v6//reboot_async.rmt -t linux-v6 -u admin -p admin -d cuaU0 -v 1 -i 1 -o 1   ''
+<PRE>Spawned 'cu -l cuaU0 -s 57600'
+	spawn id(3)
+	Pid: 11173
+	Tty: /dev/pts/4
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 184.
+	Expect::spawn(&quot;Expect&quot;, &quot;cu -l cuaU0 -s 57600&quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 578
+	V6evalRemote::rOpen() called at /usr/local/v6eval//bin/linux-v6//reboot_async.rmt line 48
+expect(Expect=GLOB(0x28eecaa0) 4 Connected) called...
+expect(): handling param 'Connected'...
+expect(): exact match 'Connected'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eecaa0), 4, &quot;Connected&quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 599
+	V6evalRemote::rOpen() called at /usr/local/v6eval//bin/linux-v6//reboot_async.rmt line 48
+spawn id(3): beginning expect.
+	Timeout: 4 seconds.
+	Current time: Thu Mar 17 21:27:24 2016
+spawn id(3): list of patterns:
+  #1: -ex `Connected'
+
+
+spawn id(3): Does `'
+match:
+  pattern #1: -ex `Connected'? No.
+
+Waiting for new data (4 seconds)...
+spawn id(3): new data.
+spawn id(3): read 2 byte(s).
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -ex `Connected'? No.
+
+Waiting for new data (4 seconds)...
+spawn id(3): new data.
+spawn id(3): read 11 byte(s).
+Connected
+
+spawn id(3): Does `\r\nConnected\r\n'
+match:
+  pattern #1: -ex `Connected'? YES!!
+    Before match string: `\r\n'
+    Match string: `Connected'
+    After match string: `\r\n'
+    Matchlist: ()
+Returning from expect successfully.
+  spawn id(3): accumulator: `\r\n'
+prompt_user: ``SI_Framework login: '', prompt_password: ``Password: '', prompt_command: ``# ''
+rLogin: Wait for login prompt (0.2 sec)
+expect(Expect=GLOB(0x28eecaa0) 0.2 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eecaa0), 0.2, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot_async.rmt line 52
+spawn id(3): beginning expect.
+	Timeout: 0.2 seconds.
+	Current time: Thu Mar 17 21:27:24 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (0.2 seconds)...
+spawn id(3): new data.
+spawn id(3): read 161 byte(s).
+.................................................................................................................................................................
+spawn id(3): Does `\r\n.................................................................................................................................................................'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (0.2 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eecaa0) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eecaa0), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot_async.rmt line 52
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Thu Mar 17 21:27:24 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n.................................................................................................................................................................'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+E
+spawn id(3): Does `\r\n.................................................................................................................................................................E'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 19 byte(s).
+:-100 
+IP=192.168
+spawn id(3): Does `\r\n.................................................................................................................................................................E:-100 \n\r\rIP=192.168'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 23 byte(s).
+.123.254 NA=00:50:18:12
+spawn id(3): Does `\r\n.................................................................................................................................................................E:-100 \n\r\rIP=192.168.123.254 NA=00:50:18:12'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+spawn id(3): new data.
+spawn id(3): read 14 byte(s).
+:12:12
+
+# 
+spawn id(3): Does `\r\n.................................................................................................................................................................E:-100 \n\r\rIP=192.168.123.254 NA=00:50:18:12:12:12\n\r\r\n\r\r# '
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? YES!!
+    Before match string: `\r\n.................................................................................................................................................................E:-100 \n\r\rIP=192.168.123.254 NA=00:50:18:12:12:12\n\r\r\n\r\r'
+    Match string: `# '
+    After match string: `'
+    Matchlist: ()
+Returning from expect successfully.
+  spawn id(3): accumulator: `'
+rLogin: Got command prompt
+rLogin: Got command prompt
+_rCommand: Try to get command prompt (0.2 sec.)
+expect(Expect=GLOB(0x28eecaa0) 0.2 -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eecaa0), 0.2, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 960
+	V6evalRemote::_rCommand(&quot;reboot&quot;, 5, 0) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 988
+	V6evalRemote::rCommandAsync(&quot;reboot&quot;, 5) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 1077
+	V6evalRemote::rRebootAsync(5) called at /usr/local/v6eval//bin/linux-v6//reboot_async.rmt line 53
+spawn id(3): beginning expect.
+	Timeout: 0.2 seconds.
+	Current time: Thu Mar 17 21:27:24 2016
+spawn id(3): list of patterns:
+  #1: -re `# '
+
+
+spawn id(3): Does `'
+match:
+  pattern #1: -re `# '? No.
+
+Waiting for new data (0.2 seconds)...
+spawn id(3): new data.
+spawn id(3): read 1 byte(s).
+
+
+spawn id(3): Does `\n'
+match:
+  pattern #1: -re `# '? No.
+
+Waiting for new data (0.2 seconds)...
+spawn id(3): new data.
+spawn id(3): read 4 byte(s).
+# 
+spawn id(3): Does `\n\r\r# '
+match:
+  pattern #1: -re `# '? YES!!
+    Before match string: `\n\r\r'
+    Match string: `# '
+    After match string: `'
+    Matchlist: ()
+Returning from expect successfully.
+  spawn id(3): accumulator: `'
+_rCommand: Do ``reboot'' command
+Closing spawn id(3).
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 1531.
+	Expect::soft_close(Expect=GLOB(0x28eecaa0)) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 937
+	V6evalRemote::rClose() called at /usr/local/v6eval//bin/linux-v6//reboot_async.rmt line 56
+reboot
+ÿ
+===================================================================
+     		MT7621   stage1 code 13:15:05 (ASIC)
+     		CPU=50000000 HZ BUS=16666666 HZ
+==================================================================
+Change MPLL source from XTAL to CR...
+do MEMPLL setting..
+MEMPLL Config : 0x11100000
+3PLL mode + External loopback
+=== XTAL-40Mhz === DDR-1200Mhz ===
+PLL2 FB_DL: 0xa, 1/0 = 595/429 29000000
+PLL4 FB_DL: 0xc, 1/0 = 583/441 31000000
+PLL3 FB_DL: 0x13, 1/0 = 602/422 4D000000
+do DDR setting..[00320381]
+Apply DDR3 Setting...(use customer AC)
+          0    8   16   24   32   40   48   56   64   72   80   88   96  104  112  120
+      --------------------------------------------------------------------------------
+0000:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0001:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0002:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0003:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0004:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0005:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0006:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0007:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0008:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0009:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+000A:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+000B:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+000C:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+000D:|    0    0    0    0    0    0    0    0    0    0    0    0    0    1    1    1
+000E:|    0    0    0    0    0    0    0    0    1    1    1    1    1    1    1    1
+000F:|    0    0    0    1    1    1    1    1    1    1    1    1    1    0    0    0
+0010:|    1    1    1    1    1    1    1    1    0    0    0    0    0    0    0    0
+0011:|    1    1    1    0    0    0    0    0    0    0    0    0    0    0    0    0
+0012:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0013:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0014:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0015:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0016:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0017:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0018:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0019:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001A:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001B:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001C:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001D:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001E:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001F:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+rank 0 coarse = 15
+rank 0 fine = 64
+B:|    0    0    0    0    0    0    0    0    0    0    1    1    1    0    0    0
+opt_dle value:11
+DRAMC_R0DELDLY[018]=00001C1D
+==================================================================
+		RX	DQS perbit delay software calibration 
+==================================================================
+1.0-15 bit dq delay value
+==================================================================
+bit|     0  1  2  3  4  5  6  7  8  9
+--------------------------------------
+0 |    10 9 10 12 8 11 10 7 7 8 
+10 |    10 10 8 12 9 10 
+--------------------------------------
+
+==================================================================
+2.dqs window
+x=pass dqs delay value (min~max)center 
+y=0-7bit DQ of every group
+input delay:DQS0 =29 DQS1 = 28
+==================================================================
+bit	DQS0	 bit      DQS1
+0  (1~54)27  8  (1~55)28
+1  (1~56)28  9  (1~55)28
+2  (1~56)28  10  (1~56)28
+3  (1~58)29  11  (1~55)28
+4  (1~56)28  12  (1~56)28
+5  (1~58)29  13  (1~56)28
+6  (1~55)28  14  (1~56)28
+7  (1~57)29  15  (1~56)28
+==================================================================
+3.dq delay value last
+==================================================================
+bit|    0  1  2  3  4  5  6  7  8   9
+--------------------------------------
+0 |    12 10 11 12 9 11 11 7 7 8 
+10 |    10 10 8 12 9 10 
+==================================================================
+==================================================================
+     TX  perbyte calibration 
+==================================================================
+DQS loop = 15, cmp_err_1 = ffff0000 
+dqs_perbyte_dly.last_dqsdly_pass[0]=15,  finish count=1 
+dqs_perbyte_dly.last_dqsdly_pass[1]=15,  finish count=2 
+DQ loop=15, cmp_err_1 = ffff0080
+dqs_perbyte_dly.last_dqdly_pass[1]=15,  finish count=1 
+DQ loop=14, cmp_err_1 = ffff0080
+DQ loop=13, cmp_err_1 = ffff0000
+dqs_perbyte_dly.last_dqdly_pass[0]=13,  finish count=2 
+byte:0, (DQS,DQ)=(9,8)
+byte:1, (DQS,DQ)=(8,8)
+20,data:89
+[EMI] DRAMC calibration passed
+
+===================================================================
+     		MT7621   stage1 code done 
+     		CPU=50000000 HZ BUS=16666666 HZ
+===================================================================
+Board: Ralink APSoC DRAM:  
+ Return Real size =268435456 !! 
+256 MB
+relocate_code Pointer at: 8ffa4000
+
+Config XHCI 40M PLL 
+******************************
+Software System Reset Occurred
+******************************
+Allocate 16 byte aligned buffer: 8ffe1390
+Enable NFI Clock
+# MTK NAND # : Use HW ECC
+NAND ID [C2 F1 80 1D C2]
+Device found in MTK table, ID: c2f1, EXT_ID: 801dc2
+Support this Device in MTK table! c2f1 
+select_chip
+[NAND]select ecc bit:4, sparesize :64 spare_per_sector=16
+Signature matched and data read!
+load_fact_bbt success 1023
+load fact bbt success
+[mtk_nand] probe successfully!
+mtd-&gt;writesize=2048 mtd-&gt;oobsize=64,	mtd-&gt;erasesize=131072  devinfo.iowidth=8
+.*** Warning - bad CRC, using default environment
+
+ASIC 7621_MP (MAC to MT7530 Mode)
+DRAM_CONF_FROM: Auto-Detection 
+DRAM_TYPE: DDR3 
+DRAM bus: 16 bit
+Xtal Mode=3 OCP Ratio=1/3
+Flash component: NAND Flash
+Date:Dec 30 2015  Time:16:41:06
+============================================ 
+icache: sets:256, ways:4, linesz:32 ,total:32768
+dcache: sets:256, ways:4, linesz:32 ,total:32768 
+
+ ##### The CPU freq = 880 MHZ #### 
+ estimate memory size =256 Mbytes
+xmalloc check m = 8fea51b0 size = 00023eb4
+xmalloc check m = 8fec9068 size = 00003e6c
+xmalloc check m = 8fecced8 size = 00004000
+.#Reset_MT7530
+Allocate 16 byte aligned buffer: Enable NFI Clock
+# MTK NAND # : Use HW ECC
+NAND ID [C2 F1 80 1D C2]
+Device found in MTK table, ID: c2f1, EXT_ID: 801dc2
+Support this Device in MTK table! c2f1 
+select_chip
+[NAND]select ecc bit:4, sparesize :64 spare_per_sector=16
+Signature matched and data read!
+load_fact_bbt success 1023
+load fact bbt success
+[mtk_nand] probe successfully!
+mtd-&gt;writesize=2048 mtd-&gt;oobsize=64,	mtd-&gt;erasesize=131072  devinfo.iowidth=8
+==================
+find_section check SIGNATURE = 2b240707 ss = 0x7b00000
+..
+==================
+find_section check SIGNATURE = 2b240202 ss = 0x7b80000
+.==================
+find_section check SIGNATURE = 2b240404 ss = 0x60000
+SCH 806A6654
+cp_type			(cp) 0x03
+version			(--) 0x02
+ram_addr		(ma) 0x80001000
+image_len*		(--) 0x001AEEAA (1765034)
+image_crc32*		(--) 0xAF7280E7
+start_addr		(sa) 0x8000F500
+rootfs_addr		(ra) 0x002A0000
+rootfs_len*		(--) 0x02139000 (34836480)
+rootfs_crc32*		(--) 0x7727BD83
+header_len*		(--) 0x0028 (40)
+magic			(--) 0x2124
+cmd_line_len*		(--) 0x0000 (0)
+recovery CopyFlash_check!!.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................Timed out waiting for an EOF from spawn id(3).
+spawn id(3) closed.
+Pid 11173 of spawn id(3) exited, Status: 0x00
+Closing spawn id(3).
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 1622.
+	Expect::hard_close(Expect=GLOB(0x28eecaa0)) called at /usr/local/lib/perl5/site_perl/Expect.pm line 1849
+	Expect::DESTROY(Expect=GLOB(0x28eecaa0)) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 939
+	eval {...} called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 939
+	V6evalRemote::rClose() called at /usr/local/v6eval//bin/linux-v6//reboot_async.rmt line 56
+</PRE>
+</TD></TR>
+<TR VALIGN="TOP"><TD>21:27:50</TD>
+<TD>vRecv(Link0,rs_unspec rs rs_sll) timeout:120 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv0"></A>
+<A HREF="#vRecvPKT0">recv unexpect packet at 21:28:46</A>
+<BR>
+<A NAME="vRecv1"></A>
+<A HREF="#vRecvPKT1">    Recv RS w/ SLL: NUT (link-local) -&gt; all-routers multicast address</A><BR>
+
+</TD>
+</TR>
+
+<TR VALIGN="TOP">
+<TD>21:28:46</TD><TD>
+vSend(Link0,local_ra)<BR>
+<A NAME="vSend0"></A>
+<A HREF="#vSendPKT0">    Send RA w/ SLL: TR1 (link-local) -&gt; all-nodes multicast address</A><BR>
+
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>21:28:46</TD>
+<TD>vRecv(Link0,rs_unspec rs rs_sll) timeout:5 cntLimit:0 seektime:0<BR>
+vRecv() return status=1
+
+</TD>
+</TR>
+
+<TR VALIGN="TOP"><TD>21:28:51</TD>
+<TD>vRecv(Link0,) timeout:3 cntLimit:0 seektime:0<BR>
+vRecv() return status=1
+
+</TD>
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>PASS</B><BR></TD>
+</TR>
+<TR><TD>21:28:54</TD><TD>End</TD></TR>
+</TABLE>
+<HR><H1>Packet Reverse Log</H1>
+<UL>
+<A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 21:28:46</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:90)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:16
+| | SourceAddress                    = 00:50:18:12:12:12
+| | Type                             = 34525
+| Packet_IPv6                     (length:76)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 36
+| | | NextHeader                       = 0
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe12:1212
+| | | DestinationAddress               = ff02::16
+| | Hdr_HopByHop                    (length:8)
+| | | NextHeader                       = 58
+| | | HeaderExtLength                  = 0
+| | | Opt_RouterAlert                 (length:4)
+| | | | OptionType                       = 5
+| | | | OptDataLength                    = 2
+| | | | Value                            = 0
+| | | Opt_PadN                        (length:2)
+| | | | OptionType                       = 1
+| | | | OptDataLength                    = 0
+| | ICMPv6_MLDv2Report              (length:28)
+| | | Type                             = 143
+| | | Code                             = 0
+| | | Checksum                         = 13169 calc(13169)
+| | | Reserved                         = 0
+| | | NumOfMcastAddrRecords            = 1
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff12:1212
+| | | | AuxData                          = 
+===rs_unspec=================================
+ng compare _HETHER_nut2allrouters.DestinationAddress received:33:33:00:00:00:16 = 33:33:00:00:00:02
+ng compare _HDR_IPV6_rs_unspec.NextHeader received:0 = 58
+ng compare _HDR_IPV6_rs_unspec.HopLimit received:1 = 255
+ng compare _HDR_IPV6_rs_unspec.SourceAddress received:fe80::250:18ff:fe12:1212 = ::
+ng compare _HDR_IPV6_rs_unspec.DestinationAddress received:ff02::16 = ff02::2
+ng meta Packet_IPv6.ICMPv6_RS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+===rs=================================
+ng compare _HETHER_nut2allrouters.DestinationAddress received:33:33:00:00:00:16 = 33:33:00:00:00:02
+ng compare _HDR_IPV6_rs.NextHeader received:0 = 58
+ng compare _HDR_IPV6_rs.HopLimit received:1 = 255
+ng compare _HDR_IPV6_rs.DestinationAddress received:ff02::16 = ff02::2
+ng meta Packet_IPv6.ICMPv6_RS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+===rs_sll=================================
+ng compare _HETHER_nut2allrouters.DestinationAddress received:33:33:00:00:00:16 = 33:33:00:00:00:02
+ng compare _HDR_IPV6_rs_sll.NextHeader received:0 = 58
+ng compare _HDR_IPV6_rs_sll.HopLimit received:1 = 255
+ng compare _HDR_IPV6_rs_sll.DestinationAddress received:ff02::16 = ff02::2
+ng meta Packet_IPv6.ICMPv6_RS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 21:28:46</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:02
+| | SourceAddress                    = 00:50:18:12:12:12
+| | Type                             = 34525
+| Packet_IPv6                     (length:56)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 16
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe12:1212
+| | | DestinationAddress               = ff02::2
+| | ICMPv6_RS                       (length:16)
+| | | Type                             = 133
+| | | Code                             = 0
+| | | Checksum                         = 9798 calc(9798)
+| | | Reserved                         = 0
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:12:12:12
+===rs_unspec=================================
+ng compare _HDR_IPV6_rs_unspec.SourceAddress received:fe80::250:18ff:fe12:1212 = ::
+ng count Packet_IPv6.ICMPv6_RS != Packet_IPv6.ICMPv6_RS
+===rs=================================
+ng count Packet_IPv6.ICMPv6_RS != Packet_IPv6.ICMPv6_RS
+===rs_sll=================================
+</PRE><HR><A NAME="vSendPKT0"></A><A HREF="#vSend0">    Send RA w/ SLL: TR1 (link-local) -&gt; all-nodes multicast address at 21:28:46</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:78)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:01
+| | SourceAddress                    = 00:00:00:00:a0:a0
+| | Type                             = 34525
+| Packet_IPv6                     (length:64)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 24
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::200:ff:fe00:a0a0
+| | | DestinationAddress               = ff02::1
+| | ICMPv6_RA                       (length:24)
+| | | Type                             = 134
+| | | Code                             = 0
+| | | Checksum                         = 61917 calc(61917)
+| | | CurHopLimit                      = 64
+| | | MFlag                            = 0
+| | | OFlag                            = 0
+| | | HFlag                            = 0
+| | | Preference                       = 0
+| | | Reserved                         = 0
+| | | LifeTime                         = 1800
+| | | ReachableTime                    = 0
+| | | RetransTimer                     = 0
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:00:00:00:a0:a0
+</PRE><HR></UL>
+
+</BODY>
+</HTML>
+<!-- c9650dd99c6511e48ebdf2f60b8c0001 -->
+<!-- 1a91e867487e503a806cf960fc72c77f -->
+<!-- 94b224f6db6a92cd5788435d324878d7 -->

@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Invalid Neighbor Solicitation Handling
+  Part C: Invalid Source Link-layer Address Option</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a node takes the proper actions upon receipt of an invalid Neighbor Solicitation.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],L-1 [RFC 4861],Section 7.3</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE>
+<TR><TD>
+<TABLE BORDER>
+<Caption>Neighbor Sol. A</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Source Address: TN2's Link-local Address<br>
+	Destination Address: NUT's Link-local Address<br>
+	Hop Limit: 255
+</TD>
+</TR>
+<TR>
+<TD>
+	Neighbor Sol.<br>
+        Target Address: NUT's Link-local Address<br>
+        Souce Link-layer: Address: TN2's Link-layer address
+</TD>
+</TR>
+</TABLE>
+</TD><TD>
+<TABLE BORDER>
+<Caption>Neighbor Sol. B</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: Unspecified Address<br>
+	Destination Address: NUT's Link-local Address<br>
+	Hop Limit: 255
+</TD>
+</TR>
+<TR>
+<TD>
+        Neighbor Sol.<br>
+        Target Address: NUT's Link-local Address
+</TD>
+</TR>
+</TABLE>
+</TD><TD>
+<TABLE BORDER>
+<Caption>Neighbor Sol. C</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: Unspecified Address<br>
+        Destination Address: NUT's Solicited-node Multicast Address<br>
+        Hop Limit: 255
+</TD>
+</TR>
+<TR>
+<TD>
+        Neighbor Sol.<br>
+        Target Address: NUT's Link-local Address<br>
+	Source Link-layer Address: TN2's Link-layer address
+</TD>
+</TR>
+</TABLE>
+</TD></TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  Part C: Invalid Source Link-layer Address Option
+    5. TN2 transmits Neighbor Solicitation C.
+    6. Observe the packets transmitted by the NUT.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part C
+   Step 6: The NUT must not transmit any packets corresponding to Neighbor Solicitation C.</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None. </code></pre>
+
+
+</body>
+
+</html>
+
+

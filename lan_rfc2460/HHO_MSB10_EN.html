@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Options Processing, Hop-by-Hop Options Header
+  Part E: Most Significant Bits 10, unicast destination</code></pre>
+
+<h1 id="TARGET">TARGET</h1>
+
+<pre><code>  CE-Router</code></pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+
+
+
+
+<h1 id="INITIALIZATION">INITIALIZATION</h1>
+
+<pre><code>  Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+<h1 id="TEST-PROCEDURE">TEST PROCEDURE</h1>
+
+<p>Verify that a node properly processes both known and unknown options, and acts in accordance with highest order two bits of the option.</p>
+
+<pre><code>   TN                          CE-Router
+    |                           |
+    |--------------------------&gt;|
+    |   Echo Request            |
+    |                           |
+    |                           |
+    |&lt;--------------------------|
+    |   ICMP Error              |
+    |                           |
+    |                           |
+    v                           v
+
+  1. TN transmits an Echo Request that has a Hop-by-Hop Options header with an unknown Option Type of 135.
+  2. Observe the packets transmitted by the CE-Router.
+
+  Echo Request Data is:
+
+        IPv6 Header
+            Version            = 6
+            Traffic Class      = 0
+            FlowLabel          = 0
+            PayloadLength      = 16
+            NextHeader         = 0 (Hop-by-Hop Options Header)
+            SourceAddress      = TN Link Local Address
+            DestinationAddress = CE-Router Link Local Address
+
+        Hop-by-Hop Options Header
+            NextHeader         = 58 (ICMPv6)
+            HeaderExtLength    = 0
+            OptionType         = 0x87 (unknown, msb: 10)
+            OptDataLength      = 4
+            data               = {0, 0, 0, 0}
+
+        ICMP Echo Request
+            Type           = 128 (Echo Request)
+            Code           = 0
+            Checksum       = (auto)
+            Identifier     = 0xffff
+            SequenceNumber = 1
+            PayloadData    = {1, 2, 3, 4, 5, 6, 7, 8}</code></pre>
+
+<h1 id="JUDGEMENT">JUDGEMENT</h1>
+
+<pre><code>  PASS: The CE-Router must send an ICMPv6 Parameter Problem message to TN.
+        The Code field must be 2(unrecognized IPv6 Option encoumtered).
+        The Pointer field must be 0x2A(offset of the option field of Hop-by-Hop Options header).
+        The CE-Router must discard the Echo Request and not send a Reply.
+        The invoking Echo Request packet included in the Error Message must not exceed minimum IPv6 MTU.
+
+            The Source Address of the Parameter Problem Message must be 
+            the same as the Destination Address in TN&#39;s Echo Request Packet.
+            The Destination Address should be the same as the Source Address 
+            in TN&#39;s Echo Reuest Packet
+
+
+        IPv6 Header
+            Version             = 6
+            Traffic Class       = 0
+            FlowLabel           = 0
+            PayloadLength       = 16
+            NextHeader          = 58 (ICMPv6)
+            SourceAddress       = CE-Router Link Local Address
+            Destination Address = TN Link Local Address
+
+        ICMP Error
+            Type           = 4 (Parameter Problem)
+            Code           = 2 (unrecognized IPv6 option encountered)
+            Checksum       = (auto)
+            Pointer        = 42 (Offset to Option field of HbH Options Header)
+            PayloadData    = (Sent Packet)</code></pre>
+
+<h1 id="CLEANUP">CLEANUP</h1>
+
+<p>Common Test Cleanup</p>
+
+<h1 id="REFERENCE">REFERENCE</h1>
+
+
+
+
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<pre><code>  perldoc V6evalTool</code></pre>
+
+
+</body>
+
+</html>
+
+

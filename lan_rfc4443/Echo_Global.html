@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>        Replying to Echo Requests
+        Part B: Request sent to global address</code></pre>
+
+<h1 id="TARGET">TARGET</h1>
+
+<pre><code>        CE-Router</code></pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>        Echo_Global.seq [-tooloption ...] -p Echo_Global.def</code></pre>
+
+<h1 id="INITIALIZATION">INITIALIZATION</h1>
+
+<pre><code>        Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+<h1 id="TEST-PROCEDURE">TEST PROCEDURE</h1>
+
+<pre><code>        Verify that a node properly replies to ICMPv6 Echo Requests.
+        
+
+        TN                      NUT
+
+        ---------------------------
+
+        1.
+         === ICMPv6 Echo Request ===&gt;
+                        src address : TN global address
+                        dst address : NUT global address        
+        2.
+        &lt;&lt; JUDGEMENT &gt;&gt;
+
+         &lt;=== ICMPv6 Echo Reply ===
+                        src address : NUT global address
+                        dst address : TN global address        
+          </code></pre>
+
+<h1 id="JUDGEMENT">JUDGEMENT</h1>
+
+<pre><code>    &lt;&lt; PASS &gt;&gt;
+    The NUT must send an Echo Reply to TN. 
+    The Source Address of the Packet must be same as the Global Destination Address of TN&#39;s Echo Request packet, 
+    while the Destination Address must be the same as the Global Source Address of TN&#39;s Echo Request packet.
+    The NUT must send an Echo Reply to TN with a valid checksum.</code></pre>
+
+<h1 id="CLEANUP">CLEANUP</h1>
+
+<p>Common Test Cleanup</p>
+
+<h1 id="REFERENCE">REFERENCE</h1>
+
+
+
+
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<pre><code>          perldoc V6evalTool</code></pre>
+
+
+</body>
+
+</html>
+
+

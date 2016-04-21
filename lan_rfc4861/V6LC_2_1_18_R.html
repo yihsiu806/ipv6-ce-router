@@ -1,0 +1,170 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Neighbor Advertisement Processing, NCE State REACHABLE
+  Part R</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a node properly updates its Neighbor Cache from the REACHABLE state upon
+  receipt of a Neighbor Advertisement.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],L-1 [RFC 4861],Section 7.2.5</p>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<TR>
+<TD>Destination</TD>
+<TD>Solicited flag</TD>
+<TD>Override flag</TD>
+<TD>TLLA</TD>
+<TD>New State</TD>
+<TD>Update Link-Layer Address</TD>
+<TD>Part</TD>
+</TR><TR>
+<TD>Multicast</TD>
+<TD>clear</TD>
+<TD>set</TD>
+<TD>none</TD>
+<TD>different</TD>
+<TD>no</TD>
+<TD>R</TD>
+</TR></TABLE>
+</BLOCKQUOTE>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<Caption>Echo Request A</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Source Address: TN2's Link-local Address<br>
+	Destination Address: NUT's Link-local Address<br></TD>
+</TR>
+<TR>
+<TD>
+        ICMPv6 Echo Request
+</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Neighbor Adv. (A-H)</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN2's Link-local Address<br>
+        Destination Address: see table
+</TD>
+</TR>
+<TR>
+<TD>
+        Neighbor Adv.<br>
+	Solicited flag: see table<br>
+	Override flag: see table
+</TD>
+</TR>
+<TR>
+<TD>
+        Target LLA Option: see table<br>
+</TD>
+</TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>   1. TN2 transmits Echo Request A.
+   2. Observe the packets transmitted by the NUT and the NCE of TN2.
+   3. TN2 transmits a solicited Neighbor Advertisement to the NUT.
+   4. Observe the packets transmitted by the NUT and the NCE of TN2.
+   5. TN2 transmits Neighbor Advertisement A. The Solicited and Override flags are set according to
+       Part A entry of the table in the discussion above. Similarly, the address in the Target Link Layer
+       Address Option is provided as it is indicated.
+   6. TN2 transmits an Echo Request.
+   7. Check the NCE of TN2 on the NUT and observe the packets transmitted by the NUT.
+   8. Perform the common cleanup procedure.
+   9. Repeat Steps 1 through 8 for Parts B through R.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Parts A through R
+   Step 2:
+   The NUT should create a Neighbor Cache Entry for TN2 and set the state of the
+   Entry to INCOMPLETE. The NUT should send a multicast Neighbor Solicitation to TN2.
+
+   Step 4:
+   Because the NUT is now in state REACHABLE, after receiving the Echo Request
+   from TN2, the NUT should send an Echo Reply. After DELAY_FIRST_PROBE_TIME, the
+   NUT should not send a unicast Neighbor Solicitation to TN2.
+
+   Step 7:
+   The NUT MUST update the state of TN2&#39;s NCE and the LLA according to the table
+   in the discussion above. After receiving the Echo Request from TN2 in step 6, the NUT
+   should react according to the following:</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<Caption>Parts A-H,L-N and Q-R to REACHABLE</Caption>
+<TR>
+<TD>
+After receiving the Echo Request from TN2, the NUT should send an Echo<br>
+Reply. After DELAY_FIRST_PROBE_TIME, the NUT should not send a<br>
+unicast Neighbor Solicitation to TN2.<br>
+<br>
+Part L<br>
+ The NUT's Echo Reply should be sent to the new updated link-layer<br>
+ destination address of TN2.
+</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Parts I-K and O-P to STALE</Caption>
+<TR>
+<TD>
+After receiving the Echo Request from TN2, the NUT should send an Echo<br>
+Reply. After DELAY_FIRST_PROBE_TIME, the NUT should send a unicast_<br>
+Neighbor Solicitation to TN2.<br>
+<br>
+Parts J and P<br>
+ The NUT's Echo Reply should be sent to the new updated link-layer<br>
+ destination address of TN2. The Neighbor Solicitation should use the new link-<br>
+ layer address in the Target field.<br>
+</TD>
+</TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None. </code></pre>
+
+
+</body>
+
+</html>
+
+

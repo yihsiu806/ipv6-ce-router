@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN""http://www.w3c.org/TR/REC-html40/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>IPv6 Conformance Test Report</TITLE>
+<META NAME="GENERATOR" CONTENT="TAHI IPv6 Conformance Test Kit">
+</HEAD>
+
+<BODY BGCOLOR="#F0F0F0">
+<H1>Test Information</H1>
+<TABLE BORDER=1>
+<TR><TD>Title</TD><TD>Initialization</TD></TR>
+<TR><TD>CommandLine</TD><TD>./CERouter_Init.seq -pkt /dev/null -log 1.html -ti Initialization</TD></TR>
+<TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_1</TD></TR>
+<TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
+<TR><TD>Start</TD><TD>2016/03/22 14:06:49</TD></TR>
+<TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
+<TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
+<TR><TD>Pkt</TD><TD>/dev/null</TD></TR>
+<TR><TD>System</TD><TD>linux-v6</TD></TR>
+<TR><TD>TargetName</TD><TD>Linux SI_Framework 2.6.36+ #1 SMP Fri Feb 19 09:19:50 CST 2016 mips unknown	</TD></TR>
+<TR><TD>HostName</TD><TD>target.tahi.org</TD></TR>
+<TR><TD>Type</TD><TD>router</TD></TR>
+</TABLE>
+<HR>
+<H1>Test Sequence Execution Log</H1>
+<TABLE BORDER=1>
+<TR><TD>14:06:49</TD><TD>Start</TD></TR>
+<TR VALIGN="TOP"><TD>14:06:49</TD>
+<TD>
+vRemote(reboot.rmt) ``/usr/local/v6eval//bin/linux-v6//reboot.rmt -t linux-v6 -u admin -p admin -d cuaU0 -v 1 -i 1 -o 1   ''
+<PRE>Spawned 'cu -l cuaU0 -s 57600'
+	spawn id(3)
+	Pid: 18414
+	Tty: /dev/pts/9
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 184.
+	Expect::spawn(&quot;Expect&quot;, &quot;cu -l cuaU0 -s 57600&quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 578
+	V6evalRemote::rOpen() called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 48
+expect(Expect=GLOB(0x28eeba64) 4 Connected) called...
+expect(): handling param 'Connected'...
+expect(): exact match 'Connected'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeba64), 4, &quot;Connected&quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 599
+	V6evalRemote::rOpen() called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 48
+spawn id(3): beginning expect.
+	Timeout: 4 seconds.
+	Current time: Tue Mar 22 14:06:49 2016
+spawn id(3): list of patterns:
+  #1: -ex `Connected'
+
+
+spawn id(3): Does `'
+match:
+  pattern #1: -ex `Connected'? No.
+
+Waiting for new data (4 seconds)...
+spawn id(3): new data.
+spawn id(3): read 2 byte(s).
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -ex `Connected'? No.
+
+Waiting for new data (4 seconds)...
+spawn id(3): new data.
+spawn id(3): read 11 byte(s).
+Connected
+
+spawn id(3): Does `\r\nConnected\r\n'
+match:
+  pattern #1: -ex `Connected'? YES!!
+    Before match string: `\r\n'
+    Match string: `Connected'
+    After match string: `\r\n'
+    Matchlist: ()
+Returning from expect successfully.
+  spawn id(3): accumulator: `\r\n'
+prompt_user: ``SI_Framework login: '', prompt_password: ``Password: '', prompt_command: ``# ''
+rLogin: Wait for login prompt (0.2 sec)
+expect(Expect=GLOB(0x28eeba64) 0.2 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeba64), 0.2, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 0.2 seconds.
+	Current time: Tue Mar 22 14:06:49 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (0.2 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeba64) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeba64), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Tue Mar 22 14:06:49 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeba64) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeba64), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Tue Mar 22 14:06:54 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeba64) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeba64), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Tue Mar 22 14:06:59 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeba64) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeba64), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Tue Mar 22 14:07:04 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeba64) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeba64), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Tue Mar 22 14:07:09 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeba64) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeba64), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Tue Mar 22 14:07:14 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Wait for login prompt (5 sec)
+expect(Expect=GLOB(0x28eeba64) 5 -re SI_Framework login:  -re Password:  -re # ) called...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+expect(): handling param '-re'...
+expect(): handling option '-re'...
+Starting EXPECT pattern matching...
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 597.
+	Expect::expect(Expect=GLOB(0x28eeba64), 5, &quot;-re&quot;, &quot;SI_Framework login: &quot;, &quot;-re&quot;, &quot;Password: &quot;, &quot;-re&quot;, &quot;# &quot;) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 697
+	V6evalRemote::rLogin(5) called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 51
+spawn id(3): beginning expect.
+	Timeout: 5 seconds.
+	Current time: Tue Mar 22 14:07:19 2016
+spawn id(3): list of patterns:
+  #1: -re `SI_Framework login: '
+  #2: -re `Password: '
+  #3: -re `# '
+
+
+spawn id(3): Does `\r\n'
+match:
+  pattern #1: -re `SI_Framework login: '? No.
+  pattern #2: -re `Password: '? No.
+  pattern #3: -re `# '? No.
+
+Waiting for new data (5 seconds)...
+TIMEOUT
+Returning from expect with TIMEOUT or EOF
+rLogin: Never got prompt; try again
+rLogin: Retry error (&gt; 8)
+Before: ``
+''
+Match: ``''
+After: ``''
+Closing spawn id(3).
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 1531.
+	Expect::soft_close(Expect=GLOB(0x28eeba64)) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 937
+	V6evalRemote::rClose() called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 57
+Timed out waiting for an EOF from spawn id(3).
+spawn id(3) closed.
+Pid 18414 of spawn id(3) exited, Status: 0x00
+Closing spawn id(3).
+ at /usr/local/lib/perl5/site_perl/Expect.pm line 1622.
+	Expect::hard_close(Expect=GLOB(0x28eeba64)) called at /usr/local/lib/perl5/site_perl/Expect.pm line 1849
+	Expect::DESTROY(Expect=GLOB(0x28eeba64)) called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 939
+	eval {...} called at /usr/local/lib/perl5/site_perl/V6evalRemote.pm line 939
+	V6evalRemote::rClose() called at /usr/local/v6eval//bin/linux-v6//reboot.rmt line 57
+</PRE>
+</TD></TR>
+<TR><TD><BR></TD><TD>
+Target: Reboot OK <BR></TD></TR>
+
+<TR VALIGN="TOP">
+<TD>14:07:43</TD>
+<TD>Wait 5 second
+</TD></TR>
+<TR><TD><BR></TD><TD>
+OK</TD>
+</TR>
+<TR><TD>14:07:48</TD><TD>End</TD></TR>
+</TABLE>
+<HR><H1>Packet Reverse Log</H1>
+<UL>
+</UL>
+
+</BODY>
+</HTML>
+<!-- b571a3c1c1af5bf079cacd2e380bb9ea -->
+<!-- d41d8cd98f00b204e9800998ecf8427e -->
+<!-- 82db769495690e0b1cfd09a2d2762fc1 -->

@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>        Error Condition with Multicast Destination
+        Part B: Echo Request Reqssembly Timeout</code></pre>
+
+<h1 id="TARGET">TARGET</h1>
+
+<pre><code>        CE-Router</code></pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>        Err_Condition_Time_Exc.seq [-tooloption ...] -p Err_Condition_Time_Exc_*.def</code></pre>
+
+<h1 id="INITIALIZATION">INITIALIZATION</h1>
+
+<pre><code>        Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+<h1 id="TEST-PROCEDURE">TEST PROCEDURE</h1>
+
+<p>Verify that a node properly handles the reception of an error condition caused by a packet with a source address that does not uniquely identify a single node.</p>
+
+<pre><code>        This test verifies that the message processing rule,
+        
+        An ICMPv6 error message MUST NOT be sent as a result of
+        receiving:
+
+        a packet whose source address does not uniquely identify
+        a single node -- e.g., the IPv6 Unspecified Address, an
+        IPv6 multicast address, or an address known by the ICMP
+        message sender to be an IPv6 anycast address.
+
+
+        TN                      NUT
+
+        ---------------------------
+
+        1.
+         === fragmented (1st) packet  ===&gt;
+                src address : does not identify a single node uniquely 
+                dst address : NUT link local address
+                     The offset of fragment is 0
+                     M Flag is set
+             
+        2.
+        &lt;&lt; JUDGEMENT &gt;&gt;
+
+         &lt;=== No packet  ===</code></pre>
+
+<h1 id="JUDGEMENT">JUDGEMENT</h1>
+
+<pre><code>    &lt;&lt; PASS &gt;&gt;
+    The NUT must not send a Time Exceeded Error Message to TN  60 seconds after
+    it receives the first fragment of an ICMPv6 Echo Request.</code></pre>
+
+<h1 id="CLEANUP">CLEANUP</h1>
+
+<p>Common Test Cleanup</p>
+
+<h1 id="REFERENCE">REFERENCE</h1>
+
+
+
+
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<pre><code>          perldoc V6evalTool</code></pre>
+
+
+</body>
+
+</html>
+
+

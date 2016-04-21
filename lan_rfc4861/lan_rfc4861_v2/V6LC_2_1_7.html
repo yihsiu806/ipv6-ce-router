@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Neighbor Solicitation Origination, Reachability Confirmation
+  Part A: Neighbor Solicitation Origination, Link-local =&gt; Link-local</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a node properly originates Neighbor Solicitations when trying to confirm the
+  reachability of a neighbor.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],L-1 [RFC 4861],Section 7.3</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE>
+<TR><TD>
+<TABLE BORDER>
+<Caption>Packet A</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Source Address: TN2's local Address<br>
+	Destination Address: NUT's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request</TD>
+</TR>
+</TABLE>
+</TD><TD>
+<TABLE BORDER>
+<Caption>Packet B</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN2's Global Address<br>
+	Destination Address: NUT's Global Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request</TD>
+</TR>
+</TABLE>
+</TD></TR>
+</TABLE><br><TABLE>
+<TR><TD>
+<TABLE BORDER>
+<Caption>Packet C</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN2's local Address<br>
+        Destination Address: NUT's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request</TD>
+</TR>
+</TABLE>
+</TD><TD>
+<TABLE BORDER>
+<Caption>Packet D</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN2's Global Address<br>
+        Destination Address: NUT's Global Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request</TD>
+</TR>
+</TABLE>
+</TD></TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  Part A: Neighbor Solicitation Origination, Link-local =&gt; Link-local
+   1. TN2 transmit Packet A. The source address is TN2&#39;s link-local address and the destination
+        address is the NUT&#39;s link-local address.
+   2. Observe the packets transmitted by the NUT. TN2 sends a Neighbor Advertisement upon
+        receiving Neighbor Solicitations from the NUT.
+   3. Wait REACHABLE_TIME * MAX_RANDOM_FACTOR seconds so that the NCE of TN2
+        transit to state STALE.
+   4. TN2 transmits Packet A. The source address is TN2&#39;s Link-local address and the destination
+        address is the NUT&#39;s Link-local address.
+   5. Observe the packets transmitted by the NUT.
+   6. Wait DELAY_FIRST_PROBE_TIME seconds so that NCE of TN2 transit to state PROBE.
+   7. Observe the packets transmitted by the NUT.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part A
+   Step 2: 
+   In response to Packet A, the NUT should transmit Neighbor Solicitations with a
+   Target Address equal to the TN2&#39;s link-local Address at intervals of 1 second. The NUT
+   MUST transmit no more than 1 Neighbor Solicitation every 1 second. Once a Neighbor
+   Advertisement is received from TN2, the NUT should send an Echo Reply in response to
+   Packet A. The NCE of TN2 is in state REACHABLE.
+
+   Step 5: 
+   In response to Packet A, the NUT should transmit an Echo Reply.
+
+   Step 7: 
+   The NUT should transmit Neighbor Solicitations with the NUT&#39;s link-local address
+   being the source address and TN2&#39;s link-local address as the destination address. The
+   maximum number of Neighbor Solicitations that the NUT can transmit is 3.</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None. </code></pre>
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Processing Router Solicitations 
+  Part A: MAX_RA_DELAY_TIME</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a router correctly processes Router Solicitations and transmits Router
+  Advertisements.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],L-1 [RFC 4861] ¡V6.2.6</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE>
+<TR><TD>
+<TABLE BORDER>
+<Caption>Router Solicitation A</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Source Address: TN2's Link-local Address<br>
+</TD>
+</TR>
+<TR>
+<TD>
+        Router Solicitation
+</TD>
+</TR>
+</TABLE>
+</TD><TD>
+<TABLE BORDER>
+<Caption>Router Solicitation B</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: Unspecified Address<br>
+</TD>
+</TR>
+<TR>
+<TD>
+        Router Solicitation
+</TD>
+</TR>
+</TABLE>
+</TD></TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  Part A: MAX_RA_DELAY_TIME
+   1. TN2 transmits Router Solicitation A twice, 3 seconds apart. The Destination Address is the all-
+      routers multicast address.
+   2. Observe the packets transmitted by the CE-Router.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part A
+   Step 2: The CE-Router MUST transmit a Router Advertisement between 0 and
+   MAX_RA_DELAY_TIME (0.5) seconds after the receipt of each Router Solicitation A.</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None. </code></pre>
+
+<h1 id="POD-ERRORS">POD ERRORS</h1>
+
+<p>Hey! <b>The above document had some coding errors, which are explained below:</b></p>
+
+<dl>
+
+<dt id="Around-line-124">Around line 124:</dt>
+<dd>
+
+<p>Non-ASCII character seen before =encoding in &#39;¡V6.2.6&#39;. Assuming ISO8859-1</p>
+
+</dd>
+</dl>
+
+
+</body>
+
+</html>
+
+

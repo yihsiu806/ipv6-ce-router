@@ -1,0 +1,153 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Neighbor Solicitation Processing, NCE State PROBE
+  Part A: Unicast Neighbor Solicitation with the same SLLA</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a node properly updates its neighbor cache upon receipt of neighbor solicitations
+  when the NCE of the neighbor is in state Probe.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],L-1 [RFC 4861],Section 7.2.3 and 7.2.4</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<Caption>Packet A</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN2's Link-local Address<br>
+	Destination Address: NUT's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Neighbor Advertisement B</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN2's Link-local Address<br>
+        Destination Address: NUT's Link-local Address<br>
+</TD>
+</TR>
+<TR>
+<TD>
+        Neighbor Advertisement<br>
+        Router flag: 0<br>
+        Solicited flag: 0<br>
+        Override flag: 1<br>
+	Target Address: TN2's Link-local Address
+</TD>
+</TR>
+</TABLE><br><TABLE>
+<TR><TD>
+<TABLE BORDER>
+<Caption>Neighbor Solicitation C</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Destination Address: NUT's Link-local Address<br>
+	Source Address: TN2's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>
+	Neighbor Solicitation<br>
+	Target Address: NUT's Link-local Address<br>
+	Source Link-Layer Address: TN2's Ethernet address
+</TD>
+</TR>
+</TABLE>
+</TD><TD>
+<TABLE BORDER>
+<Caption>Neighbor Solicitation D</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+	Destination Address: NUT's Solicited-node Multicast Link-local Address<br>
+        Source Address: TN2's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>
+	Neighbor Solicitation<br>
+        Target Address: NUT's Link-local Address<br>
+        Source Link-Layer Address: TN2's Ethernet address
+</TD>
+</TR>
+</TABLE>
+</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  Part A: Unicast Neighbor Solicitation with the same SLLA
+   1. TN2 transmits Packet A to the NUT.
+   2. TN2 transmits Neighbor Advertisement B to the NUT after receiving any Neighbor Solicitations
+        from the NUT.
+   3. Check the NCE of TN2 on the NUT and observe the packets transmitted by the NUT.
+   4. Wait (DELAY_FIRST_PROBE_TIME) seconds.
+   5. Check the NCE of TN2 on the NUT and observe the packets transmitted by the NUT.
+   6. TN2 transmits Neighbor Solicitation C.
+   7. TN2 transmits an Echo Request to the NUT.
+   8. Check the NCE of TN2 on the NUT and observe the packets transmitted by the NUT.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part A
+
+   Step 3:
+   The NUT should update the NCE of TN2 to state STALE. After receiving the Echo
+   Request from TN2, the NUT should send a Reply and enter state DELAY.
+
+   Step 5:
+   After DELAY_FIRST_PROBE_TIME, the NUT should transition to state PROBE
+   by sending a unicast Neighbor Solicitation to TN2.
+
+   Step 8:
+   The NUT should not update the state of TN2&#39;s NCE after sending its queued
+   Neighbor Advertisement and Echo Reply and should stay in state PROBE. The NUT should
+   retransmit its unicast Neighbor Solicitation to TN2.</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None.</code></pre>
+
+
+</body>
+
+</html>
+
+

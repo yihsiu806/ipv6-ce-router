@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Resolution Wait Queue
+  Part A: Single Queue</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a node properly queues packets while waiting for address resolution of the next hop.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],L-1 [RFC 4861],Section 3, Section 7.2.2</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>        Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<Caption>Packet A</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Source Address: TN2's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request<br>Sequence Number: 3</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Packet B</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN2's Global Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request<br>Sequence Number: 4</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Neighbor Advertisement C</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+	Source Address: TN2's<br>
+	Link-local Address<br>
+	Destination Address: NUT's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>
+	Neighbor Advertisement<br>
+	Router flag: 0<br>
+	Solicited flag: 1<br>
+	Override flag: 1<br>
+	Target Address: TN2's Link-local Address
+</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Neighbor Advertisement D</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN2's<br>
+        Link-local Address<br>
+	Destination Address: NUT's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>
+        Neighbor Advertisement<br>
+        Router flag: 0<br>
+        Solicited flag: 1<br>
+        Override flag: 1<br>
+        Target Address: TN2's Link-local Address
+</TD>
+</TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  Part A: Single Queue
+   1. TN2 transmits Packet A, an Echo Request, 3 times. The Sequence number is incremented each
+      time.
+   2. Observe the packets transmitted by the NUT.
+   3. TN2 transmits the Neighbor Advertisement C in response to any Neighbor Solicitations from the
+      NUT.
+   4. Observe the packets transmitted by the NUT.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part A
+   Step 2:
+   The NUT should transmit a Neighbor Solicitation with a Target Address equal to
+   TN2&#39;s link-local address. The NUT should send Echo Replies to TN2 in response to Packet
+   A.
+
+   Step 4:
+   The Echo Replies should correspond to the last 3 Echo Requests sent by TN2 to 
+   the NUT, indicating successful queuing of packets while waiting for address resolution
+   to complete. The number of Echo Replies MUST be no less than 1.</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None. </code></pre>
+
+
+</body>
+
+</html>
+
+

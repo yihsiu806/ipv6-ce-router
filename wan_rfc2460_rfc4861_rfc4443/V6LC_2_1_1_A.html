@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  On-link Determination
+  Part A: Link-local Address</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>   Verify that a node correctly determines that a destination is on-link.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],W-3 [RFC 4861],Sections 5.2</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>        Common Test Setup 1.2 is performed at the beginning of this test part. 
+        The Common Test Cleanup procedure is performed after each part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE>
+<TR><TD>
+<TABLE BORDER>
+<Caption>Packet A</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Source Address: TN1's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request</TD>
+</TR>
+</TABLE>
+</TD><TD>
+<TABLE BORDER>
+<Caption>Packet B</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN1's Global Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request</TD>
+</TR>
+</TABLE>
+</TD></TR>
+<TABLE><br><TABLE BORDER>
+<Caption>Router Advertisement</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58
+</TD>
+</TR>
+<TR>
+<TD>
+	Router Advertisement<br>
+	Prefix Length: 64<br>
+	L Bit: 1 (on-link)<br>
+	Prefix: TN1's Global Prefix
+</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Packet C</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN2's<br>
+        Global Address<br>
+	Destination Address: CE-Router's Global Address
+</TD>
+</TR>
+<TR>
+<TD>ICMPv6 Echo Request</TD>
+</TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  Part A: Link-local Address
+   1. TN1 transmits Packet A an Echo Request with TN1&#39;s link-local source address.
+   2. Observe the packets transmitted by the CE-Router.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part A
+   Step 2:
+   The CE-Router should send a Neighbor Solicitation with Target Address equal to TN1&#39;s
+   link-local address, indicating that the CE-Router has successfully determined that TN1 was on-link.</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None. </code></pre>
+
+
+</body>
+
+</html>
+
+

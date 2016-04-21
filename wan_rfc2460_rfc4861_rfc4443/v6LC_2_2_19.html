@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Router Advertisement Processing, On-link determination </code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a host properly rejects an invalid prefix length, however the prefix length is still
+  valid for on-link determination when the on-link flag is true.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],W-3 [RFC 4861] Section 6.3.4 [RFC 4862] Section 5.5.3</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  Common Test Setup 1.2 is performed at the beginning of this test part.
+  The Common Test Cleanup procedure is performed after each part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<Caption>Router Advertisement A</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Source Address: TR1's Link-local Address<br>
+</TD>
+</TR>
+<TR>
+<TD>
+	Router Advertisement<br>
+	Router Lifetime: 600 seconds<br>
+	Reachable Time: 10 seconds<br>
+	Retransmit Interval: 1 second<br>
+	Source Link-layer Option</TD>
+</TR>
+<TR>
+<TD>
+        Prefix Option<br>
+        Prefix Length: 96<br>
+        "on-link" (L) flag: 1<br>
+        Valid Lifetime: 20 seconds<br>
+        Preferred Lifetime: 20 seconds<br>
+        Prefix: TR1's Global Prefix "Y"<br>
+</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Echo Request B</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN1's Prefix "Y" Global Address<br>
+        Destination Address: CE-Router's Global Address
+</TD>
+</TR>
+<TR>
+<TD>
+	ICMPv6 Echo Request
+</TD>
+</TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  1. TR1 transmits Router Advertisement A to the CE-Router.
+  2. TN1 transmits Echo Request B to the CE-Router.
+  3. Observe the packets transmitted by the CE-Router.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Step 3:
+  The CE-Router should transmit an Echo Reply to TN1&#39;s global address on-link.
+=head1 Possible Problems
+
+  * None. </code></pre>
+
+
+</body>
+
+</html>
+
+

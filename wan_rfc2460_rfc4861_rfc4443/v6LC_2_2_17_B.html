@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Router Advertisement Processing, IsRouter flag 
+  Part B: RA with same Source Link-layer option as cached</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a host properly updates the IsRouter flag in its Neighbor Cache upon receipt of a
+  Router Advertisement.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],W-3 [RFC 4861],Section 6.3.4</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  Common Test Setup 1.2 is performed at the beginning of this test part.
+  The Common Test Cleanup procedure is performed after each part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<Caption>Router Advertisement A</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Source Address: TR1's Link-local Address<br>
+</TD>
+</TR>
+<TR>
+<TD>
+	Router Advertisement<br>
+	Router Lifetime: 600 seconds<br>
+	Reachable Time: 0 seconds<br>
+	Retransmit Interval: 1 second<br>
+	Source Link-layer Option</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Echo Request A</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TN3's off-link Global Address<br>
+        Destination Address: CE-Router's Global Address
+</TD>
+</TR>
+<TR>
+<TD>
+	ICMPv6 Echo Request
+</TD>
+</TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  Part B: RA with same Source Link-layer option as cached
+   8. TR1 transmits a Link-local Echo Request to the CE-Router.
+   9. TR1 answers any Neighbor Solicitations with a Neighbor Advertisement (R=0, S=1, O=1) to the
+       CE-Router.
+  10. Observe the packets transmitted by the CE-Router.
+  11. TR1 transmits Router Advertisement A with the same Source Link-layer option to the CE-Router.
+  12. Wait for the CE-Router to perform Duplicate Address Detection on its global address.
+  13. TN3 transmits Echo Request A to the CE-Router with a nexthop of TR1.
+  14. Observe the packets transmitted by the CE-Router.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part B
+   Steps 10:
+   The CE-Router should transmit an Echo Reply to TR1&#39;s link local address and update it&#39;s
+   NCE to state REACHABLE. The CE-Router sets the isRouter flag to false.
+
+   Step 14:
+   The CE-Router sets the isRouter flag to true and transmits an Echo Reply to TN3&#39;s off-
+   link address with a next hop of TR1.</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None. </code></pre>
+
+
+</body>
+
+</html>
+
+
