@@ -12,7 +12,7 @@
 <TR><TD>CommandLine</TD><TD>./LLA_DADSuccess.seq -pkt LLA_SAA.def -log 2.html -ti Address Autoconfiguration and Duplicate Address Detection</TD></TR>
 <TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_1</TD></TR>
 <TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
-<TR><TD>Start</TD><TD>2016/05/13 08:47:06</TD></TR>
+<TR><TD>Start</TD><TD>2016/05/16 08:48:04</TD></TR>
 <TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
 <TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
 <TR><TD>Pkt</TD><TD>LLA_SAA.def</TD></TR>
@@ -24,15 +24,15 @@
 <HR>
 <H1>Test Sequence Execution Log</H1>
 <TABLE BORDER=1>
-<TR><TD>08:47:06</TD><TD>Start</TD></TR>
-<TR VALIGN="TOP"><TD>08:47:06</TD><TD>Start Capturing Packets (Link0)<BR>
+<TR><TD>08:48:05</TD><TD>Start</TD></TR>
+<TR VALIGN="TOP"><TD>08:48:05</TD><TD>Start Capturing Packets (Link0)<BR>
 </TD></TR>
 
 <TR><TD><BR></TD><TD>
 <PRE>*** Target initialization phase ***</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>08:47:06</TD>
+<TR VALIGN="TOP"><TD>08:48:05</TD>
 <TD>
 vRemote(reboot_async.rmt) ``/usr/local/v6eval//bin/manual//reboot_async.rmt -t manual -u root -p amittima -d cuaU0   timeout=120''
 <PRE>
@@ -53,22 +53,19 @@ reboot_async&gt;
 <PRE>*** Target testing phase ***</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>08:47:11</TD><TD>Clear Captured Packets (Link0)<BR>
+<TR VALIGN="TOP"><TD>08:48:10</TD><TD>Clear Captured Packets (Link0)<BR>
 </TD></TR>
 
-<TR VALIGN="TOP"><TD>08:47:11</TD>
+<TR VALIGN="TOP"><TD>08:48:10</TD>
 <TD>vRecv(Link0,DADNS_from_NUT) timeout:130 cntLimit: seektime:0<BR>
 <A NAME="vRecv0"></A>
-<A HREF="#vRecvPKT0">recv unexpect packet at 08:48:29</A>
+<A HREF="#vRecvPKT0">recv unexpect packet at 08:49:26</A>
 <BR>
 <A NAME="vRecv1"></A>
-<A HREF="#vRecvPKT1">recv unexpect packet at 08:48:33</A>
+<A HREF="#vRecvPKT1">recv unexpect packet at 08:49:45</A>
 <BR>
 <A NAME="vRecv2"></A>
-<A HREF="#vRecvPKT2">recv unexpect packet at 08:48:49</A>
-<BR>
-<A NAME="vRecv3"></A>
-<A HREF="#vRecvPKT3">recv DADNS_from_NUT</A><BR>
+<A HREF="#vRecvPKT2">recv DADNS_from_NUT</A><BR>
 
 </TD>
 </TR>
@@ -78,7 +75,7 @@ reboot_async&gt;
 </TD></TR>
 
 <TR VALIGN="TOP">
-<TD>08:48:50</TD>
+<TD>08:49:46</TD>
 <TD>Wait 7 second
 </TD></TR>
 <TR><TD><BR></TD><TD>
@@ -86,11 +83,11 @@ reboot_async&gt;
 <PRE>Send DAD NS from TN to NUT: DADNS_from_TN_SameDstSameTgt</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>08:48:57</TD><TD>Clear Captured Packets (Link0)<BR>
+<TR VALIGN="TOP"><TD>08:49:53</TD><TD>Clear Captured Packets (Link0)<BR>
 </TD></TR>
 
 <TR VALIGN="TOP">
-<TD>08:48:57</TD><TD>
+<TD>08:49:53</TD><TD>
 vSend(Link0,DADNS_from_TN_SameDstSameTgt)<BR>
 <A NAME="vSend0"></A>
 <A HREF="#vSendPKT0">send DADNS_from_TN_SameDstSameTgt</A><BR>
@@ -101,69 +98,27 @@ vSend(Link0,DADNS_from_TN_SameDstSameTgt)<BR>
 <PRE>Wait DAD NA from NUT: DADNA_from_NUT,DADNA_from_NUT_woTLL</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>08:48:57</TD>
+<TR VALIGN="TOP"><TD>08:49:53</TD>
 <TD>vRecv(Link0,DADNA_from_NUT DADNA_from_NUT_woTLL) timeout:5 cntLimit:0 seektime:0<BR>
-<A NAME="vRecv4"></A>
-<A HREF="#vRecvPKT4">recv unexpect packet at 08:48:57</A>
-<BR>
-<A NAME="vRecv5"></A>
-<A HREF="#vRecvPKT5">recv unexpect packet at 08:48:57</A>
-<BR>
-<A NAME="vRecv6"></A>
-<A HREF="#vRecvPKT6">recv unexpect packet at 08:48:59</A>
-<BR>
-<A NAME="vRecv7"></A>
-<A HREF="#vRecvPKT7">recv unexpect packet at 08:49:01</A>
-<BR>
-vRecv() return status=1
+<A NAME="vRecv3"></A>
+<A HREF="#vRecvPKT3">recv DADNA_from_NUT</A><BR>
 
 </TD>
 </TR>
 
 <TR><TD><BR></TD><TD>
-<PRE>Received packet count=4</PRE>
-<PRE>Wait DAD NA from NUT: timeout</PRE>
-<PRE>NUT's address is not configured.</PRE>
-<PRE>CE-Router sent DAD NS but not responds to DAD NS to Same address.</PRE>
-<PRE>NG</PRE>
+<PRE>Received packet count=1</PRE>
+<PRE>Received DAD NA from NUT: DADNA_from_NUT</PRE>
+<PRE>NUT assigned the address to the interface.</PRE>
+<PRE>OK</PRE>
 <PRE>*** EOT ***</PRE>
 </TD>
 </TR>
-<TR><TD>08:49:02</TD><TD>End</TD></TR>
+<TR><TD>08:49:53</TD><TD>End</TD></TR>
 </TABLE>
 <HR><H1>Packet Reverse Log</H1>
 <UL>
-<A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 08:48:29</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
-| Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:00:00:02
-| | SourceAddress                    = 00:50:18:1e:7f:2d
-| | Type                             = 34525
-| Packet_IPv6                     (length:56)
-| | Hdr_IPv6                        (length:40)
-| | | Version                          = 6
-| | | TrafficClass                     = 0
-| | | FlowLabel                        = 0
-| | | PayloadLength                    = 16
-| | | NextHeader                       = 58
-| | | HopLimit                         = 255
-| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
-| | | DestinationAddress               = ff02::2
-| | ICMPv6_RS                       (length:16)
-| | | Type                             = 133
-| | | Code                             = 0
-| | | Checksum                         = 19447 calc(19447)
-| | | Reserved                         = 0
-| | | Opt_ICMPv6_SLL                  (length:8)
-| | | | Type                             = 1
-| | | | Length                           = 1
-| | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
-===DADNS_from_NUT=================================
-ng compare hether_nut2tentsolnode.DestinationAddress received:33:33:00:00:00:02 = 33:33:ff:1e:7f:2d
-ng compare _HDR_IPV6_DADNS_from_NUT.SourceAddress received:fe80::250:18ff:fe1e:7f2d = ::
-ng compare _HDR_IPV6_DADNS_from_NUT.DestinationAddress received:ff02::2 = ff02::1:ff1e:7f2d
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 08:48:33</A>
+<A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 08:49:26</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:110)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:16
@@ -192,17 +147,17 @@ ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
 | | ICMPv6_MLDv2Report              (length:48)
 | | | Type                             = 143
 | | | Code                             = 0
-| | | Checksum                         = 55123 calc(55123)
+| | | Checksum                         = 54611 calc(54611)
 | | | Reserved                         = 0
 | | | NumOfMcastAddrRecords            = 2
 | | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 3
+| | | | Type                             = 4
 | | | | AuxDataLen                       = 0
 | | | | NumOfSources                     = 0
 | | | | MulticastAddress                 = ff02::1:ff00:0
 | | | | AuxData                          = 
 | | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 3
+| | | | Type                             = 4
 | | | | AuxDataLen                       = 0
 | | | | NumOfSources                     = 0
 | | | | MulticastAddress                 = ff02::2
@@ -215,7 +170,7 @@ ng compare _HDR_IPV6_DADNS_from_NUT.SourceAddress received:fe80::250:18ff:fe1e:7
 ng compare _HDR_IPV6_DADNS_from_NUT.DestinationAddress received:ff02::16 = ff02::1:ff1e:7f2d
 ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
 ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 08:48:49</A>
+</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 08:49:45</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:90)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:16
@@ -260,7 +215,7 @@ ng compare _HDR_IPV6_DADNS_from_NUT.HopLimit received:1 = 255
 ng compare _HDR_IPV6_DADNS_from_NUT.DestinationAddress received:ff02::16 = ff02::1:ff1e:7f2d
 ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
 ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 08:48:50</A>
+</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 08:49:46</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:78)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:ff:1e:7f:2d
@@ -283,7 +238,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | Reserved                         = 0
 | | | TargetAddress                    = fe80::250:18ff:fe1e:7f2d
 ===DADNS_from_NUT=================================
-</PRE><HR><A NAME="vSendPKT0"></A><A HREF="#vSend0">send DADNS_from_TN_SameDstSameTgt at 08:48:57</A>
+</PRE><HR><A NAME="vSendPKT0"></A><A HREF="#vSend0">send DADNS_from_TN_SameDstSameTgt at 08:49:53</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:78)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:ff:1e:7f:2d
@@ -305,7 +260,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | Checksum                         = 25664 calc(25664)
 | | | Reserved                         = 0
 | | | TargetAddress                    = fe80::250:18ff:fe1e:7f2d
-</PRE><HR><A NAME="vRecvPKT4"></A><A HREF="#vRecv4">Recv at 08:48:57</A>
+</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 08:49:53</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:01
@@ -324,8 +279,8 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | ICMPv6_NA                       (length:32)
 | | | Type                             = 136
 | | | Code                             = 0
-| | | Checksum                         = 37067 calc(37067)
-| | | RFlag                            = 0
+| | | Checksum                         = 4299 calc(4299)
+| | | RFlag                            = 1
 | | | SFlag                            = 0
 | | | OFlag                            = 1
 | | | Reserved                         = 0
@@ -335,105 +290,10 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | Length                           = 1
 | | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
 ===DADNA_from_NUT=================================
-ng compare _ICMPV6_DADNA_from_NUT.RFlag received:0 = 1
-===DADNA_from_NUT_woTLL=================================
-ng compare _ICMPV6_DADNA_from_NUT_woTLL.RFlag received:0 = 1
-ng count Packet_IPv6.ICMPv6_NA != Packet_IPv6.ICMPv6_NA
-</PRE><HR><A NAME="vRecvPKT5"></A><A HREF="#vRecv5">Recv at 08:48:57</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
-| Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:00:00:02
-| | SourceAddress                    = 00:50:18:1e:7f:2d
-| | Type                             = 34525
-| Packet_IPv6                     (length:48)
-| | Hdr_IPv6                        (length:40)
-| | | Version                          = 6
-| | | TrafficClass                     = 0
-| | | FlowLabel                        = 0
-| | | PayloadLength                    = 8
-| | | NextHeader                       = 58
-| | | HopLimit                         = 255
-| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
-| | | DestinationAddress               = ff02::2
-| | ICMPv6_RS                       (length:8)
-| | | Type                             = 133
-| | | Code                             = 0
-| | | Checksum                         = 58523 calc(58523)
-| | | Reserved                         = 0
-===DADNA_from_NUT=================================
-ng compare _HETHER_nut2allnodes.DestinationAddress received:33:33:00:00:00:02 = 33:33:00:00:00:01
-ng compare _HDR_IPV6_DADNA_from_NUT.DestinationAddress received:ff02::2 = ff02::1
-ng meta Packet_IPv6.ICMPv6_NA != Packet_IPv6.ICMPv6_RS
-===DADNA_from_NUT_woTLL=================================
-ng compare _HETHER_nut2allnodes.DestinationAddress received:33:33:00:00:00:02 = 33:33:00:00:00:01
-ng compare _HDR_IPV6_DADNA_from_NUT_woTLL.DestinationAddress received:ff02::2 = ff02::1
-ng meta Packet_IPv6.ICMPv6_NA != Packet_IPv6.ICMPv6_RS
-</PRE><HR><A NAME="vRecvPKT6"></A><A HREF="#vRecv6">Recv at 08:48:59</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
-| Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:00:00:02
-| | SourceAddress                    = 00:50:18:1e:7f:2d
-| | Type                             = 34525
-| Packet_IPv6                     (length:56)
-| | Hdr_IPv6                        (length:40)
-| | | Version                          = 6
-| | | TrafficClass                     = 0
-| | | FlowLabel                        = 0
-| | | PayloadLength                    = 16
-| | | NextHeader                       = 58
-| | | HopLimit                         = 255
-| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
-| | | DestinationAddress               = ff02::2
-| | ICMPv6_RS                       (length:16)
-| | | Type                             = 133
-| | | Code                             = 0
-| | | Checksum                         = 19447 calc(19447)
-| | | Reserved                         = 0
-| | | Opt_ICMPv6_SLL                  (length:8)
-| | | | Type                             = 1
-| | | | Length                           = 1
-| | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
-===DADNA_from_NUT=================================
-ng compare _HETHER_nut2allnodes.DestinationAddress received:33:33:00:00:00:02 = 33:33:00:00:00:01
-ng compare _HDR_IPV6_DADNA_from_NUT.DestinationAddress received:ff02::2 = ff02::1
-ng meta Packet_IPv6.ICMPv6_NA != Packet_IPv6.ICMPv6_RS
-===DADNA_from_NUT_woTLL=================================
-ng compare _HETHER_nut2allnodes.DestinationAddress received:33:33:00:00:00:02 = 33:33:00:00:00:01
-ng compare _HDR_IPV6_DADNA_from_NUT_woTLL.DestinationAddress received:ff02::2 = ff02::1
-ng meta Packet_IPv6.ICMPv6_NA != Packet_IPv6.ICMPv6_RS
-</PRE><HR><A NAME="vRecvPKT7"></A><A HREF="#vRecv7">Recv at 08:49:01</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
-| Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:00:00:02
-| | SourceAddress                    = 00:50:18:1e:7f:2d
-| | Type                             = 34525
-| Packet_IPv6                     (length:48)
-| | Hdr_IPv6                        (length:40)
-| | | Version                          = 6
-| | | TrafficClass                     = 0
-| | | FlowLabel                        = 0
-| | | PayloadLength                    = 8
-| | | NextHeader                       = 58
-| | | HopLimit                         = 255
-| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
-| | | DestinationAddress               = ff02::2
-| | ICMPv6_RS                       (length:8)
-| | | Type                             = 133
-| | | Code                             = 0
-| | | Checksum                         = 58523 calc(58523)
-| | | Reserved                         = 0
-===DADNA_from_NUT=================================
-ng compare _HETHER_nut2allnodes.DestinationAddress received:33:33:00:00:00:02 = 33:33:00:00:00:01
-ng compare _HDR_IPV6_DADNA_from_NUT.DestinationAddress received:ff02::2 = ff02::1
-ng meta Packet_IPv6.ICMPv6_NA != Packet_IPv6.ICMPv6_RS
-===DADNA_from_NUT_woTLL=================================
-ng compare _HETHER_nut2allnodes.DestinationAddress received:33:33:00:00:00:02 = 33:33:00:00:00:01
-ng compare _HDR_IPV6_DADNA_from_NUT_woTLL.DestinationAddress received:ff02::2 = ff02::1
-ng meta Packet_IPv6.ICMPv6_NA != Packet_IPv6.ICMPv6_RS
 </PRE><HR></UL>
 
 </BODY>
 </HTML>
 <!-- 0a23b34546a4fca1f311c19cf7cff3c4 -->
 <!-- 88449886b03b3f9ce0564ef8864f8141 -->
-<!-- ba7211fc27c9641663be6fcbff4047a0 -->
+<!-- ceabe50b71ce508f700e31ec40220d15 -->

@@ -12,7 +12,7 @@
 <TR><TD>CommandLine</TD><TD>./LLA_DAD_NSPostDAD_SameDstSameTgt.seq -pkt DAD_Failure.def -log 4.html -ti Part B&#58; CE-Router receives DAD NS (target == CE-Router)</TD></TR>
 <TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_1</TD></TR>
 <TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
-<TR><TD>Start</TD><TD>2016/05/13 09:12:41</TD></TR>
+<TR><TD>Start</TD><TD>2016/05/16 08:55:16</TD></TR>
 <TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
 <TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
 <TR><TD>Pkt</TD><TD>DAD_Failure.def</TD></TR>
@@ -24,15 +24,15 @@
 <HR>
 <H1>Test Sequence Execution Log</H1>
 <TABLE BORDER=1>
-<TR><TD>09:12:41</TD><TD>Start</TD></TR>
-<TR VALIGN="TOP"><TD>09:12:41</TD><TD>Start Capturing Packets (Link0)<BR>
+<TR><TD>08:55:16</TD><TD>Start</TD></TR>
+<TR VALIGN="TOP"><TD>08:55:16</TD><TD>Start Capturing Packets (Link0)<BR>
 </TD></TR>
 
 <TR><TD><BR></TD><TD>
 <PRE>*** Target initialization phase ***</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:12:41</TD>
+<TR VALIGN="TOP"><TD>08:55:16</TD>
 <TD>
 vRemote(reboot_async.rmt) ``/usr/local/v6eval//bin/manual//reboot_async.rmt -t manual -u root -p amittima -d cuaU0   timeout=120''
 <PRE>
@@ -53,45 +53,42 @@ reboot_async&gt;
 <PRE>*** Target testing phase ***</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:14:30</TD><TD>Clear Captured Packets (Link0)<BR>
+<TR VALIGN="TOP"><TD>08:55:23</TD><TD>Clear Captured Packets (Link0)<BR>
 </TD></TR>
 
 <TR><TD><BR></TD><TD>
 <PRE>TN wait DAD NS(dadns_from_NUT) from CE-Router for 130 [sec],</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:14:30</TD>
+<TR VALIGN="TOP"><TD>08:55:23</TD>
 <TD>vRecv(Link0,DADNS_from_NUT) timeout:130 cntLimit: seektime:0<BR>
 <A NAME="vRecv0"></A>
-<A HREF="#vRecvPKT0">recv unexpect packet at 09:15:47</A>
+<A HREF="#vRecvPKT0">recv unexpect packet at 08:56:44</A>
 <BR>
 <A NAME="vRecv1"></A>
-<A HREF="#vRecvPKT1">recv unexpect packet at 09:15:53</A>
+<A HREF="#vRecvPKT1">recv unexpect packet at 08:56:59</A>
 <BR>
 <A NAME="vRecv2"></A>
-<A HREF="#vRecvPKT2">recv unexpect packet at 09:16:08</A>
-<BR>
-<A NAME="vRecv3"></A>
-<A HREF="#vRecvPKT3">recv DADNS_from_NUT</A><BR>
+<A HREF="#vRecvPKT2">recv DADNS_from_NUT</A><BR>
 
 </TD>
 </TR>
 
-<TR VALIGN="TOP"><TD>09:16:08</TD><TD>Clear Captured Packets (Link0)<BR>
+<TR VALIGN="TOP"><TD>08:56:59</TD><TD>Clear Captured Packets (Link0)<BR>
 </TD></TR>
 
 <TR VALIGN="TOP">
-<TD>09:16:08</TD><TD>
+<TD>08:56:59</TD><TD>
 vSend(Link0,DADNS_from_TN_SameDstSameTgt)<BR>
 <A NAME="vSend0"></A>
 <A HREF="#vSendPKT0">send DADNS_from_TN_SameDstSameTgt</A><BR>
 
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:16:08</TD>
+<TR VALIGN="TOP"><TD>08:56:59</TD>
 <TD>vRecv(Link0,addrconf_rs_unspec addrconf_rs addrconf_rs_sll) timeout:13 cntLimit:0 seektime:0<BR>
-<A NAME="vRecv4"></A>
-<A HREF="#vRecvPKT4">recv unexpect packet at 09:16:15</A>
+<A NAME="vRecv3"></A>
+<A HREF="#vRecvPKT3">recv unexpect packet at 08:57:02</A>
 <BR>
 vRecv() return status=1
 
@@ -103,11 +100,11 @@ vRecv() return status=1
 <PRE>Send NS from TN to NUT: SOLNS_from_TN_SameTgt</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:16:21</TD><TD>Clear Captured Packets (Link0)<BR>
+<TR VALIGN="TOP"><TD>08:57:12</TD><TD>Clear Captured Packets (Link0)<BR>
 </TD></TR>
 
 <TR VALIGN="TOP">
-<TD>09:16:21</TD><TD>
+<TD>08:57:12</TD><TD>
 vSend(Link0,SOLNS_from_TN_SameTgt)<BR>
 <A NAME="vSend1"></A>
 <A HREF="#vSendPKT1">send SOLNS_from_TN_SameTgt</A><BR>
@@ -118,7 +115,7 @@ vSend(Link0,SOLNS_from_TN_SameTgt)<BR>
 <PRE>Wait NA from NUT: NA_from_NUT,NA_from_NUT_woTLL</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:16:21</TD>
+<TR VALIGN="TOP"><TD>08:57:12</TD>
 <TD>vRecv(Link0,NA_from_NUT NA_from_NUT_woTLL) timeout:5 cntLimit:0 seektime:0<BR>
 vRecv() return status=1
 
@@ -133,11 +130,11 @@ vRecv() return status=1
 <PRE>Send NS from TN to NUT: NS_from_TN_SrcDstUni</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:16:26</TD><TD>Clear Captured Packets (Link0)<BR>
+<TR VALIGN="TOP"><TD>08:57:17</TD><TD>Clear Captured Packets (Link0)<BR>
 </TD></TR>
 
 <TR VALIGN="TOP">
-<TD>09:16:26</TD><TD>
+<TD>08:57:17</TD><TD>
 vSend(Link0,NS_from_TN_SrcDstUni)<BR>
 <A NAME="vSend2"></A>
 <A HREF="#vSendPKT2">send NS_from_TN_SrcDstUni</A><BR>
@@ -148,7 +145,7 @@ vSend(Link0,NS_from_TN_SrcDstUni)<BR>
 <PRE>Wait NA from NUT: NA_from_NUT,NA_from_NUT_woTLL</PRE>
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:16:27</TD>
+<TR VALIGN="TOP"><TD>08:57:17</TD>
 <TD>vRecv(Link0,NA_from_NUT NA_from_NUT_woTLL) timeout:5 cntLimit:0 seektime:0<BR>
 vRecv() return status=1
 
@@ -164,41 +161,11 @@ vRecv() return status=1
 <PRE>*** EOT ***</PRE>
 </TD>
 </TR>
-<TR><TD>09:16:32</TD><TD>End</TD></TR>
+<TR><TD>08:57:22</TD><TD>End</TD></TR>
 </TABLE>
 <HR><H1>Packet Reverse Log</H1>
 <UL>
-<A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 09:15:47</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
-| Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:00:00:02
-| | SourceAddress                    = 00:50:18:1e:7f:2d
-| | Type                             = 34525
-| Packet_IPv6                     (length:56)
-| | Hdr_IPv6                        (length:40)
-| | | Version                          = 6
-| | | TrafficClass                     = 0
-| | | FlowLabel                        = 0
-| | | PayloadLength                    = 16
-| | | NextHeader                       = 58
-| | | HopLimit                         = 255
-| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
-| | | DestinationAddress               = ff02::2
-| | ICMPv6_RS                       (length:16)
-| | | Type                             = 133
-| | | Code                             = 0
-| | | Checksum                         = 19447 calc(19447)
-| | | Reserved                         = 0
-| | | Opt_ICMPv6_SLL                  (length:8)
-| | | | Type                             = 1
-| | | | Length                           = 1
-| | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
-===DADNS_from_NUT=================================
-ng compare hether_nut2tentsolnode.DestinationAddress received:33:33:00:00:00:02 = 33:33:ff:1e:7f:2d
-ng compare _HDR_IPV6_DADNS_from_NUT.SourceAddress received:fe80::250:18ff:fe1e:7f2d = ::
-ng compare _HDR_IPV6_DADNS_from_NUT.DestinationAddress received:ff02::2 = ff02::1:ff1e:7f2d
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 09:15:53</A>
+<A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 08:56:44</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:110)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:16
@@ -227,17 +194,17 @@ ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
 | | ICMPv6_MLDv2Report              (length:48)
 | | | Type                             = 143
 | | | Code                             = 0
-| | | Checksum                         = 55123 calc(55123)
+| | | Checksum                         = 54611 calc(54611)
 | | | Reserved                         = 0
 | | | NumOfMcastAddrRecords            = 2
 | | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 3
+| | | | Type                             = 4
 | | | | AuxDataLen                       = 0
 | | | | NumOfSources                     = 0
 | | | | MulticastAddress                 = ff02::1:ff00:0
 | | | | AuxData                          = 
 | | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 3
+| | | | Type                             = 4
 | | | | AuxDataLen                       = 0
 | | | | NumOfSources                     = 0
 | | | | MulticastAddress                 = ff02::2
@@ -250,7 +217,7 @@ ng compare _HDR_IPV6_DADNS_from_NUT.SourceAddress received:fe80::250:18ff:fe1e:7
 ng compare _HDR_IPV6_DADNS_from_NUT.DestinationAddress received:ff02::16 = ff02::1:ff1e:7f2d
 ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
 ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 09:16:08</A>
+</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 08:56:59</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:90)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:16
@@ -295,7 +262,7 @@ ng compare _HDR_IPV6_DADNS_from_NUT.HopLimit received:1 = 255
 ng compare _HDR_IPV6_DADNS_from_NUT.DestinationAddress received:ff02::16 = ff02::1:ff1e:7f2d
 ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
 ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 09:16:08</A>
+</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 08:56:59</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:78)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:ff:1e:7f:2d
@@ -318,7 +285,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | Reserved                         = 0
 | | | TargetAddress                    = fe80::250:18ff:fe1e:7f2d
 ===DADNS_from_NUT=================================
-</PRE><HR><A NAME="vSendPKT0"></A><A HREF="#vSend0">send DADNS_from_TN_SameDstSameTgt at 09:16:08</A>
+</PRE><HR><A NAME="vSendPKT0"></A><A HREF="#vSend0">send DADNS_from_TN_SameDstSameTgt at 08:56:59</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:78)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:ff:1e:7f:2d
@@ -340,7 +307,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | Checksum                         = 25664 calc(25664)
 | | | Reserved                         = 0
 | | | TargetAddress                    = fe80::250:18ff:fe1e:7f2d
-</PRE><HR><A NAME="vRecvPKT4"></A><A HREF="#vRecv4">Recv at 09:16:15</A>
+</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 08:57:02</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:90)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:16
@@ -401,7 +368,7 @@ ng compare _HDR_IPV6_addrconf_rs_sll.SourceAddress received::: = fe80::250:18ff:
 ng compare _HDR_IPV6_addrconf_rs_sll.DestinationAddress received:ff02::16 = ff02::2
 ng meta Packet_IPv6.ICMPv6_RS != Packet_IPv6.Hdr_HopByHop
 ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-</PRE><HR><A NAME="vSendPKT1"></A><A HREF="#vSend1">send SOLNS_from_TN_SameTgt at 09:16:21</A>
+</PRE><HR><A NAME="vSendPKT1"></A><A HREF="#vSend1">send SOLNS_from_TN_SameTgt at 08:57:12</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:ff:1e:7f:2d
@@ -427,7 +394,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | Type                             = 1
 | | | | Length                           = 1
 | | | | LinkLayerAddress                 = 00:00:00:00:01:00
-</PRE><HR><A NAME="vSendPKT2"></A><A HREF="#vSend2">send NS_from_TN_SrcDstUni at 09:16:27</A>
+</PRE><HR><A NAME="vSendPKT2"></A><A HREF="#vSend2">send NS_from_TN_SrcDstUni at 08:57:17</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:50:18:1e:7f:2d
@@ -459,4 +426,4 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 </HTML>
 <!-- b3888c011abd9aabb2879bbc01cad916 -->
 <!-- b837321b1987cfea643e0c5a85ab8a3e -->
-<!-- f4826f896aa10e684a5a8204f09a994c -->
+<!-- f117260a492281fbff26bad79d454436 -->
