@@ -12,7 +12,7 @@
 <TR><TD>CommandLine</TD><TD>./v6LC_2_2_16_K-v3_8_2.seq -pkt ./v6LC_2_2_16_K-v3_8_2.def -log 54.html -ti <TT>Part K&#58; RA without SLLA, NCE STALE</TT></TD></TR>
 <TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_1</TD></TR>
 <TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
-<TR><TD>Start</TD><TD>2016/05/05 09:33:41</TD></TR>
+<TR><TD>Start</TD><TD>2016/05/26 06:27:20</TD></TR>
 <TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
 <TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
 <TR><TD>Pkt</TD><TD>./v6LC_2_2_16_K-v3_8_2.def</TD></TR>
@@ -24,28 +24,22 @@
 <HR>
 <H1>Test Sequence Execution Log</H1>
 <TABLE BORDER=1>
-<TR><TD>09:33:41</TD><TD>Start</TD></TR>
-<TR VALIGN="TOP"><TD>09:33:41</TD><TD>Start Capturing Packets (Link0)<BR>
+<TR><TD>06:27:21</TD><TD>Start</TD></TR>
+<TR VALIGN="TOP"><TD>06:27:21</TD><TD>Start Capturing Packets (Link0)<BR>
 </TD></TR>
 
 <TR VALIGN="TOP">
-<TD>09:33:41</TD><TD>
+<TD>06:27:21</TD><TD>
 vSend(Link0,local_ra)<BR>
 <A NAME="vSend0"></A>
 <A HREF="#vSendPKT0">    Send RA w/o SLL: TR1 (link-local) -&gt; all-nodes multicast address</A><BR>
 
 </TD>
 </TR>
-<TR VALIGN="top"><TD>09:33:41</TD>
-<TD>vRecv(Link0,dhcp6_solicit ns_nutrelay_to_relay ns_nutlla_to_any_client2_lla ns_nutga_to_any_server1lla ns_nutlla_to_any_server1lla ns_nut_global_to_relay1_0_global ns_nut_to_relay2_0 ns_nutlla_to_any_client1_lla ns_nut_to_relay2_0_global ns_nutlla_to_server1ga ns_nutrelay_to_client_global ns_nut_to_relay1_0 ns_nutrelay_to_client_local ns_nut_to_any_client1_global ns_nutrelay_to_server ns_nut_to_relay1_0_global ns_nut_global_to_relay2_0_global) timeout:30 cntLimit:0 seektime:0<BR>
+<TR VALIGN="top"><TD>06:27:21</TD>
+<TD>vRecv(Link0,dhcp6_solicit ns_nutrelay_to_client_global ns_nut_to_any_client1_global ns_nut_to_relay2_0 ns_nut_to_relay1_0 ns_nutrelay_to_relay ns_nutrelay_to_client_local ns_nut_global_to_relay2_0_global ns_nutlla_to_any_client1_lla ns_nutlla_to_any_server1lla ns_nutrelay_to_server ns_nutlla_to_server1ga ns_nut_to_relay1_0_global ns_nutlla_to_any_client2_lla ns_nut_to_relay2_0_global ns_nutga_to_any_server1lla ns_nut_global_to_relay1_0_global) timeout:30 cntLimit:0 seektime:0<BR>
 <A NAME="vRecv0"></A>
-<A HREF="#vRecvPKT0">recv unexpect packet at 09:33:45</A>
-<BR>
-<A NAME="vRecv1"></A>
-<A HREF="#vRecvPKT1">recv unexpect packet at 09:33:45</A>
-<BR>
-<A NAME="vRecv2"></A>
-<A HREF="#vRecvPKT2">recv dhcp6_solicit</A><BR>
+<A HREF="#vRecvPKT0">recv dhcp6_solicit</A><BR>
 
 
 </TD>
@@ -53,12 +47,12 @@ vSend(Link0,local_ra)<BR>
 </TR>
 
 <TR><TD><BR></TD><TD>
-<B>got DHCPv6 Solicit Message</B><BR><B>Solicit Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Identifier</B></td><td>Identifier = 8055775</td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:1e:7f:2d<BR><B>DUID-LLT</B> TIME = 504922230<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 0<BR>T2= 0<BR></td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 0<BR></td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 0<BR>T2= 0<BR></td></tr><tr><td><B>Opt_DHCPv6_ReconfigureAccept</B></td><td><BR></td></tr></table>Checking existing option...<BR><B>Opt_DHCPv6_IA_PD found<BR></B><B>Opt_DHCPv6_IA_NA found<BR></B></TD>
+<B>got DHCPv6 Solicit Message</B><BR><B>Solicit Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 0<BR>T2= 0<BR></td></tr><tr><td><B>Opt_DHCPv6_ReconfigureAccept</B></td><td><BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 7707824</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 0<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:1e:7f:2d<BR><B>DUID-LLT</B> TIME = 504921708<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 0<BR>T2= 0<BR></td></tr></table>Checking existing option...<BR><B>Opt_DHCPv6_IA_NA found<BR></B><B>Opt_DHCPv6_IA_PD found<BR></B></TD>
 
 </TR>
 <TR VALIGN="top">
 
-<TD>09:33:45</TD><TD>
+<TD>06:27:24</TD><TD>
 vSend(Link0,advertise_server1_to_nut)<BR>
 <A NAME="vSend1"></A>
 <A HREF="#vSendPKT1">send advertise_server1_to_nut</A><BR>
@@ -66,13 +60,16 @@ vSend(Link0,advertise_server1_to_nut)<BR>
 </TD>
 </TR>
 <TR><TD><BR></TD><TD>
-<B>Advertise Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Identifier</B></td><td>Identifier = 8055775</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:1e:7f:2d<BR><B>DUID-LLT</B> TIME = 504922230<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 3ffe:501:ffff:1110::<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_SearchList</B></td><td>SearchList = test.example.com.<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_Servers</B></td><td>DNS = 3ffe:501:ffff:100:200:ff:fe00:3f3e<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 50<BR>T2= 80<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr></table></TD>
+<B>Advertise Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 50<BR>T2= 80<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 7707824</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_Servers</B></td><td>DNS = 3ffe:501:ffff:100:200:ff:fe00:3f3e<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:1e:7f:2d<BR><B>DUID-LLT</B> TIME = 504921708<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_SearchList</B></td><td>SearchList = test.example.com.<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 3ffe:501:ffff:1110::<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr></table></TD>
 
 </TR>
-<TR VALIGN="top"><TD>09:33:45</TD>
-<TD>vRecv(Link0,dhcp6_request ns_nut_to_relay1_0 ns_nut_to_relay1_0_global ns_nut_global_to_relay2_0_global ns_nutrelay_to_server ns_nut_to_any_client1_global ns_nutrelay_to_client_local ns_nutlla_to_server1ga ns_nut_to_relay2_0_global ns_nutrelay_to_client_global ns_nutlla_to_any_server1lla ns_nut_to_relay2_0 ns_nutlla_to_any_client1_lla ns_nut_global_to_relay1_0_global ns_nutlla_to_any_client2_lla ns_nutrelay_to_relay ns_nutga_to_any_server1lla) timeout:30 cntLimit:0 seektime:0<BR>
-<A NAME="vRecv3"></A>
-<A HREF="#vRecvPKT3">recv dhcp6_request</A><BR>
+<TR VALIGN="top"><TD>06:27:24</TD>
+<TD>vRecv(Link0,dhcp6_request ns_nutlla_to_server1ga ns_nutlla_to_any_client2_lla ns_nut_to_relay1_0_global ns_nut_to_relay2_0_global ns_nut_global_to_relay1_0_global ns_nutga_to_any_server1lla ns_nutrelay_to_client_global ns_nut_to_any_client1_global ns_nut_to_relay1_0 ns_nut_to_relay2_0 ns_nutrelay_to_client_local ns_nut_global_to_relay2_0_global ns_nutrelay_to_relay ns_nutlla_to_any_client1_lla ns_nutlla_to_any_server1lla ns_nutrelay_to_server) timeout:30 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv1"></A>
+<A HREF="#vRecvPKT1">recv unexpect packet at 06:27:25</A>
+<BR>
+<A NAME="vRecv2"></A>
+<A HREF="#vRecvPKT2">recv dhcp6_request</A><BR>
 
 
 </TD>
@@ -80,12 +77,12 @@ vSend(Link0,advertise_server1_to_nut)<BR>
 </TR>
 
 <TR><TD><BR></TD><TD>
-<B>got DHCPv6 Request Message</B><BR><B>Request Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Identifier</B></td><td>Identifier = 9435140</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:1e:7f:2d<BR><B>DUID-LLT</B> TIME = 504922230<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 0<BR>T2= 0<BR><B>#IA_Prefix Option</B><BR>Prefix= 3ffe:501:ffff:1110::<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 0<BR></td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 0<BR>T2= 0<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_ReconfigureAccept</B></td><td><BR></td></tr></table>Checking existing option...<BR><B>Opt_DHCPv6_IA_PD found<BR></B><B>Opt_DHCPv6_IA_NA found<BR></B></TD>
+<B>got DHCPv6 Request Message</B><BR><B>Request Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 0<BR>T2= 0<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_ReconfigureAccept</B></td><td><BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 13311768</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 0<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:1e:7f:2d<BR><B>DUID-LLT</B> TIME = 504921708<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 0<BR>T2= 0<BR><B>#IA_Prefix Option</B><BR>Prefix= 3ffe:501:ffff:1110::<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr></table>Checking existing option...<BR><B>Opt_DHCPv6_IA_NA found<BR></B><B>Opt_DHCPv6_IA_PD found<BR></B></TD>
 
 </TR>
 <TR VALIGN="top">
 
-<TD>09:33:46</TD><TD>
+<TD>06:27:25</TD><TD>
 vSend(Link0,reply_server1_to_nut)<BR>
 <A NAME="vSend2"></A>
 <A HREF="#vSendPKT2">send reply_server1_to_nut</A><BR>
@@ -93,84 +90,78 @@ vSend(Link0,reply_server1_to_nut)<BR>
 </TD>
 </TR>
 <TR><TD><BR></TD><TD>
-<B>Reply Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Identifier</B></td><td>Identifier = 9435140</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:1e:7f:2d<BR><B>DUID-LLT</B> TIME = 504922230<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 3ffe:501:ffff:1110::<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_SearchList</B></td><td>SearchList = test.example.com.<BR></td></tr><tr><td><B>Opt_DHCPv6_StatusCode</B></td><td>StatusCode= 0 Success <BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_Servers</B></td><td>DNS = 3ffe:501:ffff:100:200:ff:fe00:3f3e<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 50<BR>T2= 80<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr></table></TD></TR>
+<B>Reply Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 50<BR>T2= 80<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 13311768</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_Servers</B></td><td>DNS = 3ffe:501:ffff:100:200:ff:fe00:3f3e<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:1e:7f:2d<BR><B>DUID-LLT</B> TIME = 504921708<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_SearchList</B></td><td>SearchList = test.example.com.<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 3ffe:501:ffff:1110::<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_StatusCode</B></td><td>StatusCode= 0 Success <BR></td></tr></table></TD></TR>
 
 <TR VALIGN="TOP">
-<TD>09:33:46</TD>
+<TD>06:27:25</TD>
 <TD>Wait 3 second
 </TD></TR>
 <TR><TD><BR></TD><TD>
 <FONT COLOR="#FF0000" SIZE="5"><U><B>Test Procedure</B></U></FONT><BR></TD>
 </TR>
 <TR VALIGN="TOP">
-<TD>09:33:49</TD><TD>
+<TD>06:27:28</TD><TD>
 vSend(Link0,tr1_ereq_common)<BR>
 <A NAME="vSend3"></A>
 <A HREF="#vSendPKT3">    Send Echo Request: TR (link-local) -&gt; NUT (link-local)</A><BR>
 
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:33:49</TD>
+<TR VALIGN="TOP"><TD>06:27:28</TD>
 <TD>vRecv(Link0,tr1_mcast_ns_global_common tr1_mcast_ns_linklocal_common) timeout:2 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv3"></A>
+<A HREF="#vRecvPKT3">recv unexpect packet at 06:27:25</A>
+<BR>
 <A NAME="vRecv4"></A>
-<A HREF="#vRecvPKT4">recv unexpect packet at 09:33:46</A>
+<A HREF="#vRecvPKT4">recv unexpect packet at 06:27:25</A>
 <BR>
 <A NAME="vRecv5"></A>
-<A HREF="#vRecvPKT5">recv unexpect packet at 09:33:46</A>
-<BR>
-<A NAME="vRecv6"></A>
-<A HREF="#vRecvPKT6">recv unexpect packet at 09:33:47</A>
-<BR>
-<A NAME="vRecv7"></A>
-<A HREF="#vRecvPKT7">    Recv NS w/ SLL: NUT (link-local) -&gt; TR1 (link-local) solicited-node multicast address</A><BR>
+<A HREF="#vRecvPKT5">    Recv NS w/ SLL: NUT (link-local) -&gt; TR1 (link-local) solicited-node multicast address</A><BR>
 
 </TD>
 </TR>
 
 <TR VALIGN="TOP">
-<TD>09:33:49</TD><TD>
+<TD>06:27:28</TD><TD>
 vSend(Link0,tr1_na_linklocal_common)<BR>
 <A NAME="vSend4"></A>
 <A HREF="#vSendPKT4">    Send NA (RSO) w/ TLL: TR (link-local) -&gt; NUT (link-local)</A><BR>
 
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:33:49</TD>
+<TR VALIGN="TOP"><TD>06:27:28</TD>
 <TD>vRecv(Link0,tr1_erep_common) timeout:2 cntLimit:0 seektime:0<BR>
-<A NAME="vRecv8"></A>
-<A HREF="#vRecvPKT8">    Recv Echo Reply: NUT (link-local) -&gt; TR (link-local)</A><BR>
+<A NAME="vRecv6"></A>
+<A HREF="#vRecvPKT6">    Recv Echo Reply: NUT (link-local) -&gt; TR (link-local)</A><BR>
 
 </TD>
 </TR>
 
-<TR VALIGN="TOP"><TD>09:33:49</TD>
+<TR VALIGN="TOP"><TD>06:27:28</TD>
 <TD>vRecv(Link0,) timeout:45 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv7"></A>
+<A HREF="#vRecvPKT7">recv a packet at 06:27:29</A>
+<BR>
+<A NAME="vRecv8"></A>
+<A HREF="#vRecvPKT8">recv a packet at 06:27:33</A>
+<BR>
 <A NAME="vRecv9"></A>
-<A HREF="#vRecvPKT9">recv a packet at 09:33:49</A>
+<A HREF="#vRecvPKT9">recv a packet at 06:27:39</A>
 <BR>
 <A NAME="vRecv10"></A>
-<A HREF="#vRecvPKT10">recv a packet at 09:33:49</A>
+<A HREF="#vRecvPKT10">recv a packet at 06:27:43</A>
 <BR>
 <A NAME="vRecv11"></A>
-<A HREF="#vRecvPKT11">recv a packet at 09:33:53</A>
+<A HREF="#vRecvPKT11">recv a packet at 06:27:48</A>
 <BR>
 <A NAME="vRecv12"></A>
-<A HREF="#vRecvPKT12">recv a packet at 09:33:57</A>
+<A HREF="#vRecvPKT12">recv a packet at 06:27:52</A>
 <BR>
 <A NAME="vRecv13"></A>
-<A HREF="#vRecvPKT13">recv a packet at 09:34:02</A>
+<A HREF="#vRecvPKT13">recv a packet at 06:27:56</A>
 <BR>
 <A NAME="vRecv14"></A>
-<A HREF="#vRecvPKT14">recv a packet at 09:34:10</A>
-<BR>
-<A NAME="vRecv15"></A>
-<A HREF="#vRecvPKT15">recv a packet at 09:34:15</A>
-<BR>
-<A NAME="vRecv16"></A>
-<A HREF="#vRecvPKT16">recv a packet at 09:34:26</A>
-<BR>
-<A NAME="vRecv17"></A>
-<A HREF="#vRecvPKT17">recv a packet at 09:34:34</A>
+<A HREF="#vRecvPKT14">recv a packet at 06:28:11</A>
 <BR>
 vRecv() return status=1
 
@@ -178,7 +169,7 @@ vRecv() return status=1
 </TR>
 
 <TR VALIGN="TOP">
-<TD>09:34:34</TD><TD>
+<TD>06:28:13</TD><TD>
 vSend(Link0,local_ra_update)<BR>
 <A NAME="vSend5"></A>
 <A HREF="#vSendPKT5">send local_ra_update</A><BR>
@@ -186,42 +177,45 @@ vSend(Link0,local_ra_update)<BR>
 </TD>
 </TR>
 <TR VALIGN="TOP">
-<TD>09:34:34</TD><TD>
+<TD>06:28:13</TD><TD>
 vSend(Link0,tr1_ereq_common)<BR>
 <A NAME="vSend6"></A>
 <A HREF="#vSendPKT6">    Send Echo Request: TR (link-local) -&gt; NUT (link-local)</A><BR>
 
 </TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:34:34</TD>
+<TR VALIGN="TOP"><TD>06:28:13</TD>
 <TD>vRecv(Link0,tr1_erep_common) timeout:2 cntLimit:0 seektime:0<BR>
-<A NAME="vRecv18"></A>
-<A HREF="#vRecvPKT18">    Recv Echo Reply: NUT (link-local) -&gt; TR (link-local)</A><BR>
+<A NAME="vRecv15"></A>
+<A HREF="#vRecvPKT15">    Recv Echo Reply: NUT (link-local) -&gt; TR (link-local)</A><BR>
 
 </TD>
 </TR>
 
-<TR VALIGN="TOP"><TD>09:34:34</TD>
+<TR VALIGN="TOP"><TD>06:28:13</TD>
 <TD>vRecv(Link0,tr1_ucast_ns_global tr1_ucast_ns_global_sll tr1_ucast_ns_linklocal tr1_ucast_ns_linklocal_sll) timeout:7 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv16"></A>
+<A HREF="#vRecvPKT16">recv unexpect packet at 06:28:15</A>
+<BR>
+<A NAME="vRecv17"></A>
+<A HREF="#vRecvPKT17">recv unexpect packet at 06:28:15</A>
+<BR>
+<A NAME="vRecv18"></A>
+<A HREF="#vRecvPKT18">    Recv NS w/ SLL: NUT (link-local) -&gt; TR1 (link-local)</A><BR>
+
+</TD>
+</TR>
+
+<TR VALIGN="TOP"><TD>06:28:18</TD>
+<TD>vRecv(Link0,) timeout:4 cntLimit:0 seektime:0<BR>
 <A NAME="vRecv19"></A>
-<A HREF="#vRecvPKT19">recv unexpect packet at 09:34:37</A>
+<A HREF="#vRecvPKT19">recv a packet at 06:28:19</A>
 <BR>
 <A NAME="vRecv20"></A>
-<A HREF="#vRecvPKT20">recv unexpect packet at 09:34:37</A>
+<A HREF="#vRecvPKT20">recv a packet at 06:28:19</A>
 <BR>
 <A NAME="vRecv21"></A>
-<A HREF="#vRecvPKT21">    Recv NS w/ SLL: NUT (link-local) -&gt; TR1 (link-local)</A><BR>
-
-</TD>
-</TR>
-
-<TR VALIGN="TOP"><TD>09:34:39</TD>
-<TD>vRecv(Link0,) timeout:4 cntLimit:0 seektime:0<BR>
-<A NAME="vRecv22"></A>
-<A HREF="#vRecvPKT22">recv a packet at 09:34:40</A>
-<BR>
-<A NAME="vRecv23"></A>
-<A HREF="#vRecvPKT23">recv a packet at 09:34:41</A>
+<A HREF="#vRecvPKT21">recv a packet at 06:28:20</A>
 <BR>
 vRecv() return status=1
 
@@ -231,11 +225,11 @@ vRecv() return status=1
 <TR><TD><BR></TD><TD>
 <B>PASS</B><BR><FONT COLOR="#FF0000" SIZE="5"><U><B>Common Test Cleanup</B></U></FONT><BR></TD>
 </TR>
-<TR VALIGN="TOP"><TD>09:34:43</TD><TD>Clear Captured Packets (Link0)<BR>
+<TR VALIGN="TOP"><TD>06:28:22</TD><TD>Clear Captured Packets (Link0)<BR>
 </TD></TR>
 
 <TR VALIGN="TOP">
-<TD>09:34:43</TD><TD>
+<TD>06:28:22</TD><TD>
 vSend(Link0,tr1_ra_force_cleanup)<BR>
 <A NAME="vSend7"></A>
 <A HREF="#vSendPKT7">    Send RA (rltime=0, rtime=30000, retrans=1000, vltime=0, pltime=0) w/o SLL: TR1 (link-local) -&gt; all-nodes multicast address</A><BR>
@@ -243,13 +237,13 @@ vSend(Link0,tr1_ra_force_cleanup)<BR>
 </TD>
 </TR>
 <TR VALIGN="TOP">
-<TD>09:34:43</TD>
+<TD>06:28:22</TD>
 <TD>Wait 10 second
 </TD></TR>
-<TR VALIGN="TOP"><TD>09:34:53</TD><TD>Stop Capturing Packets (Link0)<BR>
+<TR VALIGN="TOP"><TD>06:28:32</TD><TD>Stop Capturing Packets (Link0)<BR>
 </TD></TR>
 
-<TR VALIGN="TOP"><TD>09:34:53</TD>
+<TR VALIGN="TOP"><TD>06:28:32</TD>
 <TD>
 vRemote(reboot.rmt) ``/usr/local/v6eval//bin/manual//reboot.rmt -t manual -u root -p amittima -d cuaU0   ''
 <PRE>
@@ -263,11 +257,11 @@ reboot&gt;
 
 </PRE>
 </TD></TR>
-<TR><TD>09:34:56</TD><TD>End</TD></TR>
+<TR><TD>06:28:55</TD><TD>End</TD></TR>
 </TABLE>
 <HR><H1>Packet Reverse Log</H1>
 <UL>
-<A NAME="vSendPKT0"></A><A HREF="#vSend0">    Send RA w/o SLL: TR1 (link-local) -&gt; all-nodes multicast address at 09:33:41</A>
+<A NAME="vSendPKT0"></A><A HREF="#vSend0">    Send RA w/o SLL: TR1 (link-local) -&gt; all-nodes multicast address at 06:27:21</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:102)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:01
@@ -308,235 +302,31 @@ reboot&gt;
 | | | | PreferredLifetime                = 600
 | | | | Reserved2                        = 0
 | | | | Prefix                           = 3ffe:501:ffff:100::
-</PRE><HR><A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 09:33:45</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
-| Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:00:00:02
-| | SourceAddress                    = 00:50:18:1e:7f:2d
-| | Type                             = 34525
-| Packet_IPv6                     (length:48)
-| | Hdr_IPv6                        (length:40)
-| | | Version                          = 6
-| | | TrafficClass                     = 0
-| | | FlowLabel                        = 0
-| | | PayloadLength                    = 8
-| | | NextHeader                       = 58
-| | | HopLimit                         = 255
-| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
-| | | DestinationAddress               = ff02::2
-| | ICMPv6_RS                       (length:8)
-| | | Type                             = 133
-| | | Code                             = 0
-| | | Checksum                         = 58523 calc(58523)
-| | | Reserved                         = 0
-===dhcp6_solicit=================================
-ng compare _HDR_IPV6_dhcp6_solicit.NextHeader received:58 = 17
-ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_RS
-===ns_nutrelay_to_relay=================================
-ng compare _HDR_IPV6_ns_nutrelay_to_relay.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nutlla_to_any_client2_lla=================================
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nutga_to_any_server1lla=================================
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nutlla_to_any_server1lla=================================
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nut_global_to_relay1_0_global=================================
-ng compare _HDR_IPV6_ns_nut_global_to_relay1_0_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100::abcd
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nut_to_relay2_0=================================
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nutlla_to_any_client1_lla=================================
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nut_to_relay2_0_global=================================
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nutlla_to_server1ga=================================
-ng compare _HETHER_nut_to_server1.DestinationAddress received:33:33:00:00:00:02 = 00:00:00:00:a1:a1
-ng compare _HDR_IPV6_ns_nutlla_to_server1ga.DestinationAddress received:ff02::2 = 3ffe:501:ffff:100:200:ff:fe00:a1a1
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nutrelay_to_client_global=================================
-ng compare _HDR_IPV6_ns_nutrelay_to_client_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
-ng compare _HDR_IPV6_ns_nutrelay_to_client_global.DestinationAddress received:ff02::2 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nut_to_relay1_0=================================
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nutrelay_to_client_local=================================
-ng compare _HDR_IPV6_ns_nutrelay_to_client_local.DestinationAddress received:ff02::2 = fe80::200:ff:fe00:a2a2
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nut_to_any_client1_global=================================
-ng compare _HDR_IPV6_ns_nut_to_any_client1_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100::abcd
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nutrelay_to_server=================================
-ng compare _HDR_IPV6_ns_nutrelay_to_server.DestinationAddress received:ff02::2 = fe80::200:ff:fe00:a1a1
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nut_to_relay1_0_global=================================
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-===ns_nut_global_to_relay2_0_global=================================
-ng compare _HDR_IPV6_ns_nut_global_to_relay2_0_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100::abcd
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
-</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 09:33:45</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:110)
-| Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:00:00:16
-| | SourceAddress                    = 00:50:18:1e:7f:2d
-| | Type                             = 34525
-| Packet_IPv6                     (length:96)
-| | Hdr_IPv6                        (length:40)
-| | | Version                          = 6
-| | | TrafficClass                     = 0
-| | | FlowLabel                        = 0
-| | | PayloadLength                    = 56
-| | | NextHeader                       = 0
-| | | HopLimit                         = 1
-| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
-| | | DestinationAddress               = ff02::16
-| | Hdr_HopByHop                    (length:8)
-| | | NextHeader                       = 58
-| | | HeaderExtLength                  = 0
-| | | Opt_RouterAlert                 (length:4)
-| | | | OptionType                       = 5
-| | | | OptDataLength                    = 2
-| | | | Value                            = 0
-| | | Opt_PadN                        (length:2)
-| | | | OptionType                       = 1
-| | | | OptDataLength                    = 0
-| | ICMPv6_MLDv2Report              (length:48)
-| | | Type                             = 143
-| | | Code                             = 0
-| | | Checksum                         = 55123 calc(55123)
-| | | Reserved                         = 0
-| | | NumOfMcastAddrRecords            = 2
-| | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 3
-| | | | AuxDataLen                       = 0
-| | | | NumOfSources                     = 0
-| | | | MulticastAddress                 = ff02::1:ff00:0
-| | | | AuxData                          = 
-| | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 3
-| | | | AuxDataLen                       = 0
-| | | | NumOfSources                     = 0
-| | | | MulticastAddress                 = ff02::2
-| | | | AuxData                          = 
-===dhcp6_solicit=================================
-ng compare _HDR_IPV6_dhcp6_solicit.NextHeader received:0 = 17
-ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nutrelay_to_relay=================================
-ng compare _HDR_IPV6_ns_nutrelay_to_relay.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nutrelay_to_relay.HopLimit received:1 = 255
-ng compare _HDR_IPV6_ns_nutrelay_to_relay.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nutlla_to_any_client2_lla=================================
-ng compare _HDR_IPV6_ns_nutlla_to_any_client2_lla.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nutlla_to_any_client2_lla.HopLimit received:1 = 255
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nutga_to_any_server1lla=================================
-ng compare _HDR_IPV6_ns_nutga_to_any_server1lla.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nutga_to_any_server1lla.HopLimit received:1 = 255
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nutlla_to_any_server1lla=================================
-ng compare _HDR_IPV6_ns_nutlla_to_any_server1lla.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nutlla_to_any_server1lla.HopLimit received:1 = 255
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nut_global_to_relay1_0_global=================================
-ng compare _HDR_IPV6_ns_nut_global_to_relay1_0_global.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nut_global_to_relay1_0_global.HopLimit received:1 = 255
-ng compare _HDR_IPV6_ns_nut_global_to_relay1_0_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100::abcd
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nut_to_relay2_0=================================
-ng compare _HDR_IPV6_ns_nut_to_relay2_0.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nut_to_relay2_0.HopLimit received:1 = 255
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nutlla_to_any_client1_lla=================================
-ng compare _HDR_IPV6_ns_nutlla_to_any_client1_lla.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nutlla_to_any_client1_lla.HopLimit received:1 = 255
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nut_to_relay2_0_global=================================
-ng compare _HDR_IPV6_ns_nut_to_relay2_0_global.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nut_to_relay2_0_global.HopLimit received:1 = 255
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nutlla_to_server1ga=================================
-ng compare _HETHER_nut_to_server1.DestinationAddress received:33:33:00:00:00:16 = 00:00:00:00:a1:a1
-ng compare _HDR_IPV6_ns_nutlla_to_server1ga.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nutlla_to_server1ga.HopLimit received:1 = 255
-ng compare _HDR_IPV6_ns_nutlla_to_server1ga.DestinationAddress received:ff02::16 = 3ffe:501:ffff:100:200:ff:fe00:a1a1
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nutrelay_to_client_global=================================
-ng compare _HDR_IPV6_ns_nutrelay_to_client_global.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nutrelay_to_client_global.HopLimit received:1 = 255
-ng compare _HDR_IPV6_ns_nutrelay_to_client_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
-ng compare _HDR_IPV6_ns_nutrelay_to_client_global.DestinationAddress received:ff02::16 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nut_to_relay1_0=================================
-ng compare _HDR_IPV6_ns_nut_to_relay1_0.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nut_to_relay1_0.HopLimit received:1 = 255
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nutrelay_to_client_local=================================
-ng compare _HDR_IPV6_ns_nutrelay_to_client_local.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nutrelay_to_client_local.HopLimit received:1 = 255
-ng compare _HDR_IPV6_ns_nutrelay_to_client_local.DestinationAddress received:ff02::16 = fe80::200:ff:fe00:a2a2
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nut_to_any_client1_global=================================
-ng compare _HDR_IPV6_ns_nut_to_any_client1_global.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nut_to_any_client1_global.HopLimit received:1 = 255
-ng compare _HDR_IPV6_ns_nut_to_any_client1_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100::abcd
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nutrelay_to_server=================================
-ng compare _HDR_IPV6_ns_nutrelay_to_server.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nutrelay_to_server.HopLimit received:1 = 255
-ng compare _HDR_IPV6_ns_nutrelay_to_server.DestinationAddress received:ff02::16 = fe80::200:ff:fe00:a1a1
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nut_to_relay1_0_global=================================
-ng compare _HDR_IPV6_ns_nut_to_relay1_0_global.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nut_to_relay1_0_global.HopLimit received:1 = 255
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===ns_nut_global_to_relay2_0_global=================================
-ng compare _HDR_IPV6_ns_nut_global_to_relay2_0_global.NextHeader received:0 = 58
-ng compare _HDR_IPV6_ns_nut_global_to_relay2_0_global.HopLimit received:1 = 255
-ng compare _HDR_IPV6_ns_nut_global_to_relay2_0_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100::abcd
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 09:33:45</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:134)
+</PRE><HR><A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 06:27:24</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:136)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:01:00:02
 | | SourceAddress                    = 00:50:18:1e:7f:2d
 | | Type                             = 34525
-| Packet_IPv6                     (length:120)
+| Packet_IPv6                     (length:122)
 | | Hdr_IPv6                        (length:40)
 | | | Version                          = 6
 | | | TrafficClass                     = 0
 | | | FlowLabel                        = 0
-| | | PayloadLength                    = 80
+| | | PayloadLength                    = 82
 | | | NextHeader                       = 17
 | | | HopLimit                         = 1
 | | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
 | | | DestinationAddress               = ff02::1:2
-| | Upp_UDP                         (length:80)
+| | Upp_UDP                         (length:82)
 | | | Hdr_UDP                         (length:8)
 | | | | SourcePort                       = 546
 | | | | DestinationPort                  = 547
-| | | | Length                           = 80
-| | | | Checksum                         = 16582 calc(16582)
-| | | Udp_DHCPv6_Solicit              (length:72)
+| | | | Length                           = 82
+| | | | Checksum                         = 37292 calc(37292)
+| | | Udp_DHCPv6_Solicit              (length:74)
 | | | | Type                             = 1
-| | | | Identifier                       = 8055775
+| | | | Identifier                       = 7707824
 | | | | Opt_DHCPv6_ReconfigureAccept    (length:4)
 | | | | | Code                             = 20
 | | | | | Length                           = 0
@@ -546,7 +336,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | | DHCPv6_DUID_LLT_Ether           (length:14)
 | | | | | | Type                             = 1
 | | | | | | HardwareType                     = 1
-| | | | | | Time                             = 504922230
+| | | | | | Time                             = 504921708
 | | | | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
 | | | | Opt_DHCPv6_IA_NA                (length:16)
 | | | | | Code                             = 3
@@ -558,11 +348,12 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | | Code                             = 8
 | | | | | Length                           = 2
 | | | | | Time                             = 0
-| | | | Opt_DHCPv6_OptionRequest        (length:8)
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
 | | | | | Code                             = 6
-| | | | | Length                           = 4
+| | | | | Length                           = 6
 | | | | | OptionCode                       = 23
 | | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
 | | | | Opt_DHCPv6_IA_PD                (length:16)
 | | | | | Code                             = 25
 | | | | | Length                           = 12
@@ -570,7 +361,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | | Time1                            = 0
 | | | | | Time2                            = 0
 ===dhcp6_solicit=================================
-</PRE><HR><A NAME="vSendPKT1"></A><A HREF="#vSend1">send advertise_server1_to_nut at 09:33:45</A>
+</PRE><HR><A NAME="vSendPKT1"></A><A HREF="#vSend1">send advertise_server1_to_nut at 06:27:24</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:233)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:50:18:1e:7f:2d
@@ -591,17 +382,17 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | SourcePort                       = 546
 | | | | DestinationPort                  = 546
 | | | | Length                           = 179
-| | | | Checksum                         = 23848 calc(23848)
+| | | | Checksum                         = 44646 calc(44646)
 | | | Udp_DHCPv6_Advertise            (length:171)
 | | | | Type                             = 2
-| | | | Identifier                       = 8055775
+| | | | Identifier                       = 7707824
 | | | | Opt_DHCPv6_CID                  (length:18)
 | | | | | Code                             = 1
 | | | | | Length                           = 14
 | | | | | DHCPv6_DUID_LLT_Ether           (length:14)
 | | | | | | Type                             = 1
 | | | | | | HardwareType                     = 1
-| | | | | | Time                             = 504922230
+| | | | | | Time                             = 504921708
 | | | | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
 | | | | Opt_DHCPv6_SID                  (length:18)
 | | | | | Code                             = 2
@@ -644,31 +435,97 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | | Code                             = 24
 | | | | | Length                           = 18
 | | | | | SearchString                     = test.example.com.
-</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 09:33:46</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:209)
+</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 06:27:25</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
 | Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:01:00:02
+| | DestinationAddress               = 33:33:00:00:00:02
 | | SourceAddress                    = 00:50:18:1e:7f:2d
 | | Type                             = 34525
-| Packet_IPv6                     (length:195)
+| Packet_IPv6                     (length:48)
 | | Hdr_IPv6                        (length:40)
 | | | Version                          = 6
 | | | TrafficClass                     = 0
 | | | FlowLabel                        = 0
-| | | PayloadLength                    = 155
+| | | PayloadLength                    = 8
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
+| | | DestinationAddress               = ff02::2
+| | ICMPv6_RS                       (length:8)
+| | | Type                             = 133
+| | | Code                             = 0
+| | | Checksum                         = 58523 calc(58523)
+| | | Reserved                         = 0
+===dhcp6_request=================================
+ng compare _HDR_IPV6_dhcp6_request.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_RS
+===ns_nutlla_to_server1ga=================================
+ng compare _HETHER_nut_to_server1.DestinationAddress received:33:33:00:00:00:02 = 00:00:00:00:a1:a1
+ng compare _HDR_IPV6_ns_nutlla_to_server1ga.DestinationAddress received:ff02::2 = 3ffe:501:ffff:100:200:ff:fe00:a1a1
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nutlla_to_any_client2_lla=================================
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nut_to_relay1_0_global=================================
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nut_to_relay2_0_global=================================
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nut_global_to_relay1_0_global=================================
+ng compare _HDR_IPV6_ns_nut_global_to_relay1_0_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100::abcd
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nutga_to_any_server1lla=================================
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nutrelay_to_client_global=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_client_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
+ng compare _HDR_IPV6_ns_nutrelay_to_client_global.DestinationAddress received:ff02::2 = 3ffe:501:ffff:100:200:ff:fe00:a2a2
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nut_to_any_client1_global=================================
+ng compare _HDR_IPV6_ns_nut_to_any_client1_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100::abcd
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nut_to_relay1_0=================================
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nut_to_relay2_0=================================
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nutrelay_to_client_local=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_client_local.DestinationAddress received:ff02::2 = fe80::200:ff:fe00:a2a2
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nut_global_to_relay2_0_global=================================
+ng compare _HDR_IPV6_ns_nut_global_to_relay2_0_global.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100::abcd
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nutrelay_to_relay=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_relay.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nutlla_to_any_client1_lla=================================
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nutlla_to_any_server1lla=================================
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+===ns_nutrelay_to_server=================================
+ng compare _HDR_IPV6_ns_nutrelay_to_server.DestinationAddress received:ff02::2 = fe80::200:ff:fe00:a1a1
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_RS
+</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 06:27:25</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:211)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:1e:7f:2d
+| | Type                             = 34525
+| Packet_IPv6                     (length:197)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 157
 | | | NextHeader                       = 17
 | | | HopLimit                         = 1
 | | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
 | | | DestinationAddress               = ff02::1:2
-| | Upp_UDP                         (length:155)
+| | Upp_UDP                         (length:157)
 | | | Hdr_UDP                         (length:8)
 | | | | SourcePort                       = 546
 | | | | DestinationPort                  = 547
-| | | | Length                           = 155
-| | | | Checksum                         = 13752 calc(13752)
-| | | Udp_DHCPv6_Request              (length:147)
+| | | | Length                           = 157
+| | | | Checksum                         = 4123 calc(4123)
+| | | Udp_DHCPv6_Request              (length:149)
 | | | | Type                             = 3
-| | | | Identifier                       = 9435140
+| | | | Identifier                       = 13311768
 | | | | Opt_DHCPv6_ReconfigureAccept    (length:4)
 | | | | | Code                             = 20
 | | | | | Length                           = 0
@@ -678,7 +535,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | | DHCPv6_DUID_LLT_Ether           (length:14)
 | | | | | | Type                             = 1
 | | | | | | HardwareType                     = 1
-| | | | | | Time                             = 504922230
+| | | | | | Time                             = 504921708
 | | | | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
 | | | | Opt_DHCPv6_SID                  (length:18)
 | | | | | Code                             = 2
@@ -704,11 +561,12 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | | Code                             = 8
 | | | | | Length                           = 2
 | | | | | Time                             = 0
-| | | | Opt_DHCPv6_OptionRequest        (length:8)
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
 | | | | | Code                             = 6
-| | | | | Length                           = 4
+| | | | | Length                           = 6
 | | | | | OptionCode                       = 23
 | | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
 | | | | Opt_DHCPv6_IA_PD                (length:45)
 | | | | | Code                             = 25
 | | | | | Length                           = 41
@@ -723,7 +581,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | | | PrefixLength                     = 60
 | | | | | | Prefix                           = 3ffe:501:ffff:1110::
 ===dhcp6_request=================================
-</PRE><HR><A NAME="vSendPKT2"></A><A HREF="#vSend2">send reply_server1_to_nut at 09:33:46</A>
+</PRE><HR><A NAME="vSendPKT2"></A><A HREF="#vSend2">send reply_server1_to_nut at 06:27:25</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:241)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:50:18:1e:7f:2d
@@ -744,17 +602,17 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | SourcePort                       = 547
 | | | | DestinationPort                  = 546
 | | | | Length                           = 187
-| | | | Checksum                         = 15069 calc(15069)
+| | | | Checksum                         = 5528 calc(5528)
 | | | Udp_DHCPv6_Reply                (length:179)
 | | | | Type                             = 7
-| | | | Identifier                       = 9435140
+| | | | Identifier                       = 13311768
 | | | | Opt_DHCPv6_CID                  (length:18)
 | | | | | Code                             = 1
 | | | | | Length                           = 14
 | | | | | DHCPv6_DUID_LLT_Ether           (length:14)
 | | | | | | Type                             = 1
 | | | | | | HardwareType                     = 1
-| | | | | | Time                             = 504922230
+| | | | | | Time                             = 504921708
 | | | | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
 | | | | Opt_DHCPv6_SID                  (length:18)
 | | | | | Code                             = 2
@@ -802,7 +660,7 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | | Code                             = 24
 | | | | | Length                           = 18
 | | | | | SearchString                     = test.example.com.
-</PRE><HR><A NAME="vSendPKT3"></A><A HREF="#vSend3">    Send Echo Request: TR (link-local) -&gt; NUT (link-local) at 09:33:49</A>
+</PRE><HR><A NAME="vSendPKT3"></A><A HREF="#vSend3">    Send Echo Request: TR (link-local) -&gt; NUT (link-local) at 06:27:28</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:50:18:1e:7f:2d
@@ -826,18 +684,18 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | SequenceNumber                   = 0
 | | | Payload                         (length:8)
 | | | | data                             = 01234567 89abcdef
-</PRE><HR><A NAME="vRecvPKT4"></A><A HREF="#vRecv4">Recv at 09:33:46</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:110)
+</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 06:27:25</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:130)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:16
 | | SourceAddress                    = 00:50:18:1e:7f:2d
 | | Type                             = 34525
-| Packet_IPv6                     (length:96)
+| Packet_IPv6                     (length:116)
 | | Hdr_IPv6                        (length:40)
 | | | Version                          = 6
 | | | TrafficClass                     = 0
 | | | FlowLabel                        = 0
-| | | PayloadLength                    = 56
+| | | PayloadLength                    = 76
 | | | NextHeader                       = 0
 | | | HopLimit                         = 1
 | | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
@@ -852,71 +710,12 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | Opt_PadN                        (length:2)
 | | | | OptionType                       = 1
 | | | | OptDataLength                    = 0
-| | ICMPv6_MLDv2Report              (length:48)
+| | ICMPv6_MLDv2Report              (length:68)
 | | | Type                             = 143
 | | | Code                             = 0
-| | | Checksum                         = 54611 calc(54611)
+| | | Checksum                         = 43296 calc(43296)
 | | | Reserved                         = 0
-| | | NumOfMcastAddrRecords            = 2
-| | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 4
-| | | | AuxDataLen                       = 0
-| | | | NumOfSources                     = 0
-| | | | MulticastAddress                 = ff02::1:ff00:0
-| | | | AuxData                          = 
-| | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 4
-| | | | AuxDataLen                       = 0
-| | | | NumOfSources                     = 0
-| | | | MulticastAddress                 = ff02::2
-| | | | AuxData                          = 
-===tr1_mcast_ns_global_common=================================
-ng compare _HETHER_nut_to_tr1solnode.DestinationAddress received:33:33:00:00:00:16 = 33:33:ff:00:a1:a1
-ng compare _HDR_IPV6_tr1_mcast_ns_global_common.NextHeader received:0 = 58
-ng compare _HDR_IPV6_tr1_mcast_ns_global_common.HopLimit received:1 = 255
-ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
-ng compare _HDR_IPV6_tr1_mcast_ns_global_common.DestinationAddress received:ff02::16 = ff02::1:ff00:a1a1
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-===tr1_mcast_ns_linklocal_common=================================
-ng compare _HETHER_nut_to_tr1solnode.DestinationAddress received:33:33:00:00:00:16 = 33:33:ff:00:a1:a1
-ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.NextHeader received:0 = 58
-ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.HopLimit received:1 = 255
-ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.DestinationAddress received:ff02::16 = ff02::1:ff00:a1a1
-ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
-ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-</PRE><HR><A NAME="vRecvPKT5"></A><A HREF="#vRecv5">Recv at 09:33:46</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:150)
-| Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:00:00:16
-| | SourceAddress                    = 00:50:18:1e:7f:2d
-| | Type                             = 34525
-| Packet_IPv6                     (length:136)
-| | Hdr_IPv6                        (length:40)
-| | | Version                          = 6
-| | | TrafficClass                     = 0
-| | | FlowLabel                        = 0
-| | | PayloadLength                    = 96
-| | | NextHeader                       = 0
-| | | HopLimit                         = 1
-| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
-| | | DestinationAddress               = ff02::16
-| | Hdr_HopByHop                    (length:8)
-| | | NextHeader                       = 58
-| | | HeaderExtLength                  = 0
-| | | Opt_RouterAlert                 (length:4)
-| | | | OptionType                       = 5
-| | | | OptDataLength                    = 2
-| | | | Value                            = 0
-| | | Opt_PadN                        (length:2)
-| | | | OptionType                       = 1
-| | | | OptDataLength                    = 0
-| | ICMPv6_MLDv2Report              (length:88)
-| | | Type                             = 143
-| | | Code                             = 0
-| | | Checksum                         = 42502 calc(42502)
-| | | Reserved                         = 0
-| | | NumOfMcastAddrRecords            = 4
+| | | NumOfMcastAddrRecords            = 3
 | | | MLDv2_AddrRecord                (length:20)
 | | | | Type                             = 4
 | | | | AuxDataLen                       = 0
@@ -928,12 +727,6 @@ ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 | | | | AuxDataLen                       = 0
 | | | | NumOfSources                     = 0
 | | | | MulticastAddress                 = ff02::1:ff00:0
-| | | | AuxData                          = 
-| | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 4
-| | | | AuxDataLen                       = 0
-| | | | NumOfSources                     = 0
-| | | | MulticastAddress                 = ff02::2
 | | | | AuxData                          = 
 | | | MLDv2_AddrRecord                (length:20)
 | | | | Type                             = 4
@@ -956,41 +749,72 @@ ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.HopLimit received:1 = 255
 ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.DestinationAddress received:ff02::16 = ff02::1:ff00:a1a1
 ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
 ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
-</PRE><HR><A NAME="vRecvPKT6"></A><A HREF="#vRecv6">Recv at 09:33:47</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:78)
+</PRE><HR><A NAME="vRecvPKT4"></A><A HREF="#vRecv4">Recv at 06:27:25</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:130)
 | Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:ff:00:ab:cd
+| | DestinationAddress               = 33:33:00:00:00:16
 | | SourceAddress                    = 00:50:18:1e:7f:2d
 | | Type                             = 34525
-| Packet_IPv6                     (length:64)
+| Packet_IPv6                     (length:116)
 | | Hdr_IPv6                        (length:40)
 | | | Version                          = 6
 | | | TrafficClass                     = 0
 | | | FlowLabel                        = 0
-| | | PayloadLength                    = 24
+| | | PayloadLength                    = 76
+| | | NextHeader                       = 0
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
+| | | DestinationAddress               = ff02::16
+| | Hdr_HopByHop                    (length:8)
 | | | NextHeader                       = 58
-| | | HopLimit                         = 255
-| | | SourceAddress                    = ::
-| | | DestinationAddress               = ff02::1:ff00:abcd
-| | ICMPv6_NS                       (length:24)
-| | | Type                             = 135
+| | | HeaderExtLength                  = 0
+| | | Opt_RouterAlert                 (length:4)
+| | | | OptionType                       = 5
+| | | | OptDataLength                    = 2
+| | | | Value                            = 0
+| | | Opt_PadN                        (length:2)
+| | | | OptionType                       = 1
+| | | | OptDataLength                    = 0
+| | ICMPv6_MLDv2Report              (length:68)
+| | | Type                             = 143
 | | | Code                             = 0
-| | | Checksum                         = 56589 calc(56589)
+| | | Checksum                         = 43296 calc(43296)
 | | | Reserved                         = 0
-| | | TargetAddress                    = 3ffe:501:ffff:100::abcd
+| | | NumOfMcastAddrRecords            = 3
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:abcd
+| | | | AuxData                          = 
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:0
+| | | | AuxData                          = 
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff1e:7f2d
+| | | | AuxData                          = 
 ===tr1_mcast_ns_global_common=================================
-ng compare _HETHER_nut_to_tr1solnode.DestinationAddress received:33:33:ff:00:ab:cd = 33:33:ff:00:a1:a1
-ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received::: = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
-ng compare _HDR_IPV6_tr1_mcast_ns_global_common.DestinationAddress received:ff02::1:ff00:abcd = ff02::1:ff00:a1a1
-ng compare _ICMPV6_tr1_mcast_ns_global_common.TargetAddress received:3ffe:501:ffff:100::abcd = fe80::200:ff:fe00:a1a1
-ng count Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_NS
+ng compare _HETHER_nut_to_tr1solnode.DestinationAddress received:33:33:00:00:00:16 = 33:33:ff:00:a1:a1
+ng compare _HDR_IPV6_tr1_mcast_ns_global_common.NextHeader received:0 = 58
+ng compare _HDR_IPV6_tr1_mcast_ns_global_common.HopLimit received:1 = 255
+ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
+ng compare _HDR_IPV6_tr1_mcast_ns_global_common.DestinationAddress received:ff02::16 = ff02::1:ff00:a1a1
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
 ===tr1_mcast_ns_linklocal_common=================================
-ng compare _HETHER_nut_to_tr1solnode.DestinationAddress received:33:33:ff:00:ab:cd = 33:33:ff:00:a1:a1
-ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.SourceAddress received::: = fe80::250:18ff:fe1e:7f2d
-ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.DestinationAddress received:ff02::1:ff00:abcd = ff02::1:ff00:a1a1
-ng compare _ICMPV6_tr1_mcast_ns_linklocal_common.TargetAddress received:3ffe:501:ffff:100::abcd = fe80::200:ff:fe00:a1a1
-ng count Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_NS
-</PRE><HR><A NAME="vRecvPKT7"></A><A HREF="#vRecv7">Recv at 09:33:49</A>
+ng compare _HETHER_nut_to_tr1solnode.DestinationAddress received:33:33:00:00:00:16 = 33:33:ff:00:a1:a1
+ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.NextHeader received:0 = 58
+ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.HopLimit received:1 = 255
+ng compare _HDR_IPV6_tr1_mcast_ns_linklocal_common.DestinationAddress received:ff02::16 = ff02::1:ff00:a1a1
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+</PRE><HR><A NAME="vRecvPKT5"></A><A HREF="#vRecv5">Recv at 06:27:28</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:ff:00:a1:a1
@@ -1019,7 +843,7 @@ ng count Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_NS
 ===tr1_mcast_ns_global_common=================================
 ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250:18ff:fe1e:7f2d = 3ffe:501:ffff:100:250:18ff:fe1e:7f2d
 ===tr1_mcast_ns_linklocal_common=================================
-</PRE><HR><A NAME="vSendPKT4"></A><A HREF="#vSend4">    Send NA (RSO) w/ TLL: TR (link-local) -&gt; NUT (link-local) at 09:33:49</A>
+</PRE><HR><A NAME="vSendPKT4"></A><A HREF="#vSend4">    Send NA (RSO) w/ TLL: TR (link-local) -&gt; NUT (link-local) at 06:27:28</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:50:18:1e:7f:2d
@@ -1048,7 +872,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | | Type                             = 2
 | | | | Length                           = 1
 | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
-</PRE><HR><A NAME="vRecvPKT8"></A><A HREF="#vRecv8">Recv at 09:33:49</A>
+</PRE><HR><A NAME="vRecvPKT6"></A><A HREF="#vRecv6">Recv at 06:27:28</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:00:00:00:a1:a1
@@ -1073,7 +897,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Payload                         (length:8)
 | | | | data                             = 01234567 89abcdef
 ===tr1_erep_common=================================
-</PRE><HR><A NAME="vRecvPKT9"></A><A HREF="#vRecv9">Recv at 09:33:49</A>
+</PRE><HR><A NAME="vRecvPKT7"></A><A HREF="#vRecv7">Recv at 06:27:29</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:02
@@ -1094,63 +918,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Code                             = 0
 | | | Checksum                         = 58523 calc(58523)
 | | | Reserved                         = 0
-</PRE><HR><A NAME="vRecvPKT10"></A><A HREF="#vRecv10">Recv at 09:33:49</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:150)
-| Hdr_Ether                       (length:14)
-| | DestinationAddress               = 33:33:00:00:00:16
-| | SourceAddress                    = 00:50:18:1e:7f:2d
-| | Type                             = 34525
-| Packet_IPv6                     (length:136)
-| | Hdr_IPv6                        (length:40)
-| | | Version                          = 6
-| | | TrafficClass                     = 0
-| | | FlowLabel                        = 0
-| | | PayloadLength                    = 96
-| | | NextHeader                       = 0
-| | | HopLimit                         = 1
-| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
-| | | DestinationAddress               = ff02::16
-| | Hdr_HopByHop                    (length:8)
-| | | NextHeader                       = 58
-| | | HeaderExtLength                  = 0
-| | | Opt_RouterAlert                 (length:4)
-| | | | OptionType                       = 5
-| | | | OptDataLength                    = 2
-| | | | Value                            = 0
-| | | Opt_PadN                        (length:2)
-| | | | OptionType                       = 1
-| | | | OptDataLength                    = 0
-| | ICMPv6_MLDv2Report              (length:88)
-| | | Type                             = 143
-| | | Code                             = 0
-| | | Checksum                         = 42502 calc(42502)
-| | | Reserved                         = 0
-| | | NumOfMcastAddrRecords            = 4
-| | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 4
-| | | | AuxDataLen                       = 0
-| | | | NumOfSources                     = 0
-| | | | MulticastAddress                 = ff02::1:ff00:abcd
-| | | | AuxData                          = 
-| | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 4
-| | | | AuxDataLen                       = 0
-| | | | NumOfSources                     = 0
-| | | | MulticastAddress                 = ff02::1:ff00:0
-| | | | AuxData                          = 
-| | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 4
-| | | | AuxDataLen                       = 0
-| | | | NumOfSources                     = 0
-| | | | MulticastAddress                 = ff02::2
-| | | | AuxData                          = 
-| | | MLDv2_AddrRecord                (length:20)
-| | | | Type                             = 4
-| | | | AuxDataLen                       = 0
-| | | | NumOfSources                     = 0
-| | | | MulticastAddress                 = ff02::1:ff1e:7f2d
-| | | | AuxData                          = 
-</PRE><HR><A NAME="vRecvPKT11"></A><A HREF="#vRecv11">Recv at 09:33:53</A>
+</PRE><HR><A NAME="vRecvPKT8"></A><A HREF="#vRecv8">Recv at 06:27:33</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:02
@@ -1171,7 +939,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Code                             = 0
 | | | Checksum                         = 58523 calc(58523)
 | | | Reserved                         = 0
-</PRE><HR><A NAME="vRecvPKT12"></A><A HREF="#vRecv12">Recv at 09:33:57</A>
+</PRE><HR><A NAME="vRecvPKT9"></A><A HREF="#vRecv9">Recv at 06:27:39</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:02
@@ -1192,7 +960,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Code                             = 0
 | | | Checksum                         = 58523 calc(58523)
 | | | Reserved                         = 0
-</PRE><HR><A NAME="vRecvPKT13"></A><A HREF="#vRecv13">Recv at 09:34:02</A>
+</PRE><HR><A NAME="vRecvPKT10"></A><A HREF="#vRecv10">Recv at 06:27:43</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:02
@@ -1213,7 +981,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Code                             = 0
 | | | Checksum                         = 58523 calc(58523)
 | | | Reserved                         = 0
-</PRE><HR><A NAME="vRecvPKT14"></A><A HREF="#vRecv14">Recv at 09:34:10</A>
+</PRE><HR><A NAME="vRecvPKT11"></A><A HREF="#vRecv11">Recv at 06:27:48</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:02
@@ -1234,7 +1002,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Code                             = 0
 | | | Checksum                         = 58523 calc(58523)
 | | | Reserved                         = 0
-</PRE><HR><A NAME="vRecvPKT15"></A><A HREF="#vRecv15">Recv at 09:34:15</A>
+</PRE><HR><A NAME="vRecvPKT12"></A><A HREF="#vRecv12">Recv at 06:27:52</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:02
@@ -1255,7 +1023,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Code                             = 0
 | | | Checksum                         = 58523 calc(58523)
 | | | Reserved                         = 0
-</PRE><HR><A NAME="vRecvPKT16"></A><A HREF="#vRecv16">Recv at 09:34:26</A>
+</PRE><HR><A NAME="vRecvPKT13"></A><A HREF="#vRecv13">Recv at 06:27:56</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:02
@@ -1276,7 +1044,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Code                             = 0
 | | | Checksum                         = 58523 calc(58523)
 | | | Reserved                         = 0
-</PRE><HR><A NAME="vRecvPKT17"></A><A HREF="#vRecv17">Recv at 09:34:34</A>
+</PRE><HR><A NAME="vRecvPKT14"></A><A HREF="#vRecv14">Recv at 06:28:11</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:02
@@ -1297,7 +1065,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Code                             = 0
 | | | Checksum                         = 58523 calc(58523)
 | | | Reserved                         = 0
-</PRE><HR><A NAME="vSendPKT5"></A><A HREF="#vSend5">send local_ra_update at 09:34:34</A>
+</PRE><HR><A NAME="vSendPKT5"></A><A HREF="#vSend5">send local_ra_update at 06:28:13</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:102)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:01
@@ -1338,7 +1106,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | | PreferredLifetime                = 600
 | | | | Reserved2                        = 0
 | | | | Prefix                           = 3ffe:501:ffff:100::
-</PRE><HR><A NAME="vSendPKT6"></A><A HREF="#vSend6">    Send Echo Request: TR (link-local) -&gt; NUT (link-local) at 09:34:34</A>
+</PRE><HR><A NAME="vSendPKT6"></A><A HREF="#vSend6">    Send Echo Request: TR (link-local) -&gt; NUT (link-local) at 06:28:13</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:50:18:1e:7f:2d
@@ -1362,7 +1130,7 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | SequenceNumber                   = 0
 | | | Payload                         (length:8)
 | | | | data                             = 01234567 89abcdef
-</PRE><HR><A NAME="vRecvPKT18"></A><A HREF="#vRecv18">Recv at 09:34:34</A>
+</PRE><HR><A NAME="vRecvPKT15"></A><A HREF="#vRecv15">Recv at 06:28:13</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:00:00:00:a1:a1
@@ -1387,38 +1155,38 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | Payload                         (length:8)
 | | | | data                             = 01234567 89abcdef
 ===tr1_erep_common=================================
-</PRE><HR><A NAME="vRecvPKT19"></A><A HREF="#vRecv19">Recv at 09:34:37</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:160)
+</PRE><HR><A NAME="vRecvPKT16"></A><A HREF="#vRecv16">Recv at 06:28:15</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:162)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:01:00:02
 | | SourceAddress                    = 00:50:18:1e:7f:2d
 | | Type                             = 34525
-| Packet_IPv6                     (length:146)
+| Packet_IPv6                     (length:148)
 | | Hdr_IPv6                        (length:40)
 | | | Version                          = 6
 | | | TrafficClass                     = 0
 | | | FlowLabel                        = 0
-| | | PayloadLength                    = 106
+| | | PayloadLength                    = 108
 | | | NextHeader                       = 17
 | | | HopLimit                         = 1
 | | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
 | | | DestinationAddress               = ff02::1:2
-| | Upp_UDP                         (length:106)
+| | Upp_UDP                         (length:108)
 | | | Hdr_UDP                         (length:8)
 | | | | SourcePort                       = 546
 | | | | DestinationPort                  = 547
-| | | | Length                           = 106
-| | | | Checksum                         = 7479 calc(7479)
-| | | Udp_DHCPv6_Renew                (length:98)
+| | | | Length                           = 108
+| | | | Checksum                         = 6718 calc(6718)
+| | | Udp_DHCPv6_Renew                (length:100)
 | | | | Type                             = 5
-| | | | Identifier                       = 11819853
+| | | | Identifier                       = 15622078
 | | | | Opt_DHCPv6_CID                  (length:18)
 | | | | | Code                             = 1
 | | | | | Length                           = 14
 | | | | | DHCPv6_DUID_LLT_Ether           (length:14)
 | | | | | | Type                             = 1
 | | | | | | HardwareType                     = 1
-| | | | | | Time                             = 504922230
+| | | | | | Time                             = 504921708
 | | | | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
 | | | | Opt_DHCPv6_SID                  (length:18)
 | | | | | Code                             = 2
@@ -1444,11 +1212,12 @@ ng compare _HDR_IPV6_tr1_mcast_ns_global_common.SourceAddress received:fe80::250
 | | | | | Code                             = 8
 | | | | | Length                           = 2
 | | | | | Time                             = 0
-| | | | Opt_DHCPv6_OptionRequest        (length:8)
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
 | | | | | Code                             = 6
-| | | | | Length                           = 4
+| | | | | Length                           = 6
 | | | | | OptionCode                       = 23
 | | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
 ===tr1_ucast_ns_global=================================
 ng compare _HETHER_nut_to_tr1.DestinationAddress received:33:33:00:01:00:02 = 00:00:00:00:a1:a1
 ng compare _HDR_IPV6_tr1_ucast_ns_global.NextHeader received:17 = 58
@@ -1475,38 +1244,38 @@ ng compare _HDR_IPV6_tr1_ucast_ns_linklocal_sll.NextHeader received:17 = 58
 ng compare _HDR_IPV6_tr1_ucast_ns_linklocal_sll.HopLimit received:1 = 255
 ng compare _HDR_IPV6_tr1_ucast_ns_linklocal_sll.DestinationAddress received:ff02::1:2 = fe80::200:ff:fe00:a1a1
 ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Upp_UDP
-</PRE><HR><A NAME="vRecvPKT20"></A><A HREF="#vRecv20">Recv at 09:34:37</A>
-<PRE STYLE="line-height:70%">Frame_Ether                     (length:161)
+</PRE><HR><A NAME="vRecvPKT17"></A><A HREF="#vRecv17">Recv at 06:28:15</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:163)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:01:00:02
 | | SourceAddress                    = 00:50:18:1e:7f:2d
 | | Type                             = 34525
-| Packet_IPv6                     (length:147)
+| Packet_IPv6                     (length:149)
 | | Hdr_IPv6                        (length:40)
 | | | Version                          = 6
 | | | TrafficClass                     = 0
 | | | FlowLabel                        = 0
-| | | PayloadLength                    = 107
+| | | PayloadLength                    = 109
 | | | NextHeader                       = 17
 | | | HopLimit                         = 1
 | | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
 | | | DestinationAddress               = ff02::1:2
-| | Upp_UDP                         (length:107)
+| | Upp_UDP                         (length:109)
 | | | Hdr_UDP                         (length:8)
 | | | | SourcePort                       = 546
 | | | | DestinationPort                  = 547
-| | | | Length                           = 107
-| | | | Checksum                         = 59384 calc(59384)
-| | | Udp_DHCPv6_Renew                (length:99)
+| | | | Length                           = 109
+| | | | Checksum                         = 65026 calc(65026)
+| | | Udp_DHCPv6_Renew                (length:101)
 | | | | Type                             = 5
-| | | | Identifier                       = 9516789
+| | | | Identifier                       = 9314976
 | | | | Opt_DHCPv6_CID                  (length:18)
 | | | | | Code                             = 1
 | | | | | Length                           = 14
 | | | | | DHCPv6_DUID_LLT_Ether           (length:14)
 | | | | | | Type                             = 1
 | | | | | | HardwareType                     = 1
-| | | | | | Time                             = 504922230
+| | | | | | Time                             = 504921708
 | | | | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
 | | | | Opt_DHCPv6_SID                  (length:18)
 | | | | | Code                             = 2
@@ -1520,11 +1289,12 @@ ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Upp_UDP
 | | | | | Code                             = 8
 | | | | | Length                           = 2
 | | | | | Time                             = 0
-| | | | Opt_DHCPv6_OptionRequest        (length:8)
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
 | | | | | Code                             = 6
-| | | | | Length                           = 4
+| | | | | Length                           = 6
 | | | | | OptionCode                       = 23
 | | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
 | | | | Opt_DHCPv6_IA_PD                (length:45)
 | | | | | Code                             = 25
 | | | | | Length                           = 41
@@ -1564,7 +1334,7 @@ ng compare _HDR_IPV6_tr1_ucast_ns_linklocal_sll.NextHeader received:17 = 58
 ng compare _HDR_IPV6_tr1_ucast_ns_linklocal_sll.HopLimit received:1 = 255
 ng compare _HDR_IPV6_tr1_ucast_ns_linklocal_sll.DestinationAddress received:ff02::1:2 = fe80::200:ff:fe00:a1a1
 ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Upp_UDP
-</PRE><HR><A NAME="vRecvPKT21"></A><A HREF="#vRecv21">Recv at 09:34:39</A>
+</PRE><HR><A NAME="vRecvPKT18"></A><A HREF="#vRecv18">Recv at 06:28:18</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:00:00:00:a1:a1
@@ -1598,7 +1368,28 @@ ng compare _HDR_IPV6_tr1_ucast_ns_global_sll.SourceAddress received:fe80::250:18
 ===tr1_ucast_ns_linklocal=================================
 ng count Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_NS
 ===tr1_ucast_ns_linklocal_sll=================================
-</PRE><HR><A NAME="vRecvPKT22"></A><A HREF="#vRecv22">Recv at 09:34:40</A>
+</PRE><HR><A NAME="vRecvPKT19"></A><A HREF="#vRecv19">Recv at 06:28:19</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:62)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:02
+| | SourceAddress                    = 00:50:18:1e:7f:2d
+| | Type                             = 34525
+| Packet_IPv6                     (length:48)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 8
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe1e:7f2d
+| | | DestinationAddress               = ff02::2
+| | ICMPv6_RS                       (length:8)
+| | | Type                             = 133
+| | | Code                             = 0
+| | | Checksum                         = 58523 calc(58523)
+| | | Reserved                         = 0
+</PRE><HR><A NAME="vRecvPKT20"></A><A HREF="#vRecv20">Recv at 06:28:19</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:00:00:00:a1:a1
@@ -1624,7 +1415,7 @@ ng count Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_NS
 | | | | Type                             = 1
 | | | | Length                           = 1
 | | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
-</PRE><HR><A NAME="vRecvPKT23"></A><A HREF="#vRecv23">Recv at 09:34:41</A>
+</PRE><HR><A NAME="vRecvPKT21"></A><A HREF="#vRecv21">Recv at 06:28:20</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 00:00:00:00:a1:a1
@@ -1650,7 +1441,7 @@ ng count Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_NS
 | | | | Type                             = 1
 | | | | Length                           = 1
 | | | | LinkLayerAddress                 = 00:50:18:1e:7f:2d
-</PRE><HR><A NAME="vSendPKT7"></A><A HREF="#vSend7">    Send RA (rltime=0, rtime=30000, retrans=1000, vltime=0, pltime=0) w/o SLL: TR1 (link-local) -&gt; all-nodes multicast address at 09:34:43</A>
+</PRE><HR><A NAME="vSendPKT7"></A><A HREF="#vSend7">    Send RA (rltime=0, rtime=30000, retrans=1000, vltime=0, pltime=0) w/o SLL: TR1 (link-local) -&gt; all-nodes multicast address at 06:28:22</A>
 <PRE STYLE="line-height:70%">Frame_Ether                     (length:102)
 | Hdr_Ether                       (length:14)
 | | DestinationAddress               = 33:33:00:00:00:01
@@ -1697,4 +1488,4 @@ ng count Packet_IPv6.ICMPv6_NS != Packet_IPv6.ICMPv6_NS
 </HTML>
 <!-- aa77350c785e4318e5de3a903baf642e -->
 <!-- 153ee8a70202e2686cb54218eb93348d -->
-<!-- 86201f18c3f95cc1bba183ff9360615c -->
+<!-- 0232087959dd3722fd20665fc98d3ea9 -->
