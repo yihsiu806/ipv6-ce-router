@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Unrecognized Routing Type
+  Part B: Unrecognized Routing Type 0</code></pre>
+
+<h1 id="TARGET">TARGET</h1>
+
+<pre><code>  CE-Router</code></pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+
+
+
+
+<h1 id="INITIALIZATION">INITIALIZATION</h1>
+
+<pre><code>  Common Test Setup is performed at the beginning of this test part.
+  The Common Test Cleanup procedure is performed after each part.</code></pre>
+
+<h1 id="TEST-PROCEDURE">TEST PROCEDURE</h1>
+
+<p>Verify that a node properly processes an IPv6 packet as the intermediate node that contains a Routing header with an unrecognized Routing Type value.</p>
+
+<pre><code>   TR                          CE-Router
+    |                           |
+    |--------------------------&gt;|
+    |   ICMP Echo Request       |
+    |                           |
+    |&lt;--------------------------|
+    |  ICMP Parameter Problem   |
+    |                           |
+    v                           v
+
+  1. TR forwards an Echo Request that has a Routing header 
+     with a Routing Type valude of 0 and Segments Left value of 1.
+     The Echo Request is destined for the CE-Router.
+  2. Observe the packets transmitted by the CE-Router.
+
+
+  Network topology
+
+
+                                                     (Link1)
+     TN                                                     TR
+    Host1 ------ Router1 ------ Router2 ------ CE-Router ------ Router3
+         Global 6       Global 4       Global 0      Global 2
+
+  ICMP Echo Request is:
+
+        IPv6 Header
+            Version            = 6
+            Traffic Class      = 0
+            FlowLabel          = 0
+            PayloadLength      = 72
+            NextHeader         = 43 (Routing Header)
+            SourceAddress      = Global 6 Address (Host1)
+            DestinationAddress = CE-Router&#39;s Global 0 Address 
+
+        Routing Header
+            NextHeader      = 58 (ICMPv6)
+            HeaderExtLength = 6
+            RoutingType     = 0 (unknown)
+            SegmentsLeft    = 1
+            Address[1]      = Global 6 Address (Router1)
+            Address[2]      = Global 4 Address (Router2)
+            Address[3]      = TR&#39;s Global 2 Address 
+
+        ICMP Echo Request
+            Type = 128 (Echo Request)</code></pre>
+
+<h1 id="JUDGEMENT">JUDGEMENT</h1>
+
+<pre><code>  PASS: The CE-Router must discard the Echo Request and send an ICMP Parameter Problem,
+        Code 0, message to TN&#39;s Global Address. 
+        The Pointer field must be 0x2A(offset of the Routing Type field of the Routing header).
+
+        IPv6 Header
+            Version            = 6
+            Traffic Class      = 0
+            FlowLabel          = 0
+            PayloadLength      = 120
+            NextHeader         = 58 (ICMPv6)
+            SourceAddress      = CE-Router&#39;s Clobal 0 Address 
+            DestinationAddress = Global 6 Address (Host1)
+
+        ICMP Error
+            Type           = 4 (Parameter Problem)
+            Code           = 0 (Erroneous header field encountered)
+            Checksum       = (auto)
+            Pointer        = 42 (Offset to Routing Type field of the Routing Header)
+            PayloadData    = (Sent Packet)</code></pre>
+
+<h1 id="CLEANUP">CLEANUP</h1>
+
+<p>Common Test Cleanup</p>
+
+<h1 id="REFERENCE">REFERENCE</h1>
+
+
+
+
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<pre><code>  perldoc V6evalTool</code></pre>
+
+
+</body>
+
+</html>
+
+

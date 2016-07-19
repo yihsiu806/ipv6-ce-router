@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>        Error Condition with Multicast Destination
+        Part A: UDP Port Unreachable</code></pre>
+
+<h1 id="TARGET">TARGET</h1>
+
+<pre><code>        CE-Router</code></pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>        To_Multi_Dst_Unreach_4.seq [-tooloption ...] -p To_Multi_Dst_Unreach_4.def</code></pre>
+
+<h1 id="INITIALIZATION">INITIALIZATION</h1>
+
+<pre><code>        Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+<h1 id="TEST-PROCEDURE">TEST PROCEDURE</h1>
+
+<p>Verify that a node properly handles the reception of an error condition caused by a packet with a Multicast Destination Address.</p>
+
+<pre><code>        This test verifies that the message processing rule,
+        
+        An ICMPv6 error message MUST NOT be sent as a result of
+        receiving:
+
+        a packet destined to an IPv6 multicast address (there are
+        two exceptions to this rule: (1) the Packet Too Big
+        Message - Section 3.2 - to allow Path MTU discovery to
+        work for IPv6 multicast, and (2) the Parameter Problem
+        Message, Code 2 - Section 3.4 - reporting an unrecognized
+        IPv6 option that has the Option Type highest-order two
+        bits set to 10).
+
+
+        TN                      NUT
+
+        ---------------------------
+
+        1.
+         === UDP packet  ===&gt;
+                src address : TN link local address
+                dst address : all node link localbmulticast address
+             port number is not used in NUT (9000)
+        2.
+        &lt;&lt; JUDGEMENT &gt;&gt;
+
+         &lt;=== No pakcet ===
+                        </code></pre>
+
+<h1 id="JUDGEMENT">JUDGEMENT</h1>
+
+<pre><code>    &lt;&lt; PASS &gt;&gt;
+    The NUT must not send a Destination Unreachable Error Message to TN2 
+    when it receives a UDP packet for an unreachable port.</code></pre>
+
+<h1 id="CLEANUP">CLEANUP</h1>
+
+<p>Common Test Cleanup</p>
+
+<h1 id="REFERENCE">REFERENCE</h1>
+
+
+
+
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<pre><code>          perldoc V6evalTool</code></pre>
+
+
+</body>
+
+</html>
+
+

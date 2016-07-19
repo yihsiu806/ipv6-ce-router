@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>        Packet Too Big Message Generation</code></pre>
+
+<h1 id="TARGET">TARGET</h1>
+
+<pre><code>        Router</code></pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>        Pkt_Too_Big.seq [-tooloption ...] -p Pkt_Too_Big.def</code></pre>
+
+<h1 id="NETWORK-CONFIGURATION">NETWORK CONFIGURATION</h1>
+
+<pre><code>   TN2                      CE-Router                      TN1
+              (Link1)                     (Link0)
+    |                           |                           |
+    |--------------------------&gt;|                           |
+    |       Echo Request        |                           |
+    |    (packet size = 1460)   |                           |
+    |                           |                           |
+    |&lt;------------------------- |                           |
+    |   ICMPv6 Packet Too Big   |                           |
+    |                           |                           |
+    v                           v                           v</code></pre>
+
+<h1 id="INITIALIZATION">INITIALIZATION</h1>
+
+<pre><code>        Common Test Setup is performed at the beginning of this test part.
+
+        And status of Neighbor Cache Entry for TN2&#39;s addresses are reachable.</code></pre>
+
+<h1 id="TEST-PROCEDURE">TEST PROCEDURE</h1>
+
+<p>Verify that a router propely generates Packet Too Big Message</p>
+
+<pre><code>        This test verifies that the node sends a Packet Too Big Message 
+        in response to a packet that it can not forward because the packet 
+        is larger than the MTU of the outgoing link.
+
+        TN2                     CE-Router
+
+        ---------------------------
+
+        1.
+        After CE-Router is initialized (set static route) , CE-Router sets 
+        the Link MTU of LINK0 Interface to 1280 .
+
+        2.
+        TN2 send Echo Request to TN1.
+
+         === echo request  ===&gt;
+                src address : TN2 global address
+                dst address : TN1 global address
+                PayloadLength : 1460
+
+        3.
+        CE-Router send Packet Too Big Message 
+
+         &lt;=== Packet Too Big Message ===</code></pre>
+
+<h1 id="JUDGEMENT">JUDGEMENT</h1>
+
+<pre><code>    &lt;&lt; PASS &gt;&gt;
+    The CE-Router must transmit a Packet Too Big messge to TN2, 
+    as it could not forward the Echo Request due to PMTU limitations.
+         - The MTU field of Packet Too Big Message should be set to 1280.
+         - The Source Address of the Packet should be one of the CE-Router&#39;s unicast addresses
+         - The Destination Address should be the same as the Source Address in TN2&#39;s Echo Request packet.
+           The Code field should be st to &quot;0&quot;.
+         - The invoking Echo Request packet included in the Error Message must not exceed minimum IPv6 MTU.</code></pre>
+
+<h1 id="CLEANUP">CLEANUP</h1>
+
+<p>Common Test Cleanup</p>
+
+<h1 id="REFERENCE">REFERENCE</h1>
+
+
+
+
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<pre><code>          perldoc V6evalTool
+          perldoc V6evalRemote</code></pre>
+
+
+</body>
+
+</html>
+
+

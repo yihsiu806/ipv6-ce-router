@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  No Next Header after IPv6 Header</code></pre>
+
+<h1 id="TARGET">TARGET</h1>
+
+<pre><code>  CE-Router</code></pre>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+
+
+
+
+<h1 id="INITIALIZATION">INITIALIZATION</h1>
+
+<pre><code>  Common Test Setup is performed at the beginning of this test part.</code></pre>
+
+<h1 id="TEST-PROCEDURE">TEST PROCEDURE</h1>
+
+<p>Verify proper behavior of a node when it encounters a Next Header value of 59 (no next header).</p>
+
+<pre><code>   TN2                      CE-Router                      TN1
+              (Link1)                     (Link0)
+    |                           |                           |
+    |--------------------------&gt;|                           |
+    |   Echo Request to Link1   |                           |
+    |                           |                           |
+    |                           |                           |
+    |                           |--------------------------&gt;|
+    |                           |   Echo Request to Link0   |
+    |                           |                           |
+    |                           |                           |
+    v                           v                           v
+
+  1. TN2 transmits an Echo Request containing an IPv6 header with a Next Header of 59 
+     to TN1&#39;s Global address with a first hop through the CE-Router.
+  2. Observe the packets transmitted by the CE-Router on Link0.
+
+  Echo Request Data is:
+
+        IPv6 Header
+            Version            = 6
+            Traffic Class      = 0
+            FlowLabel          = 0
+            PayloadLength      = 24
+            NextHeader         = 59 (None)
+            SourceAddress      = TN2 Global Address
+            DestinationAddress = TN1 Global Address
+
+         ICMP Echo Request
+            Type           = 128 (Echo Request)
+            Code           = 0
+            Checksum       = (auto)
+            Identifier     = 0xffff
+            SequenceNumber = 1
+            PayloadData    = {1, 2, 3, 4, 5, 6, 7, 8}</code></pre>
+
+<h1 id="JUDGEMENT">JUDGEMENT</h1>
+
+<pre><code>  PASS: The CE-Router must forward the Echo Request from TN2 to TN1.
+        The octets after the IPv6 Header with a Next Header field of 59 
+        (the ICMPv6 Request octets) must be unchanged.
+
+        IPv6 Header
+            Version             = 6
+            PayloadLength       = 51
+            NextHeader          = 58 
+            SourceAddress      = TN2 Global Address (Link1)
+            DestinationAddress = TN1 Global Address (Link0)</code></pre>
+
+<h1 id="CLEANUP">CLEANUP</h1>
+
+<p>Common Test Cleanup</p>
+
+<h1 id="REFERENCE">REFERENCE</h1>
+
+
+
+
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<pre><code>  perldoc V6evalTool</code></pre>
+
+
+</body>
+
+</html>
+
+

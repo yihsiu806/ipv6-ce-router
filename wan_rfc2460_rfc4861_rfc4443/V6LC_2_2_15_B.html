@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Router Advertisement Processing, Neighbor Cache 
+  Part B: RA processing, NCE INCOMPLETE</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a host properly updates its Neighbor Cache upon receipt of a Router
+  Advertisement.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],W-3 [RFC 4861],Section 6.3.4 and 7.3.3</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  Common Test Setup 1.2 is performed at the beginning of this test part.
+  The Common Test Cleanup procedure is performed after each part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<Caption>Router Solicitation A</Caption>
+<TR>
+<TD>
+	IPv6 Header<br>
+	Next Header: 58<br>
+	Source Address: TR1's Link-local Address<br>
+</TD>
+</TR>
+<TR>
+<TD>
+	Router Advertisement<br>
+	Router Lifetime: 0 seconds<br>
+	Reachable Time: 10 seconds<br>
+	Retransmit Interval: 1 second<br>
+	Source Link-layer Option</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Echo Request B</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TR1's link-local Address<br>
+        Destination Address: CE-Router's link-local Address
+</TD>
+</TR>
+<TR>
+<TD>
+	ICMPv6 Echo Request
+</TD>
+</TR>
+</TABLE><br><TABLE BORDER>
+<Caption>Neighbor Advertisement C</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TR1's Link-local Address<br>
+	Destination Address: CE-Router's Link-local Address
+</TD>
+</TR>
+<TR>
+<TD>
+        Neighbor Advertisement<br>
+	Router flag: 1<br>
+        Solicited flag: 1<br>
+        Override flag: 1<br>
+	Target Address: TR1's Link-local Address
+</TD>
+</TR></TABLE>
+</BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  Part B: RA processing, NCE INCOMPLETE
+   4. TR1 transmits Echo Request B. TR1 does not respond to any Neighbor Solicitations from the
+      CE-Router.
+   5. Observe the packets transmitted by the CE-Router and check the NCE of TR1 on the CE-Router.
+   6. TR1 transmits Router Advertisement A.
+   7. Check the NCE of TR1 on the CE-Router and observe the packets transmitted by the CE-Router.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part B
+   Step 5:
+   The CE-Router should create a Neighbor Cache Entry for TR1 and set the state of the
+   Entry to INCOMPLETE. The CE-Router should send a multicast Neighbor Solicitation to TR1.
+
+   Step 7:
+   The CE-Router must update the state of TR1&#39;s NCE to STALE and update its Link-layer
+   Address. Because the CE-Router&#39;s NCE for TR1 is in state STALE, the CE-Router should send an Echo
+   Reply to TR1&#39;s earlier request using the received Link-Layer address and enter state
+   DELAY. After DELAY_FIRST_PROBE_TIME, the CE-Router should send a unicast Neighbor
+   Solicitation to TR1.</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None. </code></pre>
+
+
+</body>
+
+</html>
+
+

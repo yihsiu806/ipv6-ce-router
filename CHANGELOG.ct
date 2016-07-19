@@ -1,0 +1,58 @@
+
+
+
+                                CHANGELOG
+
+                                   for
+
+           IPv6 Ready Logo Phase-2 CE Router Conformance Test Package
+2016/05/10    Release 1.0.2
+    Official release
+	o Provide IA_PD,RDNS and DNSSL option in CERouter1.1.20 part J
+		wan_rfc3315_rfc3646
+			C_RFC3315_15_11_DiscInfoReq.seq
+	o Modify CERouter2.7.4 to only check RDNS and DNSSL option in RA
+		lan_rfc7084
+			L_Adv_RDNSS.seq
+			CERouter_2_7_4_B.seq
+	o Modify CERouter3.2.4 to check if NUT ask NS/NA for forwarding request packet
+		lan_rfc7084
+			L_Adv_RDNSS.seq
+			CERouter_2_7_4_B.seq
+	o Modify CERouter1.5.8 and CERouter3.1.8 to be advanced function for MTU
+		wan_rfc1981
+			RAwithMTUreduce.seq
+		forward_rfc2460_rfc4861_rfc4443
+			Pkt_Too_Big.seq
+	o Change the Unknown prefix in CERouter2.7.6
+		lan_rfc7084
+			CERouter_2_7_6.def
+2016/02/22    Release 1.0.1
+    Official release
+	o Provide testing DHCPv6 stateful and stateless server at same time
+		config.pl
+		all seq files in lan_rfc3736
+	o Provide IA_NA option in CERouter1.1.17 part C to F
+		wan_rfc3315_rfc3646
+			CERouter_1_1_17_E.seq
+			CERouter_1_1_117_F.seq
+			C_RFC3646_3_Update_DnsSvrOpt_rep.seq
+			C_RFC3646_4_Update_DnsSchLstOpt_rep.seq
+	o Correct the title of CERouter1.6.3 part D
+		wan_rfc7084
+			INDEX_p2_ce
+	o Minimize the necessary capture files for wan testing
+		wan_rfc3736
+			INDEX_p2_ce
+	o Correct the RA reachable time for CERouter1.3.15 and add sleeping time in common test setup 1.2 
+	  to ignore WAN global address DAD
+		DHCPv6_common.pm
+		wan_rfc2460_rfc4861_rfc4443
+			rdisc.pm
+			All V6LC_2_2_15* files
+			All v6LC_2_2_16* files
+2015/11/13    Release 1.0.0
+    1st official release
+
+
+                                                      [end of CHANGELOG]

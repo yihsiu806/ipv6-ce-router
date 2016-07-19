@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN""http://www.w3c.org/TR/REC-html40/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>IPv6 Conformance Test Report</TITLE>
+<META NAME="GENERATOR" CONTENT="TAHI IPv6 Conformance Test Kit">
+</HEAD>
+
+<BODY BGCOLOR="#F0F0F0">
+<H1>Test Information</H1>
+<TABLE BORDER=1>
+<TR><TD>Title</TD><TD>Part B &#58; Maximum Retransmission Time of Rebind messages, T1 and T2 (Valid lifetime=3000s)</TD></TR>
+<TR><TD>CommandLine</TD><TD>./CERouter_1_2_6_B.seq -pkt ./CERouter_1_2_6_B.def -log 17.html -ti Part B &#58; Maximum Retransmission Time of Rebind messages, T1 and T2 (Valid lifetime=3000s)</TD></TR>
+<TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_2</TD></TR>
+<TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
+<TR><TD>Start</TD><TD>2016/07/19 06:25:29</TD></TR>
+<TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
+<TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
+<TR><TD>Pkt</TD><TD>./CERouter_1_2_6_B.def</TD></TR>
+<TR><TD>System</TD><TD>linux-v6</TD></TR>
+<TR><TD>TargetName</TD><TD>Linux 2.6.36+ </TD></TR>
+<TR><TD>HostName</TD><TD>NoBrand	</TD></TR>
+<TR><TD>Type</TD><TD>router</TD></TR>
+</TABLE>
+<HR>
+<H1>Test Sequence Execution Log</H1>
+<TABLE BORDER=1>
+<TR><TD>06:25:29</TD><TD>Start</TD></TR>
+<TR VALIGN="TOP"><TD>06:25:29</TD><TD>Start Capturing Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP"><TD>06:25:29</TD><TD>Start Capturing Packets (Link1)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP">
+<TD>06:25:29</TD><TD>
+vSend(Link0,ra_MsetOset)<BR>
+<A NAME="vSend0"></A>
+<A HREF="#vSendPKT0">send ra_MsetOset</A><BR>
+
+</TD>
+</TR>
+<TR VALIGN="top"><TD>06:25:29</TD>
+<TD>vRecv(Link0,dhcp6_solicit ns_nutga_to_any_server1lla ns_nut_global_to_relay2_0_global ns_nut_to_relay1_0 ns_nut_global_to_relay1_0_global ns_nut_to_relay2_0_global ns_nutlla_to_any_client1_lla ns_nut_to_relay2_0 ns_nut_to_relay1_0_global ns_nut_to_any_client1_global ns_nutlla_to_any_client2_lla ns_nutlla_to_any_server1lla ns_nutlla_to_server1ga) timeout:30 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv0"></A>
+<A HREF="#vRecvPKT0">recv unexpect packet at 06:25:30</A>
+<BR>
+<A NAME="vRecv1"></A>
+<A HREF="#vRecvPKT1">	Receive DHCPv6 Solicit Message</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>got DHCPv6 Solicit Message</B><BR><B>Solicit Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_ReconfigureAccept</B></td><td><BR></td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 0<BR>T2= 0<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 0<BR>T2= 0<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 6501800</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 0<BR></td></tr></table></TD>
+</TR>
+<TR VALIGN="TOP"><TD>06:25:31</TD><TD>Clear Captured Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="top">
+
+<TD>06:25:31</TD><TD>
+vSend(Link0,advertise_server1_to_nut)<BR>
+<A NAME="vSend1"></A>
+<A HREF="#vSendPKT1">    Send DHCPv6 Advertise Message: SERVER1 --> NUT</A><BR>
+
+</TD>
+</TR>
+<TR><TD><BR></TD><TD>
+<B>Advertise Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_Servers</B></td><td>DNS = 3ffe:501:ffff:100:200:ff:fe00:3f3e<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 50<BR>T2= 80<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_SearchList</B></td><td>SearchList = test.example.com.<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 6501800</td></tr></table></TD>
+
+</TR>
+<TR VALIGN="top"><TD>06:25:31</TD>
+<TD>vRecv(Link0,dhcp6_request ns_nutlla_to_any_client1_lla ns_nut_to_relay1_0_global ns_nut_to_relay2_0 ns_nut_to_any_client1_global ns_nutlla_to_any_client2_lla ns_nutlla_to_any_server1lla ns_nutlla_to_server1ga ns_nut_global_to_relay2_0_global ns_nutga_to_any_server1lla ns_nut_to_relay1_0 ns_nut_global_to_relay1_0_global ns_nut_to_relay2_0_global) timeout:30 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv2"></A>
+<A HREF="#vRecvPKT2">	Receive DHCPv6 Request Message</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>got DHCPv6 Request Message</B><BR><B>Request Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_ReconfigureAccept</B></td><td><BR></td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 0<BR>T2= 0<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 0<BR>T2= 0<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 15582725</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 0<BR></td></tr></table></TD>
+</TR>
+<TR VALIGN="TOP"><TD>06:25:32</TD><TD>Clear Captured Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="top">
+
+<TD>06:25:32</TD><TD>
+vSend(Link0,reply_server1_to_nut)<BR>
+<A NAME="vSend2"></A>
+<A HREF="#vSendPKT2">    Send DHCPv6 Reply Message: SERVER1 --> NUT</A><BR>
+
+</TD>
+</TR>
+<TR><TD><BR></TD><TD>
+<B>Reply Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_Servers</B></td><td>DNS = 3ffe:501:ffff:100:200:ff:fe00:3f3e<BR></td></tr><tr><td><B>Opt_DHCPv6_StatusCode</B></td><td>StatusCode= 0 Success <BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 4294967295<BR>T2= 4294967295<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 4294967295<BR>ValidLifetime= 4294967295<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_SearchList</B></td><td>SearchList = test.example.com.<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 15582725</td></tr></table></TD></TR>
+
+<TR VALIGN="TOP">
+<TD>06:25:32</TD>
+<TD>Wait 3 second
+</TD></TR>
+<TR VALIGN="TOP"><TD>06:25:35</TD><TD>Clear Captured Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="top"><TD>06:25:35</TD>
+<TD>vRecv(Link0,dhcp6_rebind ns_nutlla_to_any_client1_lla ns_nut_to_relay1_0_global ns_nut_to_relay2_0 ns_nutlla_to_any_client2_lla ns_nutlla_to_any_server1lla ns_nutlla_to_server1ga ns_nut_to_any_client1_global ns_nutga_to_any_server1lla ns_nut_global_to_relay2_0_global ns_nut_to_relay1_0 ns_nut_global_to_relay1_0_global ns_nut_to_relay2_0_global) timeout:85 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv3"></A>
+<A HREF="#vRecvPKT3">recv unexpect packet at 06:26:22</A>
+<BR>
+<A NAME="vRecv4"></A>
+<A HREF="#vRecvPKT4">recv unexpect packet at 06:26:31</A>
+<BR>
+<A NAME="vRecv5"></A>
+<A HREF="#vRecvPKT5">recv unexpect packet at 06:26:48</A>
+<BR>
+<A NAME="vRecv6"></A>
+<A HREF="#vRecvPKT6">    Receive DHCPv6 Rebind Message</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>Rebind Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 16304492</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 0<BR></td></tr></table>Checking existing option...<BR><B>Opt_DHCPv6_ElapsedTime found<BR></B><B> Time of Elapsed Time Option is 0 </B><BR><PRE><FONT COLOR="#FF0000">IRT is 10, MRT is 600, MRD is 2916.9872879982 sec</FONT><BR><FONT COLOR="#FF0000">Retransmitted Maximum Rebind RT.</FONT><BR><FONT COLOR="#FF0000">1st 2nd  3rd   4th     5th      6th       7th</FONT><BR><FONT COLOR="#FF0000">11  23.1 48.51 101.871 213.9291 449.25111 660</FONT><BR><FONT COLOR="#FF0000">Capable Maximum 7th RD is 1507.6612 sec, remaining MRD is 2916.9872879982 sec</FONT><BR></PRE></TD>
+
+</TR>
+<TR VALIGN="top"><TD>06:26:52</TD>
+<TD>vRecv(Link0,dhcp6_rebind ns_nut_to_relay2_0_global ns_nut_global_to_relay1_0_global ns_nutga_to_any_server1lla ns_nut_global_to_relay2_0_global ns_nut_to_relay1_0 ns_nutlla_to_any_client2_lla ns_nutlla_to_any_server1lla ns_nutlla_to_server1ga ns_nut_to_any_client1_global ns_nutlla_to_any_client1_lla ns_nut_to_relay1_0_global ns_nut_to_relay2_0) timeout:11 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv7"></A>
+<A HREF="#vRecvPKT7">    Receive DHCPv6 Rebind Message</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>Rebind Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 16304492</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 973<BR></td></tr></table><FONT COLOR="#FF0000 "> Actual RT is 9.69651389122009, RD is 9.69651389122009</FONT><BR></TD>
+
+</TR>
+<TR VALIGN="top"><TD>06:27:01</TD>
+<TD>vRecv(Link0,dhcp6_rebind ns_nut_global_to_relay2_0_global ns_nutga_to_any_server1lla ns_nut_to_relay1_0 ns_nut_to_relay2_0_global ns_nut_global_to_relay1_0_global ns_nutlla_to_any_client1_lla ns_nut_to_relay2_0 ns_nut_to_relay1_0_global ns_nut_to_any_client1_global ns_nutlla_to_any_server1lla ns_nutlla_to_any_client2_lla ns_nutlla_to_server1ga) timeout:20.3626791715622 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv8"></A>
+<A HREF="#vRecvPKT8">    Receive DHCPv6 Rebind Message</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>Rebind Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 16304492</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 3003<BR></td></tr></table><FONT COLOR="#FF0000 "> Actual RT is 20.1966660022736, RD is 29.8931798934937</FONT><BR></TD>
+
+</TR>
+<TR VALIGN="top"><TD>06:27:21</TD>
+<TD>vRecv(Link0,dhcp6_rebind ns_nut_to_relay2_0_global ns_nut_global_to_relay1_0_global ns_nut_global_to_relay2_0_global ns_nutga_to_any_server1lla ns_nut_to_relay1_0 ns_nut_to_any_client1_global ns_nutlla_to_any_client2_lla ns_nutlla_to_any_server1lla ns_nutlla_to_server1ga ns_nutlla_to_any_client1_lla ns_nut_to_relay2_0 ns_nut_to_relay1_0_global) timeout:42.4129986047745 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv9"></A>
+<A HREF="#vRecvPKT9">    Receive DHCPv6 Rebind Message</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>Rebind Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 16304492</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 6892<BR></td></tr></table><FONT COLOR="#FF0000 "> Actual RT is 38.7120780944824, RD is 68.6052579879761</FONT><BR></TD>
+
+</TR>
+<TR VALIGN="top"><TD>06:28:00</TD>
+<TD>vRecv(Link0,dhcp6_rebind ns_nutlla_to_any_client2_lla ns_nutlla_to_any_server1lla ns_nutlla_to_server1ga ns_nut_to_any_client1_global ns_nutlla_to_any_client1_lla ns_nut_to_relay1_0_global ns_nut_to_relay2_0 ns_nut_global_to_relay1_0_global ns_nut_to_relay2_0_global ns_nutga_to_any_server1lla ns_nut_global_to_relay2_0_global ns_nut_to_relay1_0) timeout:81.2953639984131 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv10"></A>
+<A HREF="#vRecvPKT10">    Receive DHCPv6 Rebind Message</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>Rebind Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 16304492</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 14611<BR></td></tr></table><FONT COLOR="#FF0000 "> Actual RT is 76.8256020545959, RD is 145.430860042572</FONT><BR></TD>
+
+</TR>
+<TR VALIGN="top"><TD>06:29:17</TD>
+<TD>vRecv(Link0,dhcp6_rebind ns_nut_to_any_client1_global ns_nutlla_to_server1ga ns_nutlla_to_any_server1lla ns_nutlla_to_any_client2_lla ns_nut_to_relay2_0 ns_nut_to_relay1_0_global ns_nutlla_to_any_client1_lla ns_nut_global_to_relay1_0_global ns_nut_to_relay2_0_global ns_nut_to_relay1_0 ns_nut_global_to_relay2_0_global ns_nutga_to_any_server1lla) timeout:161.333764314651 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv11"></A>
+<A HREF="#vRecvPKT11">    Receive DHCPv6 Rebind Message</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>Rebind Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 16304492</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 30605<BR></td></tr></table><FONT COLOR="#FF0000 "> Actual RT is 159.18590092659, RD is 304.616760969162</FONT><BR></TD>
+
+</TR>
+<TR VALIGN="top"><TD>06:31:56</TD>
+<TD>vRecv(Link0,dhcp6_rebind ns_nutlla_to_any_client2_lla ns_nutlla_to_any_server1lla ns_nutlla_to_server1ga ns_nut_to_any_client1_global ns_nutlla_to_any_client1_lla ns_nut_to_relay2_0 ns_nut_to_relay1_0_global ns_nut_global_to_relay1_0_global ns_nut_to_relay2_0_global ns_nutga_to_any_server1lla ns_nut_global_to_relay2_0_global ns_nut_to_relay1_0) timeout:334.290391945839 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv12"></A>
+<A HREF="#vRecvPKT12">recv unexpect packet at 06:33:02</A>
+<BR>
+<A NAME="vRecv13"></A>
+<A HREF="#vRecvPKT13">recv unexpect packet at 06:33:03</A>
+<BR>
+<A NAME="vRecv14"></A>
+<A HREF="#vRecvPKT14">recv unexpect packet at 06:33:04</A>
+<BR>
+<A NAME="vRecv15"></A>
+<A HREF="#vRecvPKT15">recv unexpect packet at 06:33:12</A>
+<BR>
+<A NAME="vRecv16"></A>
+<A HREF="#vRecvPKT16">recv unexpect packet at 06:33:13</A>
+<BR>
+<A NAME="vRecv17"></A>
+<A HREF="#vRecvPKT17">recv unexpect packet at 06:33:14</A>
+<BR>
+<A NAME="vRecv18"></A>
+<A HREF="#vRecvPKT18">recv unexpect packet at 06:33:22</A>
+<BR>
+<A NAME="vRecv19"></A>
+<A HREF="#vRecvPKT19">recv unexpect packet at 06:33:23</A>
+<BR>
+<A NAME="vRecv20"></A>
+<A HREF="#vRecvPKT20">recv unexpect packet at 06:33:24</A>
+<BR>
+<A NAME="vRecv21"></A>
+<A HREF="#vRecvPKT21">    Receive DHCPv6 Rebind Message</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>Rebind Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 2001:db8:ffff::<BR>PreferredLifetime= 2000<BR>ValidLifetime= 3000<BR></td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921751<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 16304492</td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 62593<BR></td></tr></table><FONT COLOR="#FF0000 "> Actual RT is 318.37375998497, RD is 622.990520954132</FONT><BR></TD>
+
+</TR>
+<TR VALIGN="top"><TD>06:37:15</TD>
+<TD>vRecv(Link0,dhcp6_rebind ns_nutlla_to_server1ga ns_nutlla_to_any_server1lla ns_nutlla_to_any_client2_lla ns_nut_to_any_client1_global ns_nut_to_relay2_0 ns_nut_to_relay1_0_global ns_nutlla_to_any_client1_lla ns_nut_global_to_relay1_0_global ns_nut_to_relay2_0_global ns_nut_to_relay1_0 ns_nutga_to_any_server1lla ns_nut_global_to_relay2_0_global) timeout:660 cntLimit:0 seektime:0<BR>

@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Router Advertisement Processing, Router Lifetime 
+  Part C: Router Lifetime Set to Five; Allowed to Expire</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a host properly processes a Router Advertisement and the Router Lifetime field
+  within it.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],W-3 [RFC 4861],Section 6.3.4</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  For Part A, Common Test Setup 1.1 is performed. For Parts B and C, Common Test
+  Setup 1.3 is performed. The Common Test Cleanup procedure is performed after each part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<Caption>Router Advertisement</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TR1's Link-local Address<br>
+	Destination Address: All-Nodes Multicast Address
+</TD>
+</TR>
+<TR>
+<TD>
+	Router Advertisement<br>
+	Router Lifetime: 20 seconds<br>
+	Reachable Time: 600 seconds<br>
+	Retransmit Interval: 1 second<br>
+</TD>
+</TR>
+<TR>
+<TD>
+	Prefix Option<br>
+	Valid Lifetime: 100 seconds<br>
+	Preferred Lifetime: 20 seconds<br>
+	Prefix: TR1's Global Prefix<br>
+</TR>
+</TD>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>  Part C: Router Lifetime Set to Five; Allowed to Expire
+   15. TN3 transmits a global Echo Request to the CE-Router.
+   16. Observe the packets transmitted by the CE-Router.
+   17. TR1 transmits a Router Advertisement with Router Lifetime set to five.
+   18. Wait seven seconds.
+   19. TN3 transmits a global Echo Request to the CE-Router.
+   20. Observe the packets transmitted by the CE-Router.
+   21. TR2 transmits a Router Advertisement with Router Lifetime set to five.
+   22. Wait seven seconds.
+   23. TN3 transmits a global Echo Request to the CE-Router.
+   24. Observe the packets transmitted by the CE-Router.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part C
+   Step 16:
+   The CE-Router should use TR1 or TR2 as a first hop.
+
+   Step 20:
+   The CE-Router should use TR2 as a first hop.
+
+   Step 24:
+   The CE-Router MUST not transmit an Echo Reply or transmit multicast NS&#39;s with a
+   target address set to TR1&#39;s or TR2&#39;s link-local address.</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None.</code></pre>
+
+
+</body>
+
+</html>
+
+

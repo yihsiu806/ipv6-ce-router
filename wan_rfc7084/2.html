@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN""http://www.w3c.org/TR/REC-html40/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>IPv6 Conformance Test Report</TITLE>
+<META NAME="GENERATOR" CONTENT="TAHI IPv6 Conformance Test Kit">
+</HEAD>
+
+<BODY BGCOLOR="#F0F0F0">
+<H1>Test Information</H1>
+<TABLE BORDER=1>
+<TR><TD>Title</TD><TD>Router Solicitation Transmission</TD></TR>
+<TR><TD>CommandLine</TD><TD>./CERouter_1_6_1.seq -pkt ./CERouter_1_6_1.def -log 2.html -ti Router Solicitation Transmission</TD></TR>
+<TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_2</TD></TR>
+<TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
+<TR><TD>Start</TD><TD>2016/07/18 05:14:55</TD></TR>
+<TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
+<TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
+<TR><TD>Pkt</TD><TD>./CERouter_1_6_1.def</TD></TR>
+<TR><TD>System</TD><TD>linux-v6</TD></TR>
+<TR><TD>TargetName</TD><TD>Linux 2.6.36+ </TD></TR>
+<TR><TD>HostName</TD><TD>NoBrand	</TD></TR>
+<TR><TD>Type</TD><TD>router</TD></TR>
+</TABLE>
+<HR>
+<H1>Test Sequence Execution Log</H1>
+<TABLE BORDER=1>
+<TR><TD>05:14:55</TD><TD>Start</TD></TR>
+<TR><TD><BR></TD><TD>
+<PRE>*** Target initialization phase ***</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:14:55</TD>
+<TD>
+vRemote(reboot_async.rmt) ``/usr/local/v6eval//bin/linux-v6//reboot_async.rmt -t linux-v6 -u root -p amittima -d cuaU0   ''
+<PRE></PRE>
+</TD></TR>
+<TR><TD><BR></TD><TD>
+<PRE>reboot_async.rmt returned status 0</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:14:56</TD><TD>Start Capturing Packets (Link0)<BR>
+</TD></TR>
+
+<TR><TD><BR></TD><TD>
+<PRE>Wait for link-local address DAD packet</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:14:56</TD>
+<TD>vRecv(Link0,dad_from_nut rs) timeout:100 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv0"></A>
+<A HREF="#vRecvPKT0">recv unexpect packet at 05:14:58</A>
+<BR>
+<A NAME="vRecv1"></A>
+<A HREF="#vRecvPKT1">recv dad_from_nut</A><BR>
+
+</TD>
+</TR>
+
+<TR><TD><BR></TD><TD>
+<PRE>Receive DAD packet, wait for rs</PRE>
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:14:59</TD>
+<TD>vRecv(Link0,rs) timeout:30 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv2"></A>
+<A HREF="#vRecvPKT2">recv unexpect packet at 05:15:00</A>
+<BR>
+<A NAME="vRecv3"></A>
+<A HREF="#vRecvPKT3">recv unexpect packet at 05:15:01</A>
+<BR>
+<A NAME="vRecv4"></A>
+<A HREF="#vRecvPKT4">recv rs</A><BR>
+
+</TD>
+</TR>
+
+<TR VALIGN="TOP"><TD>05:15:02</TD><TD>Clear Captured Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP"><TD>05:15:02</TD><TD>Stop Capturing Packets (Link0)<BR>
+</TD></TR>
+
+<TR><TD><BR></TD><TD>
+<FONT SIZE=3>*** Target test finish ***<FONT><BR></TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:15:02</TD>
+<TD>
+vRemote(reboot.rmt) ``/usr/local/v6eval//bin/linux-v6//reboot.rmt -t linux-v6 -u root -p amittima -d cuaU0   ''
+<PRE></PRE>
+</TD></TR>
+<TR><TD><BR></TD><TD>
+<B>PASS</B><BR></TD>
+</TR>
+<TR><TD>05:15:09</TD><TD>End</TD></TR>
+</TABLE>
+<HR><H1>Packet Reverse Log</H1>
+<UL>
+<A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 05:14:58</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:90)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:16
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:76)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 36
+| | | NextHeader                       = 0
+| | | HopLimit                         = 1
+| | | SourceAddress                    = ::
+| | | DestinationAddress               = ff02::16
+| | Hdr_HopByHop                    (length:8)
+| | | NextHeader                       = 58
+| | | HeaderExtLength                  = 0
+| | | Opt_RouterAlert                 (length:4)
+| | | | OptionType                       = 5
+| | | | OptDataLength                    = 2
+| | | | Value                            = 0
+| | | Opt_PadN                        (length:2)
+| | | | OptionType                       = 1
+| | | | OptDataLength                    = 0
+| | ICMPv6_MLDv2Report              (length:28)
+| | | Type                             = 143
+| | | Code                             = 0
+| | | Checksum                         = 26489 calc(26489)
+| | | Reserved                         = 0
+| | | NumOfMcastAddrRecords            = 1
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:811
+| | | | AuxData                          = 
+===dad_from_nut=================================
+ng compare _HDR_IPV6_dad_from_nut.NextHeader received:0 = 58
+ng compare _HDR_IPV6_dad_from_nut.HopLimit received:1 = 255
+ng compare _HDR_IPV6_dad_from_nut.DestinationAddress received:ff02::16 = ff02::1:ff00:811
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+===rs=================================
+ng compare _HETHER_nut2allrouters.DestinationAddress received:33:33:00:00:00:16 = 33:33:00:00:00:02
+ng compare _HDR_IPV6_rs.NextHeader received:0 = 58
+ng compare _HDR_IPV6_rs.HopLimit received:1 = 255
+ng compare _HDR_IPV6_rs.SourceAddress received::: = fe80::250:18ff:fe00:811
+ng compare _HDR_IPV6_rs.DestinationAddress received:ff02::16 = ff02::2
+ng meta Packet_IPv6.ICMPv6_RS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 05:14:59</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:78)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:08:11
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:64)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 24
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = ::
+| | | DestinationAddress               = ff02::1:ff00:811
+| | ICMPv6_NS                       (length:24)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 21173 calc(21173)
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::250:18ff:fe00:811
+===dad_from_nut=================================
+</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 05:15:00</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:110)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:16
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:96)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 56
+| | | NextHeader                       = 0
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::16
+| | Hdr_HopByHop                    (length:8)
+| | | NextHeader                       = 58
+| | | HeaderExtLength                  = 0
+| | | Opt_RouterAlert                 (length:4)
+| | | | OptionType                       = 5
+| | | | OptDataLength                    = 2
+| | | | Value                            = 0
+| | | Opt_PadN                        (length:2)
+| | | | OptionType                       = 1
+| | | | OptDataLength                    = 0
+| | ICMPv6_MLDv2Report              (length:48)
+| | | Type                             = 143
+| | | Code                             = 0
+| | | Checksum                         = 17789 calc(17789)
+| | | Reserved                         = 0
+| | | NumOfMcastAddrRecords            = 2
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:0
+| | | | AuxData                          = 
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:811
+| | | | AuxData                          = 
+===rs=================================
+ng compare _HETHER_nut2allrouters.DestinationAddress received:33:33:00:00:00:16 = 33:33:00:00:00:02
+ng compare _HDR_IPV6_rs.NextHeader received:0 = 58
+ng compare _HDR_IPV6_rs.HopLimit received:1 = 255
+ng compare _HDR_IPV6_rs.DestinationAddress received:ff02::16 = ff02::2
+ng meta Packet_IPv6.ICMPv6_RS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 05:15:01</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:90)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:16
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:76)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 36
+| | | NextHeader                       = 0
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::16
+| | Hdr_HopByHop                    (length:8)
+| | | NextHeader                       = 58
+| | | HeaderExtLength                  = 0
+| | | Opt_RouterAlert                 (length:4)
+| | | | OptionType                       = 5
+| | | | OptDataLength                    = 2
+| | | | Value                            = 0
+| | | Opt_PadN                        (length:2)
+| | | | OptionType                       = 1
+| | | | OptDataLength                    = 0
+| | ICMPv6_MLDv2Report              (length:28)
+| | | Type                             = 143
+| | | Code                             = 0
+| | | Checksum                         = 20392 calc(20392)
+| | | Reserved                         = 0
+| | | NumOfMcastAddrRecords            = 1
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:0
+| | | | AuxData                          = 
+===rs=================================
+ng compare _HETHER_nut2allrouters.DestinationAddress received:33:33:00:00:00:16 = 33:33:00:00:00:02
+ng compare _HDR_IPV6_rs.NextHeader received:0 = 58
+ng compare _HDR_IPV6_rs.HopLimit received:1 = 255
+ng compare _HDR_IPV6_rs.DestinationAddress received:ff02::16 = ff02::2
+ng meta Packet_IPv6.ICMPv6_RS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+</PRE><HR><A NAME="vRecvPKT4"></A><A HREF="#vRecv4">Recv at 05:15:02</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:56)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 16
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::2
+| | ICMPv6_RS                       (length:16)
+| | | Type                             = 133
+| | | Code                             = 0
+| | | Checksum                         = 14956 calc(14956)
+| | | Reserved                         = 0
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===rs=================================
+</PRE><HR></UL>
+
+</BODY>
+</HTML>
+<!-- 90ab16050fd9d40579c0288c54eb56fb -->
+<!-- a56b36dd8d5f0d2e3a03f14e758e180d -->
+<!-- d2c3f5ecf29a5c8b61cf3eac3b5ec3c3 -->

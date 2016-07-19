@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:perl@FreeBSD.org" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<pre><code>  Router Advertisement Processing, Reachable Time</code></pre>
+
+<h1 id="Purpose">Purpose</h1>
+
+<pre><code>  Verify that a node updates its BaseReachableTime variable and re-computes its
+  ReachableTime variable upon receipt of a Router Advertisement or a configuration with a specified
+  Reachable Time.</code></pre>
+
+<h1 id="References">References</h1>
+
+<p>[RFC 7084],W-3 [RFC 4861],Sections 6.2.1 and 6.3.4</p>
+
+<h1 id="Resource-Requirements">Resource Requirements</h1>
+
+<pre><code>  * Packet generator
+  * Monitor to capture packets</code></pre>
+
+<h1 id="Test-Setup">Test Setup</h1>
+
+<pre><code>  Common Test Setup 1.2 is performed at the beginning of this test part.
+  The Common Test Cleanup procedure is performed after each part.</code></pre>
+
+
+
+<BLOCKQUOTE><TABLE BORDER>
+<Caption>Router Advertisement</Caption>
+<TR>
+<TD>
+        IPv6 Header<br>
+        Next Header: 58<br>
+        Source Address: TR1's Link-local Address<br>
+</TD>
+</TR>
+<TR>
+<TD>
+	Router Advertisement<br>
+	Router Lifetime: [see below]<br>
+	Reachable Time: [see below]<br>
+	Retransmit Interval: 1 second<br>
+</TD>
+</TR>
+</TABLE></BLOCKQUOTE>
+
+<h1 id="Procedure">Procedure</h1>
+
+<pre><code>   1. TR1 transmits the Router Advertisement with a Reachable Time of 10 seconds.
+   2. TN1 transmits a link-local Echo Request to the CE-Router. TN1 must reply to any Neighbor
+      Solicitations from the CE-Router.
+   3. Observe the packets transmitted by the CE-Router.
+   4. Repeat Step 2 every second for 40 seconds.
+   5. Observe the packets transmitted by the CE-Router.
+   6. TR1 transmits the Router Advertisement with a Reachable Time of 40 seconds.
+   7. Repeat Step 2 every seconds for 140 seconds.
+   8. Observe the packets transmitted by the CE-Router.</code></pre>
+
+<h1 id="Observable-Results">Observable Results</h1>
+
+<pre><code>  Part A
+     Step 3:
+     The CE-Router should solicit for TN1&#39;s link-local address and transmit an Echo Reply.
+
+     Step 5:
+     The CE-Router should transmit a Neighbor Solicitation with a Target Address of TN1&#39;s
+     link-local address at an interval between 10 and 20 seconds. [ReachableTime time (between
+     5 and 15 seconds) + DELAY_FIRST_PROBE_TIME (5 seconds)].
+
+     Step 8:
+     The CE-Router should transmit Neighbor Solicitations at an interval between 25 and 65
+     seconds. [ReachableTime time (between 20 and 60 seconds) +
+     DELAY_FIRST_PROBE_TIME (5 seconds)].</code></pre>
+
+<h1 id="Possible-Problems">Possible Problems</h1>
+
+<pre><code>  * None. </code></pre>
+
+
+</body>
+
+</html>
+
+

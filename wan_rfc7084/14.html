@@ -1,0 +1,1859 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN""http://www.w3c.org/TR/REC-html40/strict.dtd">
+<HTML>
+<HEAD>
+<TITLE>IPv6 Conformance Test Report</TITLE>
+<META NAME="GENERATOR" CONTENT="TAHI IPv6 Conformance Test Kit">
+</HEAD>
+
+<BODY BGCOLOR="#F0F0F0">
+<H1>Test Information</H1>
+<TABLE BORDER=1>
+<TR><TD>Title</TD><TD>Dynamic Routing Protocol</TD></TR>
+<TR><TD>CommandLine</TD><TD>./CERouter_1_6_7.seq -pkt ./CERouter_1_6_7.def -log 14.html -ti Dynamic Routing Protocol</TD></TR>
+<TR><TD>TestVersion</TD><TD>CE-Router_Self_Test_1_0_2</TD></TR>
+<TR><TD>ToolVersion</TD><TD>REL_3_3_3</TD></TR>
+<TR><TD>Start</TD><TD>2016/07/18 05:17:36</TD></TR>
+<TR><TD>Tn</TD><TD>/usr/local/v6eval//etc//tn.def</TD></TR>
+<TR><TD>Nu</TD><TD>/usr/local/v6eval//etc//nut.def</TD></TR>
+<TR><TD>Pkt</TD><TD>./CERouter_1_6_7.def</TD></TR>
+<TR><TD>System</TD><TD>linux-v6</TD></TR>
+<TR><TD>TargetName</TD><TD>Linux 2.6.36+ </TD></TR>
+<TR><TD>HostName</TD><TD>NoBrand	</TD></TR>
+<TR><TD>Type</TD><TD>router</TD></TR>
+</TABLE>
+<HR>
+<H1>Test Sequence Execution Log</H1>
+<TABLE BORDER=1>
+<TR><TD>05:17:36</TD><TD>Start</TD></TR>
+<TR VALIGN="TOP"><TD>05:17:36</TD><TD>Clear Captured Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP"><TD>05:17:36</TD><TD>Start Capturing Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP">
+<TD>05:17:36</TD><TD>
+vSend(Link0,ra_MsetOset)<BR>
+<A NAME="vSend0"></A>
+<A HREF="#vSendPKT0">send ra_MsetOset</A><BR>
+
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>05:17:36</TD><TD>
+vSend(Link0,ereq_tr1_to_nut)<BR>
+<A NAME="vSend1"></A>
+<A HREF="#vSendPKT1">send ereq_tr1_to_nut</A><BR>
+
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:17:36</TD>
+<TD>vRecv(Link0,erep_nut_to_tr1 ns_any_to_tr1) timeout:5 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv0"></A>
+<A HREF="#vRecvPKT0">recv unexpect packet at 05:17:37</A>
+<BR>
+<A NAME="vRecv1"></A>
+<A HREF="#vRecvPKT1">recv ns_any_to_tr1</A><BR>
+
+</TD>
+</TR>
+
+<TR><TD><BR></TD><TD>
+Receive NS from CE-Router.Send NA.<BR></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>05:17:37</TD><TD>
+vSend(Link0,na_ll_tr1_to_nut)<BR>
+<A NAME="vSend2"></A>
+<A HREF="#vSendPKT2">send na_ll_tr1_to_nut</A><BR>
+
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:17:38</TD>
+<TD>vRecv(Link0,erep_nut_to_tr1) timeout:5 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv2"></A>
+<A HREF="#vRecvPKT2">recv erep_nut_to_tr1</A><BR>
+
+</TD>
+</TR>
+
+<TR><TD><BR></TD><TD>
+TR1 receives echo reply from CE-Router<BR></TD>
+
+</TR>
+<TR VALIGN="top"><TD>05:17:38</TD>
+<TD>vRecv(Link0,dhcp6_solicit ns_nutlla_to_any_server1lla ns_nut_to_relay2_0 ns_nutlla_to_any_client1_lla ns_nutga_to_any_server1lla ns_nutrelay_to_client_global ns_nutrelay_to_relay ns_nut_to_relay2_0_global ns_nutrelay_to_server ns_nut_to_relay1_0 ns_nutlla_to_server1ga ns_nut_global_to_relay2_0_global ns_nut_to_any_client1_global ns_nutlla_to_any_client2_lla ns_nut_to_relay1_0_global ns_nut_global_to_relay1_0_global ns_nutrelay_to_client_local) timeout:30 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv3"></A>
+<A HREF="#vRecvPKT3">recv dhcp6_solicit</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>got DHCPv6 Solicit Message</B><BR><B>Solicit Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Identifier</B></td><td>Identifier = 15918548</td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921828<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 0<BR>T2= 0<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 0<BR>T2= 0<BR></td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 0<BR></td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_ReconfigureAccept</B></td><td><BR></td></tr></table>Checking existing option...<BR><B>Opt_DHCPv6_IA_NA found<BR></B><B>Opt_DHCPv6_IA_PD found<BR></B></TD>
+
+</TR>
+<TR VALIGN="top">
+
+<TD>05:17:38</TD><TD>
+vSend(Link0,advertise_server1_to_nut)<BR>
+<A NAME="vSend3"></A>
+<A HREF="#vSendPKT3">send advertise_server1_to_nut</A><BR>
+
+</TD>
+</TR>
+<TR><TD><BR></TD><TD>
+<B>Advertise Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 15918548</td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921828<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_Servers</B></td><td>DNS = 3ffe:501:ffff:100:200:ff:fe00:3f3e<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 50<BR>T2= 80<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 3ffe:501:ffff:1110::<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_SearchList</B></td><td>SearchList = test.example.com.<BR></td></tr></table></TD>
+
+</TR>
+<TR VALIGN="top"><TD>05:17:38</TD>
+<TD>vRecv(Link0,dhcp6_request ns_nutrelay_to_relay ns_nutrelay_to_client_global ns_nut_to_relay2_0_global ns_nutrelay_to_server ns_nutlla_to_any_server1lla ns_nutlla_to_any_client1_lla ns_nut_to_relay2_0 ns_nutga_to_any_server1lla ns_nut_to_relay1_0_global ns_nut_global_to_relay1_0_global ns_nutrelay_to_client_local ns_nutlla_to_server1ga ns_nut_to_relay1_0 ns_nut_global_to_relay2_0_global ns_nut_to_any_client1_global ns_nutlla_to_any_client2_lla) timeout:30 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv4"></A>
+<A HREF="#vRecvPKT4">recv dhcp6_request</A><BR>
+
+
+</TD>
+
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>got DHCPv6 Request Message</B><BR><B>Request Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 7331253</td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921828<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 0<BR>T2= 0<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 0<BR>T2= 0<BR><B>#IA_Prefix Option</B><BR>Prefix= 3ffe:501:ffff:1110::<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_ElapsedTime</B></td><td>Time = 0<BR></td></tr><tr><td><B>Opt_DHCPv6_OptionRequest</B></td><td>OptionCode = 23 OPTION_DNS_SERVERS<BR>OptionCode = 24 OPTION_DOMAIN_LIST<BR>OptionCode = 82 OPTION_SOL_MAX_RT<BR></td></tr><tr><td><B>Opt_DHCPv6_ReconfigureAccept</B></td><td><BR></td></tr></table>Checking existing option...<BR><B>Opt_DHCPv6_IA_NA found<BR></B><B>Opt_DHCPv6_IA_PD found<BR></B></TD>
+
+</TR>
+<TR VALIGN="top">
+
+<TD>05:17:39</TD><TD>
+vSend(Link0,reply_server1_to_nut)<BR>
+<A NAME="vSend4"></A>
+<A HREF="#vSendPKT4">send reply_server1_to_nut</A><BR>
+
+</TD>
+</TR>
+<TR><TD><BR></TD><TD>
+<B>Reply Message</B><BR><table BORDER=1><tr><td>DHCPv6 Option</td><td>Values</td></tr><tr><td><B>Opt_DHCPv6_SID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:00:00:00:a1:a1<BR><B>DUID-LLT</B> TIME = 400000<BR></td></tr><tr><td><B>Identifier</B></td><td>Identifier = 7331253</td></tr><tr><td><B>Opt_DHCPv6_CID</B></td><td><B>DUID-LLT</B> HardwareType = 1<BR><B>DUID-LLT</B> MAC = 00:50:18:00:08:11<BR><B>DUID-LLT</B> TIME = 504921828<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_Servers</B></td><td>DNS = 3ffe:501:ffff:100:200:ff:fe00:3f3e<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_NA</B></td><td><B>Option 1</B><BR>Identifier= 0<BR>T1= 50<BR>T2= 80<BR><B>#IA_Addr Option</B><BR>Addr= 3ffe:501:ffff:100::abcd<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_IA_PD</B></td><td><B>Option 1</B><BR>Identifier= 1<BR>T1= 50<BR>T2= 80<BR><B>#IA_Prefix Option</B><BR>Prefix= 3ffe:501:ffff:1110::<BR>PreferredLifetime= 100<BR>ValidLifetime= 200<BR></td></tr><tr><td><B>Opt_DHCPv6_DNS_SearchList</B></td><td>SearchList = test.example.com.<BR></td></tr></table></TD></TR>
+
+<TR VALIGN="TOP">
+<TD>05:17:39</TD>
+<TD>Wait 3 second
+</TD></TR>
+<TR><TD><BR></TD><TD>
+<B>RA includes the global prefix().</B></BR></TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:17:42</TD><TD>Clear Captured Packets (Link0)<BR>
+</TD></TR>
+
+<TR><TD><BR></TD><TD>
+<B>Observe 120 seconds for routing protocol packets.</B></BR></TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:17:42</TD>
+<TD>vRecv(Link0,ripng_any) timeout:120 cntLimit:0 seektime:0<BR>
+<A NAME="vRecv5"></A>
+<A HREF="#vRecvPKT5">recv unexpect packet at 05:17:46</A>
+<BR>
+<A NAME="vRecv6"></A>
+<A HREF="#vRecvPKT6">recv unexpect packet at 05:18:06</A>
+<BR>
+<A NAME="vRecv7"></A>
+<A HREF="#vRecvPKT7">recv unexpect packet at 05:18:07</A>
+<BR>
+<A NAME="vRecv8"></A>
+<A HREF="#vRecvPKT8">recv unexpect packet at 05:18:08</A>
+<BR>
+<A NAME="vRecv9"></A>
+<A HREF="#vRecvPKT9">recv unexpect packet at 05:18:30</A>
+<BR>
+<A NAME="vRecv10"></A>
+<A HREF="#vRecvPKT10">recv unexpect packet at 05:18:32</A>
+<BR>
+<A NAME="vRecv11"></A>
+<A HREF="#vRecvPKT11">recv unexpect packet at 05:18:36</A>
+<BR>
+<A NAME="vRecv12"></A>
+<A HREF="#vRecvPKT12">recv unexpect packet at 05:18:37</A>
+<BR>
+<A NAME="vRecv13"></A>
+<A HREF="#vRecvPKT13">recv unexpect packet at 05:18:38</A>
+<BR>
+<A NAME="vRecv14"></A>
+<A HREF="#vRecvPKT14">recv unexpect packet at 05:18:39</A>
+<BR>
+<A NAME="vRecv15"></A>
+<A HREF="#vRecvPKT15">recv unexpect packet at 05:18:41</A>
+<BR>
+<A NAME="vRecv16"></A>
+<A HREF="#vRecvPKT16">recv unexpect packet at 05:18:58</A>
+<BR>
+<A NAME="vRecv17"></A>
+<A HREF="#vRecvPKT17">recv unexpect packet at 05:18:59</A>
+<BR>
+<A NAME="vRecv18"></A>
+<A HREF="#vRecvPKT18">recv unexpect packet at 05:19:00</A>
+<BR>
+<A NAME="vRecv19"></A>
+<A HREF="#vRecvPKT19">recv unexpect packet at 05:19:02</A>
+<BR>
+<A NAME="vRecv20"></A>
+<A HREF="#vRecvPKT20">recv unexpect packet at 05:19:06</A>
+<BR>
+<A NAME="vRecv21"></A>
+<A HREF="#vRecvPKT21">recv unexpect packet at 05:19:07</A>
+<BR>
+<A NAME="vRecv22"></A>
+<A HREF="#vRecvPKT22">recv unexpect packet at 05:19:08</A>
+<BR>
+<A NAME="vRecv23"></A>
+<A HREF="#vRecvPKT23">recv unexpect packet at 05:19:10</A>
+<BR>
+<A NAME="vRecv24"></A>
+<A HREF="#vRecvPKT24">recv unexpect packet at 05:19:12</A>
+<BR>
+<A NAME="vRecv25"></A>
+<A HREF="#vRecvPKT25">recv unexpect packet at 05:19:32</A>
+<BR>
+<A NAME="vRecv26"></A>
+<A HREF="#vRecvPKT26">recv unexpect packet at 05:19:32</A>
+<BR>
+vRecv() return status=1
+
+</TD>
+</TR>
+
+<TR><TD><BR></TD><TD>
+<B>OK! CE-Router does not transmit any routing protocol packets.</B></BR></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>05:19:42</TD><TD>
+vSend(Link0,ra_RouterLifetimeZero)<BR>
+<A NAME="vSend5"></A>
+<A HREF="#vSendPKT5">send ra_RouterLifetimeZero</A><BR>
+
+</TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:19:42</TD><TD>Clear Captured Packets (Link0)<BR>
+</TD></TR>
+
+<TR VALIGN="TOP"><TD>05:19:42</TD><TD>Stop Capturing Packets (Link0)<BR>
+</TD></TR>
+
+<TR><TD><BR></TD><TD>
+<FONT SIZE=3>*** Target test finish ***<FONT><BR></TD>
+</TR>
+<TR VALIGN="TOP"><TD>05:19:42</TD>
+<TD>
+vRemote(reboot.rmt) ``/usr/local/v6eval//bin/linux-v6//reboot.rmt -t linux-v6 -u root -p amittima -d cuaU0   ''
+<PRE></PRE>
+</TD></TR>
+<TR><TD><BR></TD><TD>
+<B>PASS</B><BR></TD>
+</TR>
+<TR><TD>05:19:48</TD><TD>End</TD></TR>
+</TABLE>
+<HR><H1>Packet Reverse Log</H1>
+<UL>
+<A NAME="vSendPKT0"></A><A HREF="#vSend0">send ra_MsetOset at 05:17:36</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:102)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:01
+| | SourceAddress                    = 00:00:00:00:a0:a0
+| | Type                             = 34525
+| Packet_IPv6                     (length:88)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 48
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::200:ff:fe00:a0a0
+| | | DestinationAddress               = ff02::1
+| | ICMPv6_RA                       (length:48)
+| | | Type                             = 134
+| | | Code                             = 0
+| | | Checksum                         = 36875 calc(36875)
+| | | CurHopLimit                      = 64
+| | | MFlag                            = 1
+| | | OFlag                            = 1
+| | | HFlag                            = 0
+| | | Preference                       = 0
+| | | Reserved                         = 0
+| | | LifeTime                         = 600
+| | | ReachableTime                    = 30000
+| | | RetransTimer                     = 1000
+| | | Opt_ICMPv6_Prefix               (length:32)
+| | | | Type                             = 3
+| | | | Length                           = 4
+| | | | PrefixLength                     = 64
+| | | | LFlag                            = 1
+| | | | AFlag                            = 0
+| | | | RFlag                            = 0
+| | | | Reserved1                        = 0
+| | | | ValidLifetime                    = 600
+| | | | PreferredLifetime                = 600
+| | | | Reserved2                        = 0
+| | | | Prefix                           = 3ffe:501:ffff:100::
+</PRE><HR><A NAME="vSendPKT1"></A><A HREF="#vSend1">send ereq_tr1_to_nut at 05:17:36</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:50:18:00:08:11
+| | SourceAddress                    = 00:00:00:00:a0:a0
+| | Type                             = 34525
+| Packet_IPv6                     (length:56)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 16
+| | | NextHeader                       = 58
+| | | HopLimit                         = 64
+| | | SourceAddress                    = fe80::200:ff:fe00:a0a0
+| | | DestinationAddress               = fe80::250:18ff:fe00:811
+| | ICMPv6_EchoRequest              (length:16)
+| | | Type                             = 128
+| | | Code                             = 0
+| | | Checksum                         = 49073 calc(49073)
+| | | Identifier                       = 0
+| | | SequenceNumber                   = 0
+| | | Payload                         (length:8)
+| | | | data                             = 00000000 00000000
+</PRE><HR><A NAME="vRecvPKT0"></A><A HREF="#vRecv0">Recv at 05:17:37</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:110)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:16
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:96)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 56
+| | | NextHeader                       = 0
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::16
+| | Hdr_HopByHop                    (length:8)
+| | | NextHeader                       = 58
+| | | HeaderExtLength                  = 0
+| | | Opt_RouterAlert                 (length:4)
+| | | | OptionType                       = 5
+| | | | OptDataLength                    = 2
+| | | | Value                            = 0
+| | | Opt_PadN                        (length:2)
+| | | | OptionType                       = 1
+| | | | OptDataLength                    = 0
+| | ICMPv6_MLDv2Report              (length:48)
+| | | Type                             = 143
+| | | Code                             = 0
+| | | Checksum                         = 17789 calc(17789)
+| | | Reserved                         = 0
+| | | NumOfMcastAddrRecords            = 2
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:0
+| | | | AuxData                          = 
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:811
+| | | | AuxData                          = 
+===erep_nut_to_tr1=================================
+ng compare _HETHER_nut_to_tr1.DestinationAddress received:33:33:00:00:00:16 = 00:00:00:00:a0:a0
+ng compare _HDR_IPV6_erep_nut_to_tr1.NextHeader received:0 = 58
+ng compare _HDR_IPV6_erep_nut_to_tr1.DestinationAddress received:ff02::16 = fe80::200:ff:fe00:a0a0
+ng meta Packet_IPv6.ICMPv6_EchoReply != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+===ns_any_to_tr1=================================
+ng compare _HDR_IPV6_ns_any_to_tr1.NextHeader received:0 = 58
+ng compare _HDR_IPV6_ns_any_to_tr1.HopLimit received:1 = 255
+ng meta Packet_IPv6.ICMPv6_NS != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+</PRE><HR><A NAME="vRecvPKT1"></A><A HREF="#vRecv1">Recv at 05:17:37</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:a0:a0
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:a0a0
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 63641 calc(63641)
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::200:ff:fe00:a0a0
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===erep_nut_to_tr1=================================
+ng compare _HETHER_nut_to_tr1.DestinationAddress received:33:33:ff:00:a0:a0 = 00:00:00:00:a0:a0
+ng compare _HDR_IPV6_erep_nut_to_tr1.DestinationAddress received:ff02::1:ff00:a0a0 = fe80::200:ff:fe00:a0a0
+ng meta Packet_IPv6.ICMPv6_EchoReply != Packet_IPv6.ICMPv6_NS
+===ns_any_to_tr1=================================
+</PRE><HR><A NAME="vSendPKT2"></A><A HREF="#vSend2">send na_ll_tr1_to_nut at 05:17:38</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:50:18:00:08:11
+| | SourceAddress                    = 00:00:00:00:a0:a0
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::200:ff:fe00:a1a1
+| | | DestinationAddress               = fe80::250:18ff:fe00:811
+| | ICMPv6_NA                       (length:32)
+| | | Type                             = 136
+| | | Code                             = 0
+| | | Checksum                         = 37852 calc(37852)
+| | | RFlag                            = 1
+| | | SFlag                            = 1
+| | | OFlag                            = 1
+| | | Reserved                         = 0
+| | | TargetAddress                    = fe80::200:ff:fe00:a0a0
+| | | Opt_ICMPv6_TLL                  (length:8)
+| | | | Type                             = 2
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:00:00:00:a0:a0
+</PRE><HR><A NAME="vRecvPKT2"></A><A HREF="#vRecv2">Recv at 05:17:38</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:00:00:00:a0:a0
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:56)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 16
+| | | NextHeader                       = 58
+| | | HopLimit                         = 64
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = fe80::200:ff:fe00:a0a0
+| | ICMPv6_EchoReply                (length:16)
+| | | Type                             = 129
+| | | Code                             = 0
+| | | Checksum                         = 48817 calc(48817)
+| | | Identifier                       = 0
+| | | SequenceNumber                   = 0
+| | | Payload                         (length:8)
+| | | | data                             = 00000000 00000000
+===erep_nut_to_tr1=================================
+</PRE><HR><A NAME="vRecvPKT3"></A><A HREF="#vRecv3">Recv at 05:17:38</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:136)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:122)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 82
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:82)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 82
+| | | | Checksum                         = 13832 calc(13832)
+| | | Udp_DHCPv6_Solicit              (length:74)
+| | | | Type                             = 1
+| | | | Identifier                       = 15918548
+| | | | Opt_DHCPv6_ReconfigureAccept    (length:4)
+| | | | | Code                             = 20
+| | | | | Length                           = 0
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_IA_NA                (length:16)
+| | | | | Code                             = 3
+| | | | | Length                           = 12
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 0
+| | | | | Time2                            = 0
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 0
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+| | | | Opt_DHCPv6_IA_PD                (length:16)
+| | | | | Code                             = 25
+| | | | | Length                           = 12
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 0
+| | | | | Time2                            = 0
+===dhcp6_solicit=================================
+</PRE><HR><A NAME="vSendPKT3"></A><A HREF="#vSend3">send advertise_server1_to_nut at 05:17:38</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:233)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:50:18:00:08:11
+| | SourceAddress                    = 00:00:00:00:a1:a1
+| | Type                             = 34525
+| Packet_IPv6                     (length:219)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 179
+| | | NextHeader                       = 17
+| | | HopLimit                         = 64
+| | | SourceAddress                    = fe80::200:ff:fe00:a1a1
+| | | DestinationAddress               = fe80::250:18ff:fe00:811
+| | Upp_UDP                         (length:179)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 546
+| | | | Length                           = 179
+| | | | Checksum                         = 21186 calc(21186)
+| | | Udp_DHCPv6_Advertise            (length:171)
+| | | | Type                             = 2
+| | | | Identifier                       = 15918548
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_SID                  (length:18)
+| | | | | Code                             = 2
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 400000
+| | | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
+| | | | Opt_DHCPv6_IA_NA                (length:44)
+| | | | | Code                             = 3
+| | | | | Length                           = 40
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Address           (length:28)
+| | | | | | Code                             = 5
+| | | | | | Length                           = 24
+| | | | | | Address                          = 3ffe:501:ffff:100::abcd
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | Opt_DHCPv6_IA_PD                (length:45)
+| | | | | Code                             = 25
+| | | | | Length                           = 41
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Prefix            (length:29)
+| | | | | | Code                             = 26
+| | | | | | Length                           = 25
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | | | PrefixLength                     = 60
+| | | | | | Prefix                           = 3ffe:501:ffff:1110::
+| | | | Opt_DHCPv6_DNS_Servers          (length:20)
+| | | | | Code                             = 23
+| | | | | Length                           = 16
+| | | | | Address                          = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | | Opt_DHCPv6_DNS_SearchList       (length:22)
+| | | | | Code                             = 24
+| | | | | Length                           = 18
+| | | | | SearchString                     = test.example.com.
+</PRE><HR><A NAME="vRecvPKT4"></A><A HREF="#vRecv4">Recv at 05:17:39</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:211)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:197)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 157
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:157)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 157
+| | | | Checksum                         = 16342 calc(16342)
+| | | Udp_DHCPv6_Request              (length:149)
+| | | | Type                             = 3
+| | | | Identifier                       = 7331253
+| | | | Opt_DHCPv6_ReconfigureAccept    (length:4)
+| | | | | Code                             = 20
+| | | | | Length                           = 0
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_SID                  (length:18)
+| | | | | Code                             = 2
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 400000
+| | | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
+| | | | Opt_DHCPv6_IA_NA                (length:44)
+| | | | | Code                             = 3
+| | | | | Length                           = 40
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 0
+| | | | | Time2                            = 0
+| | | | | Opt_DHCPv6_IA_Address           (length:28)
+| | | | | | Code                             = 5
+| | | | | | Length                           = 24
+| | | | | | Address                          = 3ffe:501:ffff:100::abcd
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 0
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+| | | | Opt_DHCPv6_IA_PD                (length:45)
+| | | | | Code                             = 25
+| | | | | Length                           = 41
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 0
+| | | | | Time2                            = 0
+| | | | | Opt_DHCPv6_IA_Prefix            (length:29)
+| | | | | | Code                             = 26
+| | | | | | Length                           = 25
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | | | PrefixLength                     = 60
+| | | | | | Prefix                           = 3ffe:501:ffff:1110::
+===dhcp6_request=================================
+</PRE><HR><A NAME="vSendPKT4"></A><A HREF="#vSend4">send reply_server1_to_nut at 05:17:39</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:233)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:50:18:00:08:11
+| | SourceAddress                    = 00:00:00:00:a1:a1
+| | Type                             = 34525
+| Packet_IPv6                     (length:219)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 179
+| | | NextHeader                       = 17
+| | | HopLimit                         = 64
+| | | SourceAddress                    = fe80::200:ff:fe00:a1a1
+| | | DestinationAddress               = fe80::250:18ff:fe00:811
+| | Upp_UDP                         (length:179)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 547
+| | | | DestinationPort                  = 546
+| | | | Length                           = 179
+| | | | Checksum                         = 22115 calc(22115)
+| | | Udp_DHCPv6_Reply                (length:171)
+| | | | Type                             = 7
+| | | | Identifier                       = 7331253
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_SID                  (length:18)
+| | | | | Code                             = 2
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 400000
+| | | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
+| | | | Opt_DHCPv6_IA_NA                (length:44)
+| | | | | Code                             = 3
+| | | | | Length                           = 40
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Address           (length:28)
+| | | | | | Code                             = 5
+| | | | | | Length                           = 24
+| | | | | | Address                          = 3ffe:501:ffff:100::abcd
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | Opt_DHCPv6_IA_PD                (length:45)
+| | | | | Code                             = 25
+| | | | | Length                           = 41
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Prefix            (length:29)
+| | | | | | Code                             = 26
+| | | | | | Length                           = 25
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | | | PrefixLength                     = 60
+| | | | | | Prefix                           = 3ffe:501:ffff:1110::
+| | | | Opt_DHCPv6_DNS_Servers          (length:20)
+| | | | | Code                             = 23
+| | | | | Length                           = 16
+| | | | | Address                          = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | | Opt_DHCPv6_DNS_SearchList       (length:22)
+| | | | | Code                             = 24
+| | | | | Length                           = 18
+| | | | | SearchString                     = test.example.com.
+</PRE><HR><A NAME="vRecvPKT5"></A><A HREF="#vRecv5">Recv at 05:17:46</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:130)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:00:00:16
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:116)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 76
+| | | NextHeader                       = 0
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::16
+| | Hdr_HopByHop                    (length:8)
+| | | NextHeader                       = 58
+| | | HeaderExtLength                  = 0
+| | | Opt_RouterAlert                 (length:4)
+| | | | OptionType                       = 5
+| | | | OptDataLength                    = 2
+| | | | Value                            = 0
+| | | Opt_PadN                        (length:2)
+| | | | OptionType                       = 1
+| | | | OptDataLength                    = 0
+| | ICMPv6_MLDv2Report              (length:68)
+| | | Type                             = 143
+| | | Code                             = 0
+| | | Checksum                         = 38805 calc(38805)
+| | | Reserved                         = 0
+| | | NumOfMcastAddrRecords            = 3
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:abcd
+| | | | AuxData                          = 
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:0
+| | | | AuxData                          = 
+| | | MLDv2_AddrRecord                (length:20)
+| | | | Type                             = 4
+| | | | AuxDataLen                       = 0
+| | | | NumOfSources                     = 0
+| | | | MulticastAddress                 = ff02::1:ff00:811
+| | | | AuxData                          = 
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:0 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.Hdr_HopByHop
+ng count Frame_Ether.Packet_IPv6 != Frame_Ether.Packet_IPv6
+</PRE><HR><A NAME="vRecvPKT6"></A><A HREF="#vRecv6">Recv at 05:18:06</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:3f:3e
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = 3ffe:501:ffff:100:250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:3f3e
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 11362 calc(11362)
+| | | Reserved                         = 0
+| | | TargetAddress                    = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+</PRE><HR><A NAME="vRecvPKT7"></A><A HREF="#vRecv7">Recv at 05:18:07</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:3f:3e
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = 3ffe:501:ffff:100:250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:3f3e
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 11362 calc(11362)
+| | | Reserved                         = 0
+| | | TargetAddress                    = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+</PRE><HR><A NAME="vRecvPKT8"></A><A HREF="#vRecv8">Recv at 05:18:08</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:3f:3e
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = 3ffe:501:ffff:100:250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:3f3e
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 11362 calc(11362)
+| | | Reserved                         = 0
+| | | TargetAddress                    = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+</PRE><HR><A NAME="vRecvPKT9"></A><A HREF="#vRecv9">Recv at 05:18:30</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:163)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:149)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 109
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:109)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 109
+| | | | Checksum                         = 5340 calc(5340)
+| | | Udp_DHCPv6_Renew                (length:101)
+| | | | Type                             = 5
+| | | | Identifier                       = 5306881
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_SID                  (length:18)
+| | | | | Code                             = 2
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 400000
+| | | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 0
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+| | | | Opt_DHCPv6_IA_PD                (length:45)
+| | | | | Code                             = 25
+| | | | | Length                           = 41
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Prefix            (length:29)
+| | | | | | Code                             = 26
+| | | | | | Length                           = 25
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | | | PrefixLength                     = 60
+| | | | | | Prefix                           = 3ffe:501:ffff:1110::
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Renew
+</PRE><HR><A NAME="vRecvPKT10"></A><A HREF="#vRecv10">Recv at 05:18:32</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:162)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:148)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 108
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:108)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 108
+| | | | Checksum                         = 16243 calc(16243)
+| | | Udp_DHCPv6_Renew                (length:100)
+| | | | Type                             = 5
+| | | | Identifier                       = 7743742
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_SID                  (length:18)
+| | | | | Code                             = 2
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 400000
+| | | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
+| | | | Opt_DHCPv6_IA_NA                (length:44)
+| | | | | Code                             = 3
+| | | | | Length                           = 40
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Address           (length:28)
+| | | | | | Code                             = 5
+| | | | | | Length                           = 24
+| | | | | | Address                          = 3ffe:501:ffff:100::abcd
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 0
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Renew
+</PRE><HR><A NAME="vRecvPKT11"></A><A HREF="#vRecv11">Recv at 05:18:36</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:3f:3e
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = 3ffe:501:ffff:100:250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:3f3e
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 11362 calc(11362)
+| | | Reserved                         = 0
+| | | TargetAddress                    = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+</PRE><HR><A NAME="vRecvPKT12"></A><A HREF="#vRecv12">Recv at 05:18:37</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:3f:3e
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = 3ffe:501:ffff:100:250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:3f3e
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 11362 calc(11362)
+| | | Reserved                         = 0
+| | | TargetAddress                    = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+</PRE><HR><A NAME="vRecvPKT13"></A><A HREF="#vRecv13">Recv at 05:18:38</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:3f:3e
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = 3ffe:501:ffff:100:250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:3f3e
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 11362 calc(11362)
+| | | Reserved                         = 0
+| | | TargetAddress                    = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+</PRE><HR><A NAME="vRecvPKT14"></A><A HREF="#vRecv14">Recv at 05:18:39</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:163)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:149)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 109
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:109)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 109
+| | | | Checksum                         = 4359 calc(4359)
+| | | Udp_DHCPv6_Renew                (length:101)
+| | | | Type                             = 5
+| | | | Identifier                       = 5306881
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_SID                  (length:18)
+| | | | | Code                             = 2
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 400000
+| | | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 981
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+| | | | Opt_DHCPv6_IA_PD                (length:45)
+| | | | | Code                             = 25
+| | | | | Length                           = 41
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Prefix            (length:29)
+| | | | | | Code                             = 26
+| | | | | | Length                           = 25
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | | | PrefixLength                     = 60
+| | | | | | Prefix                           = 3ffe:501:ffff:1110::
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Renew
+</PRE><HR><A NAME="vRecvPKT15"></A><A HREF="#vRecv15">Recv at 05:18:41</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:162)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:148)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 108
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:108)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 108
+| | | | Checksum                         = 15332 calc(15332)
+| | | Udp_DHCPv6_Renew                (length:100)
+| | | | Type                             = 5
+| | | | Identifier                       = 7743742
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_SID                  (length:18)
+| | | | | Code                             = 2
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 400000
+| | | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
+| | | | Opt_DHCPv6_IA_NA                (length:44)
+| | | | | Code                             = 3
+| | | | | Length                           = 40
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Address           (length:28)
+| | | | | | Code                             = 5
+| | | | | | Length                           = 24
+| | | | | | Address                          = 3ffe:501:ffff:100::abcd
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 911
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Renew
+</PRE><HR><A NAME="vRecvPKT16"></A><A HREF="#vRecv16">Recv at 05:18:58</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:162)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:148)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 108
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:108)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 108
+| | | | Checksum                         = 13574 calc(13574)
+| | | Udp_DHCPv6_Renew                (length:100)
+| | | | Type                             = 5
+| | | | Identifier                       = 7743742
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_SID                  (length:18)
+| | | | | Code                             = 2
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 400000
+| | | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
+| | | | Opt_DHCPv6_IA_NA                (length:44)
+| | | | | Code                             = 3
+| | | | | Length                           = 40
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Address           (length:28)
+| | | | | | Code                             = 5
+| | | | | | Length                           = 24
+| | | | | | Address                          = 3ffe:501:ffff:100::abcd
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 2669
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Renew
+</PRE><HR><A NAME="vRecvPKT17"></A><A HREF="#vRecv17">Recv at 05:18:59</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:163)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:149)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 109
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:109)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 109
+| | | | Checksum                         = 2435 calc(2435)
+| | | Udp_DHCPv6_Renew                (length:101)
+| | | | Type                             = 5
+| | | | Identifier                       = 5306881
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_SID                  (length:18)
+| | | | | Code                             = 2
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 400000
+| | | | | | LinkLayerAddress                 = 00:00:00:00:a1:a1
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 2905
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+| | | | Opt_DHCPv6_IA_PD                (length:45)
+| | | | | Code                             = 25
+| | | | | Length                           = 41
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Prefix            (length:29)
+| | | | | | Code                             = 26
+| | | | | | Length                           = 25
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | | | PrefixLength                     = 60
+| | | | | | Prefix                           = 3ffe:501:ffff:1110::
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Renew
+</PRE><HR><A NAME="vRecvPKT18"></A><A HREF="#vRecv18">Recv at 05:19:00</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:145)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:131)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 91
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:91)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 91
+| | | | Checksum                         = 63325 calc(63325)
+| | | Udp_DHCPv6_Rebind               (length:83)
+| | | | Type                             = 6
+| | | | Identifier                       = 7918261
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 0
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+| | | | Opt_DHCPv6_IA_PD                (length:45)
+| | | | | Code                             = 25
+| | | | | Length                           = 41
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Prefix            (length:29)
+| | | | | | Code                             = 26
+| | | | | | Length                           = 25
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | | | PrefixLength                     = 60
+| | | | | | Prefix                           = 3ffe:501:ffff:1110::
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Rebind
+</PRE><HR><A NAME="vRecvPKT19"></A><A HREF="#vRecv19">Recv at 05:19:02</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:144)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:130)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 90
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:90)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 90
+| | | | Checksum                         = 64815 calc(64815)
+| | | Udp_DHCPv6_Rebind               (length:82)
+| | | | Type                             = 6
+| | | | Identifier                       = 5318340
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_IA_NA                (length:44)
+| | | | | Code                             = 3
+| | | | | Length                           = 40
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Address           (length:28)
+| | | | | | Code                             = 5
+| | | | | | Length                           = 24
+| | | | | | Address                          = 3ffe:501:ffff:100::abcd
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 0
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Rebind
+</PRE><HR><A NAME="vRecvPKT20"></A><A HREF="#vRecv20">Recv at 05:19:06</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:3f:3e
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = 3ffe:501:ffff:100:250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:3f3e
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 11362 calc(11362)
+| | | Reserved                         = 0
+| | | TargetAddress                    = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+</PRE><HR><A NAME="vRecvPKT21"></A><A HREF="#vRecv21">Recv at 05:19:07</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:3f:3e
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = 3ffe:501:ffff:100:250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:3f3e
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 11362 calc(11362)
+| | | Reserved                         = 0
+| | | TargetAddress                    = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+</PRE><HR><A NAME="vRecvPKT22"></A><A HREF="#vRecv22">Recv at 05:19:08</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:86)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:ff:00:3f:3e
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:72)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 32
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = 3ffe:501:ffff:100:250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:ff00:3f3e
+| | ICMPv6_NS                       (length:32)
+| | | Type                             = 135
+| | | Code                             = 0
+| | | Checksum                         = 11362 calc(11362)
+| | | Reserved                         = 0
+| | | TargetAddress                    = 3ffe:501:ffff:100:200:ff:fe00:3f3e
+| | | Opt_ICMPv6_SLL                  (length:8)
+| | | | Type                             = 1
+| | | | Length                           = 1
+| | | | LinkLayerAddress                 = 00:50:18:00:08:11
+===ripng_any=================================
+ng compare _HDR_IPV6_ripng_any.NextHeader received:58 = 17
+ng meta Packet_IPv6.Upp_UDP != Packet_IPv6.ICMPv6_NS
+</PRE><HR><A NAME="vRecvPKT23"></A><A HREF="#vRecv23">Recv at 05:19:10</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:145)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:131)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 91
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:91)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 91
+| | | | Checksum                         = 62265 calc(62265)
+| | | Udp_DHCPv6_Rebind               (length:83)
+| | | | Type                             = 6
+| | | | Identifier                       = 7918261
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 1060
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+| | | | Opt_DHCPv6_IA_PD                (length:45)
+| | | | | Code                             = 25
+| | | | | Length                           = 41
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Prefix            (length:29)
+| | | | | | Code                             = 26
+| | | | | | Length                           = 25
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | | | PrefixLength                     = 60
+| | | | | | Prefix                           = 3ffe:501:ffff:1110::
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Rebind
+</PRE><HR><A NAME="vRecvPKT24"></A><A HREF="#vRecv24">Recv at 05:19:12</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:144)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:130)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 90
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:90)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 90
+| | | | Checksum                         = 63779 calc(63779)
+| | | Udp_DHCPv6_Rebind               (length:82)
+| | | | Type                             = 6
+| | | | Identifier                       = 5318340
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_IA_NA                (length:44)
+| | | | | Code                             = 3
+| | | | | Length                           = 40
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Address           (length:28)
+| | | | | | Code                             = 5
+| | | | | | Length                           = 24
+| | | | | | Address                          = 3ffe:501:ffff:100::abcd
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 1036
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Rebind
+</PRE><HR><A NAME="vRecvPKT25"></A><A HREF="#vRecv25">Recv at 05:19:32</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:145)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:131)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 91
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:91)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 91
+| | | | Checksum                         = 60053 calc(60053)
+| | | Udp_DHCPv6_Rebind               (length:83)
+| | | | Type                             = 6
+| | | | Identifier                       = 7918261
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 3272
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+| | | | Opt_DHCPv6_IA_PD                (length:45)
+| | | | | Code                             = 25
+| | | | | Length                           = 41
+| | | | | Identifier                       = 1
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Prefix            (length:29)
+| | | | | | Code                             = 26
+| | | | | | Length                           = 25
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | | | PrefixLength                     = 60
+| | | | | | Prefix                           = 3ffe:501:ffff:1110::
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Rebind
+</PRE><HR><A NAME="vRecvPKT26"></A><A HREF="#vRecv26">Recv at 05:19:32</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:144)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 33:33:00:01:00:02
+| | SourceAddress                    = 00:50:18:00:08:11
+| | Type                             = 34525
+| Packet_IPv6                     (length:130)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 90
+| | | NextHeader                       = 17
+| | | HopLimit                         = 1
+| | | SourceAddress                    = fe80::250:18ff:fe00:811
+| | | DestinationAddress               = ff02::1:2
+| | Upp_UDP                         (length:90)
+| | | Hdr_UDP                         (length:8)
+| | | | SourcePort                       = 546
+| | | | DestinationPort                  = 547
+| | | | Length                           = 90
+| | | | Checksum                         = 61738 calc(61738)
+| | | Udp_DHCPv6_Rebind               (length:82)
+| | | | Type                             = 6
+| | | | Identifier                       = 5318340
+| | | | Opt_DHCPv6_CID                  (length:18)
+| | | | | Code                             = 1
+| | | | | Length                           = 14
+| | | | | DHCPv6_DUID_LLT_Ether           (length:14)
+| | | | | | Type                             = 1
+| | | | | | HardwareType                     = 1
+| | | | | | Time                             = 504921828
+| | | | | | LinkLayerAddress                 = 00:50:18:00:08:11
+| | | | Opt_DHCPv6_IA_NA                (length:44)
+| | | | | Code                             = 3
+| | | | | Length                           = 40
+| | | | | Identifier                       = 0
+| | | | | Time1                            = 50
+| | | | | Time2                            = 80
+| | | | | Opt_DHCPv6_IA_Address           (length:28)
+| | | | | | Code                             = 5
+| | | | | | Length                           = 24
+| | | | | | Address                          = 3ffe:501:ffff:100::abcd
+| | | | | | PreferredLifetime                = 100
+| | | | | | ValidLifetime                    = 200
+| | | | Opt_DHCPv6_ElapsedTime          (length:6)
+| | | | | Code                             = 8
+| | | | | Length                           = 2
+| | | | | Time                             = 3077
+| | | | Opt_DHCPv6_OptionRequest        (length:10)
+| | | | | Code                             = 6
+| | | | | Length                           = 6
+| | | | | OptionCode                       = 23
+| | | | | OptionCode                       = 24
+| | | | | OptionCode                       = 82
+===ripng_any=================================
+ng compare _HDR_UDP_ripng_any.SourcePort received:546 = 521
+ng compare _HDR_UDP_ripng_any.DestinationPort received:547 = 521
+ng meta Upp_UDP.Udp_RIPng != Upp_UDP.Udp_DHCPv6_Rebind
+</PRE><HR><A NAME="vSendPKT5"></A><A HREF="#vSend5">send ra_RouterLifetimeZero at 05:19:42</A>
+<PRE STYLE="line-height:70%">Frame_Ether                     (length:70)
+| Hdr_Ether                       (length:14)
+| | DestinationAddress               = 00:50:18:00:08:11
+| | SourceAddress                    = 00:00:00:00:a0:a0
+| | Type                             = 34525
+| Packet_IPv6                     (length:56)
+| | Hdr_IPv6                        (length:40)
+| | | Version                          = 6
+| | | TrafficClass                     = 0
+| | | FlowLabel                        = 0
+| | | PayloadLength                    = 16
+| | | NextHeader                       = 58
+| | | HopLimit                         = 255
+| | | SourceAddress                    = fe80::200:ff:fe00:a0a0
+| | | DestinationAddress               = fe80::250:18ff:fe00:811
+| | ICMPv6_RA                       (length:16)
+| | | Type                             = 134
+| | | Code                             = 0
+| | | Checksum                         = 31153 calc(31153)
+| | | CurHopLimit                      = 64
+| | | MFlag                            = 0
+| | | OFlag                            = 0
+| | | HFlag                            = 0
+| | | Preference                       = 0
+| | | Reserved                         = 0
+| | | LifeTime                         = 0
+| | | ReachableTime                    = 0
+| | | RetransTimer                     = 0
+</PRE><HR></UL>
+
+</BODY>
+</HTML>
+<!-- a795d756f3b8be55ae37a96bec696057 -->
+<!-- 17420e18136f241a5fe005c844d196a1 -->
+<!-- 621fd76b08dec4b5740380ea99ebb978 -->
