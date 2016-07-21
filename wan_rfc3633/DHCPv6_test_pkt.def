@@ -17,6 +17,7 @@ FEM_dhcp6_solicit(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -39,6 +40,7 @@ FEM_dhcp6_solicit(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -62,6 +64,7 @@ FEM_dhcp6_solicit(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -84,6 +87,7 @@ FEM_dhcp6_request(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -106,6 +110,7 @@ FEM_dhcp6_request(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -128,6 +133,7 @@ FEM_dhcp6_request(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -150,6 +156,7 @@ FEM_dhcp6_information_request(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -172,6 +179,7 @@ FEM_dhcp6_information_request(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -193,6 +201,7 @@ FEM_dhcp6_confirm(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -216,6 +225,7 @@ FEM_dhcp6_confirm(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -237,6 +247,7 @@ FEM_dhcp6_renew(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -260,6 +271,7 @@ FEM_dhcp6_renew(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -282,6 +294,7 @@ FEM_dhcp6_renew(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -303,6 +316,7 @@ FEM_dhcp6_rebind(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -326,6 +340,7 @@ FEM_dhcp6_rebind(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -348,6 +363,7 @@ FEM_dhcp6_rebind(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -369,6 +385,7 @@ FEM_dhcp6_release(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -392,6 +409,7 @@ FEM_dhcp6_release(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -414,6 +432,7 @@ FEM_dhcp6_release(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -435,6 +454,7 @@ FEM_dhcp6_decline(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -458,6 +478,7 @@ FEM_dhcp6_decline(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -480,6 +501,7 @@ FEM_dhcp6_decline(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -501,6 +523,7 @@ FEM_dhcp6_advertise(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -523,6 +546,7 @@ FEM_dhcp6_reply(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -545,6 +569,7 @@ FEM_dhcp6_advertise(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -567,6 +592,7 @@ FEM_dhcp6_reply(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -589,6 +615,7 @@ FEM_dhcp6_reconfigure(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -611,6 +638,7 @@ FEM_dhcp6_advertise(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -633,6 +661,7 @@ FEM_dhcp6_advertise(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -655,6 +684,7 @@ FEM_dhcp6_reply(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -677,6 +707,7 @@ FEM_dhcp6_reply(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -699,6 +730,7 @@ FEM_dhcp6_reconfigure(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
@@ -721,6 +753,7 @@ FEM_dhcp6_advertise(
 		option = opt_SID_LLT_server1;
 		option = opt_IA_NA_Addr_woStatus;
 		option = opt_IA_PD_Prefix2;
+		option = opt_ElapsedTime;
 		option = opt_StatusCode;
 		option = opt_DNS_Name_Server1;
 		option = opt_DNS_ServerSearchList;
